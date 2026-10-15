@@ -1,0 +1,1190 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Silsilah keluarga Rasulullah ﷺ dan para sahabat: diagram keluarga interaktif, pencari hubungan kekerabatan, pohon nasab Quraisy, dan 55 kisah sirah bersumber.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E5A47'/%3E%3Cpath d='M16 7v18M16 13l-6 5M16 13l6 5M10 18v4M22 18v4' stroke='%23fff' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-family:system-ui,sans-serif;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Nasab Para Sahabat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=Spectral:wght@500;600;700&display=swap">
+<style>
+/* Layout: kartu profil keluarga di kiri, pencari hubungan di kanan, pohon nasab garis ayah di bawah. */
+:root{
+  --bg:#F1F4F2;--surface:#FFFFFF;--sunk:#E8EEEA;--ink:#16201C;--muted:#5A6964;--line:#D3DCD7;
+  --accent:#0E5A47;--accent-soft:#DFEDE7;--gold:#94661A;--gold-soft:#F5EBD8;
+  --c-h:#13775B;--c-u:#7B4AA0;--c-t:#B0690F;--c-ad:#2D63A8;--c-mk:#B23A35;--c-z:#B2457D;--c-a:#5B7D1A;--c-oq:#3F7C89;--c-out:#7A8087;--scrim:rgba(14,26,22,.55);
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --arab:"Amiri","Traditional Arabic","Scheherazade New",serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1513;--surface:#17201C;--sunk:#121A17;--ink:#E5ECE8;--muted:#9AA9A3;--line:#2A3632;
+  --accent:#62C6A6;--accent-soft:#1A2F28;--gold:#DDB061;--gold-soft:#2E2617;
+  --c-h:#4DC99D;--c-u:#B88EDD;--c-t:#E6A44F;--c-ad:#7FAAEA;--c-mk:#EF7C74;--c-z:#EA86B8;--c-a:#A6C95C;--c-oq:#7EC3CF;--c-out:#A3A9B0;--scrim:rgba(0,0,0,.7);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1513;--surface:#17201C;--sunk:#121A17;--ink:#E5ECE8;--muted:#9AA9A3;--line:#2A3632;
+  --accent:#62C6A6;--accent-soft:#1A2F28;--gold:#DDB061;--gold-soft:#2E2617;
+  --c-h:#4DC99D;--c-u:#B88EDD;--c-t:#E6A44F;--c-ad:#7FAAEA;--c-mk:#EF7C74;--c-z:#EA86B8;--c-a:#A6C95C;--c-oq:#7EC3CF;--c-out:#A3A9B0;--scrim:rgba(0,0,0,.7);color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+.eyebrow,.lbl{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+header.top{padding-block:36px 22px}
+header.top h1{font-size:clamp(32px,5vw,48px);font-weight:600;margin-top:6px}
+header.top .intro{max-width:66ch;color:var(--muted);margin:10px 0 0}
+.searchrow{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.sbox{position:relative;max-width:560px}
+.sbox input{width:100%;font:inherit;font-size:16px;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.sbox input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.sres{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--surface);border:1px solid var(--line);border-radius:10px;list-style:none;margin:0;padding:6px;z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.12);max-height:340px;overflow:auto}
+.sres li button{width:100%;display:flex;justify-content:space-between;gap:10px;align-items:baseline;background:none;border:0;padding:8px 10px;border-radius:7px;font:inherit;color:var(--ink);cursor:pointer;text-align:left}
+.sres li button:hover,.sres li button:focus-visible{background:var(--accent-soft);outline:none}
+.sres small{color:var(--muted);font-size:12.5px;flex:none}
+.quick{display:flex;flex-wrap:wrap;gap:6px}
+
+.p{display:inline-flex;align-items:center;gap:7px;padding:3px 11px 3px 9px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:inherit;font-size:14.5px;line-height:1.35;cursor:pointer;text-align:left;max-width:100%}
+.p:hover{border-color:var(--cc,var(--accent))}
+.p:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.p .d{width:9px;height:9px;flex:none;background:var(--cc,var(--c-out))}
+.p.f .d{border-radius:50%}
+.p.m .d{border-radius:1px;transform:rotate(45deg) scale(.85)}
+.p.nabi{border-color:var(--gold);background:var(--gold-soft);font-weight:600}
+.p.cur{box-shadow:0 0 0 2px var(--cc,var(--accent))}
+.t{color:var(--muted);font-size:14.5px}
+.tag{display:inline-block;font-size:11.5px;padding:1px 7px;border-radius:5px;background:var(--sunk);color:var(--muted);border:1px solid var(--line);white-space:nowrap}
+.tag.end{color:var(--c-mk);border-color:currentColor;background:transparent}
+
+main{padding-bottom:48px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.profile{padding:24px;min-width:0}
+.ph{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;align-items:flex-start}
+.ph h2{font-size:clamp(28px,4vw,38px);font-weight:600}
+.ph .ar{font-family:var(--arab);font-size:28px;color:var(--muted);line-height:1.3}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px;color:var(--muted);font-size:14.5px}
+.clan{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--cc)}
+.clan::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--cc)}
+.nasab{margin-top:16px;padding:12px 14px;background:var(--sunk);border-radius:10px;font-size:15px;line-height:1.75}
+.nasab .lbl{display:block;margin-bottom:2px}
+.nl{background:none;border:0;padding:0;font:inherit;color:var(--accent);cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.nl:hover{text-decoration-style:solid}
+.nl:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.note{margin:14px 0 0;max-width:72ch}
+.rel{margin-top:18px;padding:14px 16px;border-radius:10px;background:var(--accent-soft)}
+.rel p{margin:8px 0 0;font-size:14.5px}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.arr{font-size:13px;color:var(--muted);white-space:nowrap}
+.arr b{color:var(--ink);font-weight:600}
+.sect{margin-top:22px}
+.sect>.lbl{display:block;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px 24px}
+.fam .lbl{display:block;margin-bottom:6px}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sibg+.sibg{margin-top:8px}
+.sibg .k{font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.spouses{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.sp{border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--bg);min-width:0}
+.sp .top{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sp p{margin:8px 0 0;font-size:14px;color:var(--muted)}
+.sp .kids{margin-top:10px}
+.sp .kids .k{font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.empty{color:var(--muted);font-size:14.5px;font-style:italic}
+
+.side{display:flex;flex-direction:column;gap:20px;min-width:0}
+@media (min-width:901px){.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}}
+.finder,.legend{padding:18px}
+.finder h3,.legend h3{font-size:20px;font-weight:600;margin-bottom:12px}
+.finder label{display:block;font-size:13px;color:var(--muted);margin:8px 0 4px}
+.finder select{width:100%;font:inherit;font-size:15px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.finder .swap{margin-top:10px;font:inherit;font-size:14px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:5px 12px;cursor:pointer}
+.finder .swap:hover{border-color:var(--accent)}
+.fres{margin-top:14px;font-size:14.5px}
+.fres .path{flex-direction:column;align-items:flex-start;gap:4px}
+.fres .arr{padding-left:14px}
+.fres p{margin:10px 0 0;color:var(--muted)}
+.legend ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px}
+.legend li{display:flex;align-items:center;gap:8px}
+.legend .sw{width:10px;height:10px;border-radius:2px;background:var(--cc);flex:none}
+.legend p{font-size:13.5px;color:var(--muted);margin:12px 0 0}
+
+.treeSec{margin-top:36px;padding:24px}
+.treeSec h2{font-size:28px;font-weight:600}
+.treeSec .sub{color:var(--muted);max-width:70ch;margin:6px 0 14px}
+.tctl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tctl button{font:inherit;font-size:14px;background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:5px 12px;cursor:pointer}
+.tctl button:hover{border-color:var(--accent)}
+.treebox{overflow-x:auto;padding-bottom:8px}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:20px;margin-left:8px;border-left:1px solid var(--line)}
+.tree li{padding:3px 0;white-space:nowrap}
+.tree summary{cursor:pointer;list-style-position:outside;padding-left:2px}
+.tree summary::marker{color:var(--muted)}
+.tree li.leaf{padding-left:16px}
+.tree .w,.tree .via{font-size:12.5px;color:var(--muted);margin-left:6px}
+.tree .via{font-style:italic}
+.tree .w .nl{font-size:12.5px}
+.tree h3{font-size:18px;font-weight:600;margin:22px 0 8px}
+.orph{margin-top:20px}
+.sources{margin-top:36px;max-width:78ch;color:var(--muted);font-size:14.5px}
+.sources h2{font-size:22px;color:var(--ink);margin-bottom:8px}
+.sources ul{padding-left:20px;margin:6px 0 12px}
+
+.klist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.kl{display:flex;flex-direction:column;gap:3px;text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 13px;cursor:pointer;min-width:0}
+.kl:hover{border-color:var(--accent);background:var(--accent-soft)}
+.kl:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.kl .ke{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.kl .kt{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.25}
+.kl .kx{font-size:13.5px;color:var(--muted);line-height:1.45}
+.storySec{margin-top:36px;padding:24px}
+.storySec h2{font-size:28px;font-weight:600}
+.storySec .sub{color:var(--muted);max-width:70ch;margin:6px 0 4px}
+.storySec h3{font-size:18px;font-weight:600;margin:22px 0 10px}
+.reader{position:fixed;inset:0;z-index:60;background:var(--scrim);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding-top:calc(env(safe-area-inset-top,0px) + 24px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 24px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.rpanel{background:var(--surface);color:var(--ink);width:100%;max-width:720px;border-radius:16px;padding:26px 28px 24px;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+@media (max-width:560px){.reader{padding-top:calc(env(safe-area-inset-top,0px) + 8px);padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}.rpanel{padding:20px 18px}}
+.rtop{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.rclose{font:inherit;font-size:14px;background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:5px 12px;cursor:pointer;flex:none}
+.rclose:hover{border-color:var(--accent)}
+.rpanel h2{font-size:clamp(24px,4vw,32px);font-weight:600;margin-top:8px}
+.rtext{margin-top:14px;max-width:66ch}
+.rtext p{margin:0 0 14px;font-size:16.5px;line-height:1.7}
+.rpanel .sect{margin-top:18px}
+.rsrc{font-size:13.5px;color:var(--muted);margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.rnav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.rnav .kl.next{text-align:right;align-items:flex-end}
+.kcount{font-size:12px;color:var(--muted);margin-left:4px;font-family:var(--body);font-weight:400}
+
+.diag{padding:20px 20px 16px;margin-bottom:24px}
+.dhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:flex-end}
+.dhead h2{font-size:clamp(22px,3vw,30px);font-weight:600}
+.dsub{color:var(--muted);font-size:14px;margin-top:4px}
+.zoom{display:flex;gap:6px}
+.zoom button{font:inherit;font-size:14px;min-width:36px;background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
+.zoom button:hover{border-color:var(--accent)}
+.zoom button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dscroll{overflow:auto;margin-top:14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);max-height:min(78vh,760px);overscroll-behavior:contain}
+#dsizer{position:relative}
+#dstage{position:absolute;left:0;top:0;transform-origin:0 0}
+.dsvg{position:absolute;left:0;top:0;overflow:visible}
+.dsvg .ln{fill:none;stroke:var(--muted);stroke-opacity:.65;stroke-width:1.5}
+.dsvg .mr{fill:none;stroke:var(--gold);stroke-width:2.2}
+.dn{position:absolute;width:152px;height:80px;display:flex;flex-direction:column;gap:2px;padding:8px 10px;text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;cursor:pointer;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+.dn:hover{border-color:var(--cc);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.10)}
+.dn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dn .dr{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:6px;white-space:nowrap;overflow:hidden}
+.dn .dr::before{content:"";width:8px;height:8px;background:var(--cc);flex:none}
+.dn.f .dr::before{border-radius:50%}
+.dn.m .dr::before{border-radius:1px;transform:rotate(45deg) scale(.85)}
+.dn .dnm{font-size:13.5px;font-weight:600;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dn .dx{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:auto}
+.dn.self{border:2px solid var(--cc);background:var(--accent-soft)}
+.dn.self .dnm{font-family:var(--display);font-size:15px}
+.dn.nabi{border-color:var(--gold);background:var(--gold-soft)}
+.dn.mn{border-style:dashed}
+.dn.gp,.dn.gk{background:var(--sunk)}
+@keyframes dnIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){.dn{animation:dnIn .35s ease backwards;animation-delay:var(--d)}}
+.dleg{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:13px;color:var(--muted);align-items:center}
+.dleg i{display:inline-block;width:22px;height:0;vertical-align:middle;margin-right:6px}
+.dleg .l1{border-top:1.5px solid var(--muted)}
+.dleg .l2{border-top:2.2px solid var(--gold)}
+.dleg .l3{width:14px;height:10px;border:1px dashed var(--muted);border-radius:3px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">Silsilah keluarga dalam sirah nabawiyah</div>
+  <h1>Nasab Para Sahabat</h1>
+  <p class="intro">Pohon keluarga Rasulullah ﷺ dan sahabat-sahabat terdekat beliau. Klik nama siapa pun untuk melihat ayah, ibu, saudara, pasangan, dan anak-anaknya, bagaimana ia tersambung dengan Rasulullah ﷺ, serta kisah-kisah sirah yang melibatkannya.</p>
+  <div class="searchrow">
+    <div class="sbox">
+      <input id="q" type="search" autocomplete="off" placeholder="Cari nama, misalnya: Hafshah, Abu Jahal, Asma' bint Umais…" aria-label="Cari tokoh">
+      <ul id="qr" class="sres" hidden></ul>
+    </div>
+    <div class="quick" id="quick"></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <section class="card diag" aria-label="Diagram keluarga">
+    <div class="dhead">
+      <div><div class="eyebrow">Diagram keluarga · 2 generasi ke atas dan ke bawah</div><h2 id="dtitle"></h2><div class="dsub" id="dsub"></div></div>
+      <div class="zoom"><button type="button" id="zout" aria-label="Perkecil">−</button><button type="button" id="zfit">Pas layar</button><button type="button" id="zin" aria-label="Perbesar">+</button></div>
+    </div>
+    <div class="dscroll" id="dscroll"><div id="dsizer"><div id="dstage"></div></div></div>
+    <div class="dleg"><span><i class="l1"></i>garis keturunan</span><span><i class="l2"></i>pernikahan</span><span><i class="l3"></i>menantu</span><span>Klik kartu mana pun untuk menjadikannya pusat diagram.</span></div>
+  </section>
+  <div class="layout">
+    <section id="profile" class="card profile" aria-live="polite"></section>
+    <aside class="side">
+      <section class="card finder">
+        <h3>Cari hubungan dua tokoh</h3>
+        <label for="fa">Dari</label><select id="fa"></select>
+        <label for="fb">Ke</label><select id="fb"></select>
+        <button class="swap" id="swap" type="button">Tukar ↕</button>
+        <div class="fres" id="fres"></div>
+      </section>
+      <section class="card legend">
+        <h3>Kabilah</h3>
+        <ul id="legend"></ul>
+        <p>Titik bulat menandai perempuan, belah ketupat menandai laki-laki. Warna menunjukkan kabilah dari garis ayah.</p>
+      </section>
+    </aside>
+  </div>
+
+  <section class="card storySec" id="kisah-index">
+    <h2>Kisah-kisah sirah</h2>
+    <p class="sub">Peristiwa-peristiwa yang mempertemukan tokoh-tokoh di atas, diurutkan menurut masa. Setiap kisah menyebut sumbernya dan menautkan tokoh yang terlibat, sehingga silsilah dan kisahnya bisa dibaca bersamaan.</p>
+    <div id="storyIndex"></div>
+  </section>
+
+  <section class="card treeSec">
+    <h2>Pohon nasab Quraisy</h2>
+    <p class="sub">Disusun menurut garis ayah, dari Fihr bin Malik (Quraisy) turun ke kabilah-kabilahnya. Anak dicantumkan di bawah ayahnya; untuk perempuan disebutkan suaminya. Garis yang ditulis miring dengan “via” adalah generasi perantara yang tidak dirinci.</p>
+    <div class="tctl"><button type="button" id="openAll">Buka semua</button><button type="button" id="closeAll">Tutup semua</button><button type="button" id="showCur">Tampilkan tokoh yang dipilih</button></div>
+    <div class="treebox" id="tree"></div>
+  </section>
+
+  <section class="sources">
+    <h2>Rujukan dan catatan</h2>
+    <p>Data nasab disusun dari kitab-kitab sirah dan biografi sahabat:</p>
+    <ul>
+      <li>as-Sirah an-Nabawiyyah, Ibnu Hisyam (dari Ibnu Ishaq)</li>
+      <li>ath-Thabaqat al-Kubra, Ibnu Sa'd</li>
+      <li>al-Isti'ab fi Ma'rifatil Ash-hab, Ibnu Abdil Barr</li>
+      <li>Usdul Ghabah, Ibnul Atsir · al-Ishabah fi Tamyizish Shahabah, Ibnu Hajar</li>
+      <li>Siyar A'lam an-Nubala', adz-Dzahabi · Nasab Quraisy, Mush'ab az-Zubairi</li>
+    </ul>
+    <p>Hadits yang dikutip disertai nama perawinya. Keterangan “riwayat sirah” berarti kisah itu berasal dari kitab sirah atau tarikh dan sanadnya tidak selalu sampai derajat shahih. Bila para ahli nasab berbeda pendapat, catatannya menyebut “diperselisihkan”. Halaman ini disusun dengan bantuan AI: cocokkan dengan kitab rujukan sebelum mengutipnya dalam tulisan atau kajian.</p>
+  </section>
+</main>
+
+<div class="reader" id="reader" hidden>
+  <div class="rpanel" role="dialog" aria-modal="true" aria-labelledby="rtitle">
+    <div class="rtop"><span class="eyebrow" id="rera"></span><button type="button" class="rclose" id="rclose">Tutup ✕</button></div>
+    <h2 id="rtitle"></h2>
+    <div id="rbody"></div>
+  </div>
+</div>
+
+<script>
+// DATA START
+const PP={},LIST=[],MAR=[],SPEC=[];
+function P(id,name,sex,fa,mo,o){const p=Object.assign({id,name,sex,fa:fa||null,mo:mo||null},o||{});PP[id]=p;LIST.push(p)}
+function M(h,w,o){MAR.push(Object.assign({h,w},o||{}))}
+function S(a,b,la,lb){SPEC.push({a,b,la,lb})}
+
+/* ===== Leluhur Quraisy ===== */
+P("fihr","Fihr bin Malik","m",null,null,{k:"Quraisy",ft:"Malik bin an-Nadhr bin Kinanah bin Khuzaimah bin Mudrikah bin Ilyas bin Mudhar bin Nizar bin Ma'add bin Adnan",n:"Dari Fihr inilah keturunannya disebut Quraisy. Seluruh kabilah Quraisy bermuara padanya. Nasab Rasulullah ﷺ sampai Adnan disepakati para ulama; di atas Adnan diperselisihkan."});
+P("ghalib","Ghalib bin Fihr","m","fihr");
+P("harits_fihr","al-Harits bin Fihr","m","fihr");
+P("luayy","Lu'ay bin Ghalib","m","ghalib");
+P("kab","Ka'b bin Lu'ay","m","luayy",null,{n:"Titik temu nasab Rasulullah ﷺ dengan Bani Adi, kabilah Umar bin al-Khaththab."});
+P("murrah","Murrah bin Ka'b","m","kab",null,{n:"Titik temu nasab Rasulullah ﷺ dengan Abu Bakar (Bani Taim) dan Khalid bin al-Walid (Bani Makhzum)."});
+P("adi","Adi bin Ka'b","m","kab");
+P("kilab","Kilab bin Murrah","m","murrah");
+P("taim","Taim bin Murrah","m","murrah");
+P("yaqazah","Yaqazhah bin Murrah","m","murrah");
+P("qushay","Qushay bin Kilab","m","kilab",null,{n:"Nama aslinya Zaid. Menyatukan Quraisy di Makkah, mendirikan Dar an-Nadwah, dan memegang urusan Ka'bah dan pelayanan jamaah haji."});
+P("zuhrah","Zuhrah bin Kilab","m","kilab",null,{n:"Leluhur Bani Zuhrah, kabilah Aminah, ibunda Rasulullah ﷺ. Karena itu Bani Zuhrah disebut akhwal (paman dari pihak ibu) Nabi."});
+P("abdmanaf","Abdu Manaf bin Qushay","m","qushay",null,{nb:"Abdi Manaf",n:"Nama aslinya al-Mughirah. Titik temu nasab Rasulullah ﷺ dengan Utsman bin Affan."});
+P("abduluzza_q","Abdul Uzza bin Qushay","m","qushay",null,{nb:"Abdil Uzza"});
+P("abduddar","Abdud Dar bin Qushay","m","qushay",null,{nb:"Abdid Dar"});
+
+/* ===== Bani Hasyim ===== */
+P("hasyim","Hasyim bin Abdi Manaf","m","abdmanaf",null,{n:"Nama aslinya Amr. Dijuluki Hasyim karena meremukkan roti untuk bubur tsarid bagi jamaah haji. Merintis dua perjalanan dagang Quraisy, musim dingin dan musim panas. Wafat di Gaza."});
+P("salma_najjar","Salma bint Amr","f",null,null,{c:"Anshar · Bani an-Najjar (Khazraj)",n:"Ibu Abdul Muththalib, dari Bani an-Najjar di Yatsrib. Saat hijrah, Nabi ﷺ singgah pada Bani an-Najjar yang beliau sebut “paman-paman (akhwal) Abdul Muththalib” (HR. Bukhari-Muslim)."});
+M("hasyim","salma_najjar");
+P("abdulmuththalib","Abdul Muththalib bin Hasyim","m","hasyim","salma_najjar",{nb:"Abdil Muththalib",k:"Nama: Syaibah",n:"Dibesarkan di Yatsrib oleh keluarga ibunya, lalu dibawa ke Makkah oleh pamannya al-Muththalib sehingga dikira budaknya. Menggali kembali sumur Zamzam. Mengasuh Nabi ﷺ setelah Aminah wafat, sampai ia sendiri wafat ketika Nabi berusia 8 tahun."});
+P("asad_hasyim","Asad bin Hasyim","m","hasyim");
+P("fathimah_asad","Fathimah bint Asad","f","asad_hasyim",null,{n:"Ibu Ali bin Abi Thalib. Ikut mengasuh Nabi ﷺ di rumah Abu Thalib, kemudian masuk Islam dan berhijrah ke Madinah. Kedua orang tua Ali sama-sama dari Bani Hasyim."});
+
+P("fathimah_amr","Fathimah bint Amr","f",null,null,{up:["Amr","A'idz","Imran"],anc:"makhzum",n:"Istri Abdul Muththalib dari Bani Makhzum. Ibu Abdullah (ayah Nabi), Abu Thalib, az-Zubair, dan sebagian besar putri Abdul Muththalib."});
+P("halah_uhaib","Halah bint Uhaib","f","uhaib",null,{n:"Istri Abdul Muththalib dari Bani Zuhrah, sepupu Aminah. Menurut riwayat sirah dinikahi pada waktu yang sama dengan pernikahan Abdullah dan Aminah. Ibu Hamzah dan Shafiyyah, sekaligus bibi Sa'd bin Abi Waqqash."});
+P("natilah","Natilah bint Janab","f",null,null,{c:"Bani an-Namir bin Qasith",n:"Istri Abdul Muththalib, ibu al-Abbas."});
+P("lubna","Lubna bint Hajir","f",null,null,{c:"Khuza'ah",n:"Istri Abdul Muththalib, ibu Abu Lahab."});
+M("abdulmuththalib","fathimah_amr");M("abdulmuththalib","halah_uhaib");M("abdulmuththalib","natilah");M("abdulmuththalib","lubna");
+
+P("harits_am","al-Harits bin Abdil Muththalib","m","abdulmuththalib",null,{n:"Putra sulung Abdul Muththalib; kunyah ayahnya, Abul Harits, diambil dari namanya. Wafat sebelum masa kenabian."});
+P("abdullah_am","Abdullah bin Abdil Muththalib","m","abdulmuththalib","fathimah_amr",{nb:"Abdillah",n:"Ayah Rasulullah ﷺ. Menurut pendapat yang masyhur ia wafat di Yatsrib ketika Nabi masih dalam kandungan."});
+P("abuthalib","Abu Thalib bin Abdil Muththalib","m","abdulmuththalib","fathimah_amr",{nb:"Abi Thalib",k:"Nama: Abdu Manaf",n:"Paman yang mengasuh Nabi ﷺ sejak usia 8 tahun dan melindungi beliau dari Quraisy sampai wafat pada Tahun Kesedihan (tahun ke-10 kenabian). Wafat tanpa mengucapkan syahadat (HR. Bukhari-Muslim)."});
+P("zubair_am","az-Zubair bin Abdil Muththalib","m","abdulmuththalib","fathimah_amr",{n:"Paman Nabi ﷺ, saudara kandung Abdullah dan Abu Thalib. Wafat sebelum Islam."});
+P("hamzah","Hamzah bin Abdil Muththalib","m","abdulmuththalib","halah_uhaib",{k:"Asadullah · Sayyidusy Syuhada'",n:"Paman Nabi ﷺ yang hampir sebaya, sekaligus saudara sepersusuan beliau. Masuk Islam setelah membela Nabi dari cacian Abu Jahal (riwayat sirah). Syahid di Uhud, dibunuh Wahsyi (HR. Bukhari)."});
+P("abbas","al-Abbas bin Abdil Muththalib","m","abdulmuththalib","natilah",{k:"Abul Fadhl",n:"Paman Nabi ﷺ, sekitar dua-tiga tahun lebih tua. Hadir di Baiat Aqabah untuk memastikan keamanan keponakannya meski belum masuk Islam. Tertawan di Badr lalu menebus dirinya. Di masa Umar, kaum muslimin meminta hujan dengan perantaraan doanya (HR. Bukhari)."});
+P("abulahab","Abu Lahab bin Abdil Muththalib","m","abdulmuththalib","lubna",{nb:"Abi Lahab",k:"Nama: Abdul Uzza",n:"Paman yang paling memusuhi Nabi ﷺ; tentangnya turun surat al-Lahab. Wafat karena penyakit tak lama setelah Perang Badr."});
+P("shafiyyah_am","Shafiyyah bint Abdil Muththalib","f","abdulmuththalib","halah_uhaib",{n:"Bibi Nabi ﷺ yang keislamannya disepakati. Saudari kandung Hamzah dan ibu az-Zubair bin al-Awwam. Menurut riwayat sirah, di Perang Khandaq ia membunuh seorang Yahudi yang mengintai benteng para wanita."});
+P("atikah_am","Atikah bint Abdil Muththalib","f","abdulmuththalib","fathimah_amr",{n:"Bibi Nabi ﷺ. Menurut riwayat sirah ia bermimpi tentang bencana yang menimpa Quraisy beberapa hari sebelum Badr. Keislamannya diperselisihkan."});
+P("barrah_am","Barrah bint Abdil Muththalib","f","abdulmuththalib","fathimah_amr",{n:"Bibi Nabi ﷺ, ibu Abu Salamah."});
+P("umaimah_am","Umaimah bint Abdil Muththalib","f","abdulmuththalib","fathimah_amr",{n:"Bibi Nabi ﷺ, ibu Zainab bint Jahsy dan saudara-saudaranya."});
+P("arwa_am","Arwa bint Abdil Muththalib","f","abdulmuththalib","fathimah_amr",{n:"Bibi Nabi ﷺ. Masuk Islam dan mendorong putranya, Thulaib bin Umair, membela Nabi (riwayat Ibnu Sa'd)."});
+P("ummuhakim_am","Ummu Hakim al-Baidha' bint Abdil Muththalib","f","abdulmuththalib","fathimah_amr",{n:"Bibi Nabi ﷺ; sebagian riwayat menyebutnya kembaran Abdullah. Nenek Utsman bin Affan dari pihak ibu."});
+
+/* Aminah & Bani Zuhrah */
+P("abdmanaf_z","Abdu Manaf bin Zuhrah","m","zuhrah",null,{nb:"Abdi Manaf"});
+P("wahb","Wahb bin Abdi Manaf","m","abdmanaf_z");
+P("uhaib","Uhaib bin Abdi Manaf","m","abdmanaf_z",null,{k:"Disebut juga Wuhaib",n:"Saudara Wahb, sehingga putrinya Halah adalah sepupu Aminah. Kakek Sa'd bin Abi Waqqash."});
+P("aminah","Aminah bint Wahb","f","wahb",null,{mt:"Barrah bint Abdil Uzza (Bani Abdid Dar)",n:"Ibunda Rasulullah ﷺ. Wafat di al-Abwa' ketika Nabi berusia 6 tahun, sepulang mengunjungi kerabat di Yatsrib. Nabi ﷺ meminta izin kepada Allah untuk menziarahi kuburnya dan diizinkan (HR. Muslim)."});
+M("abdullah_am","aminah");
+P("muhammad","Muhammad Rasulullah ﷺ","m","abdullah_am","aminah",{nb:"Muhammad ﷺ",ar:"مُحَمَّد رَسُولُ الله ﷺ",k:"Abul Qasim",al:"nabi rasul rasulullah muhammad",n:"Lahir di Makkah pada Tahun Gajah, sudah yatim sejak dalam kandungan. Disusui Tsuwaibah lalu Halimah as-Sa'diyyah, diasuh kakeknya Abdul Muththalib, kemudian pamannya Abu Thalib."});
+
+/* Ibu susu & pengasuh */
+P("tsuwaibah","Tsuwaibah","f",null,null,{c:"Budak Abu Lahab",n:"Ibu susu pertama Nabi ﷺ. Ia juga menyusui Hamzah dan Abu Salamah, sehingga keduanya saudara sepersusuan Nabi (HR. Bukhari-Muslim)."});
+P("halimah","Halimah as-Sa'diyyah","f",null,null,{c:"Bani Sa'd bin Bakr (Hawazin)",n:"Ibu susu yang membawa Nabi ﷺ ke pedalaman Bani Sa'd. Peristiwa pembelahan dada terjadi ketika beliau tinggal di sana (HR. Muslim)."});
+P("ummuaiman","Ummu Aiman","f",null,null,{k:"Nama: Barakah",c:"Habasyah",n:"Pengasuh Nabi ﷺ sejak kecil, peninggalan ayah beliau. Sepeninggal Nabi, Abu Bakar dan Umar mengunjunginya seperti kebiasaan Nabi (HR. Muslim)."});
+S("muhammad","tsuwaibah","ibu susunya","anak susunya");
+S("hamzah","tsuwaibah","ibu susunya","anak susunya");
+S("abusalamah","tsuwaibah","ibu susunya","anak susunya");
+S("muhammad","halimah","ibu susunya","anak susunya");
+S("abusufyan_harits","halimah","ibu susunya","anak susunya");
+S("muhammad","ummuaiman","pengasuhnya","anak asuhnya");
+S("muhammad","zaid_haritsah","anak angkatnya (sebelum al-Ahzab: 5)","ayah angkatnya");
+S("muhammad","ali","diasuh di rumahnya sejak kecil","pengasuhnya");
+S("hamzah","zaid_haritsah","saudara yang dipersaudarakan Nabi","saudara yang dipersaudarakan Nabi");
+
+/* ===== Khadijah & Bani Asad ===== */
+P("asad_q","Asad bin Abdil Uzza","m","abduluzza_q");
+P("khuwailid","Khuwailid bin Asad","m","asad_q");
+P("naufal_asad","Naufal bin Asad","m","asad_q");
+P("waraqah","Waraqah bin Naufal","m","naufal_asad",null,{n:"Sepupu Khadijah, penganut Nasrani yang membaca kitab-kitab terdahulu. Setelah mendengar kisah wahyu pertama ia berkata, “Ini adalah Namus yang dulu diturunkan kepada Musa” (HR. Bukhari)."});
+P("khadijah","Khadijah bint Khuwailid","f","khuwailid",null,{mt:"Fathimah bint Za'idah (Bani Amir bin Lu'ay)",ar:"خديجة بنت خويلد",k:"Ummul Mukminin · ath-Thahirah",n:"Istri pertama, dinikahi ketika Nabi ﷺ berusia 25 tahun. Orang pertama yang beriman. Ibu dari semua putra-putri Nabi kecuali Ibrahim. Selama ia hidup Nabi tidak menikah lagi. Sebelumnya ia pernah menikah dengan Abu Halah at-Tamimi dan Atiq bin A'idz al-Makhzumi."});
+P("awwam","al-Awwam bin Khuwailid","m","khuwailid",null,{n:"Saudara Khadijah, ayah az-Zubair."});
+P("halah_khuwailid","Halah bint Khuwailid","f","khuwailid",null,{n:"Saudari Khadijah. Suaranya mirip Khadijah, sehingga ketika ia minta izin masuk, Nabi ﷺ teringat Khadijah (HR. Bukhari-Muslim). Ibu Abul Ash bin ar-Rabi'."});
+
+M("muhammad","khadijah",{t:"±15 tahun sebelum kenabian",n:"Bersama selama sekitar 25 tahun sampai Khadijah wafat pada Tahun Kesedihan."});
+M("muhammad","saudah",{o:2,t:"Makkah, setelah Khadijah wafat"});
+M("muhammad","aisyah",{t:"Akad di Makkah, serumah di Madinah 1–2 H"});
+M("muhammad","hafshah",{o:2,t:"3 H"});
+M("muhammad","zainab_khuz",{t:"3–4 H"});
+M("muhammad","ummusalamah",{o:2,t:"4 H"});
+M("muhammad","zainab_jahsy",{o:2,t:"5 H"});
+M("muhammad","juwairiyah",{t:"5–6 H"});
+M("muhammad","ummuhabibah",{o:2,t:"6–7 H"});
+M("muhammad","shafiyyah",{t:"7 H"});
+M("muhammad","maimunah",{t:"7 H"});
+M("muhammad","mariyah",{t:"Madinah",kind:"Sariyyah",n:"Sariyyah (budak yang dimiliki), tidak termasuk Ummahatul Mukminin."});
+
+P("qasim","al-Qasim bin Muhammad","m","muhammad","khadijah",{n:"Putra sulung; kunyah Nabi, Abul Qasim, diambil dari namanya. Wafat ketika masih kecil di Makkah."});
+P("zainab_r","Zainab bint Rasulillah","f","muhammad","khadijah",{n:"Putri sulung. Menikah dengan sepupunya dari pihak ibu, Abul Ash bin ar-Rabi'. Ketika suaminya tertawan di Badr, ia mengirim kalung peninggalan Khadijah sebagai tebusan (HR. Abu Dawud). Wafat 8 H."});
+P("ruqayyah","Ruqayyah bint Rasulillah","f","muhammad","khadijah",{n:"Istri Utsman, ikut berhijrah ke Habasyah. Wafat ketika Perang Badr berlangsung; Utsman tinggal merawatnya atas perintah Nabi dan tetap mendapat bagian Badr (HR. Bukhari). Sebelum Islam sempat diakadkan dengan Utbah bin Abi Lahab, lalu dicerai."});
+P("ummukultsum_r","Ummu Kultsum bint Rasulillah","f","muhammad","khadijah",{n:"Dinikahkan dengan Utsman setelah Ruqayyah wafat (3 H), sehingga Utsman dijuluki Dzun Nurain. Wafat 9 H tanpa keturunan. Sebelumnya diakadkan dengan Utaibah bin Abi Lahab, lalu dicerai."});
+P("fathimah","Fathimah az-Zahra'","f","muhammad","khadijah",{ar:"فاطمة الزهراء",k:"Bint Rasulillah",n:"Putri bungsu, menikah dengan Ali bin Abi Thalib (2 H). “Fathimah adalah bagian dariku” (HR. Bukhari-Muslim). Wafat sekitar enam bulan setelah Nabi ﷺ (HR. Bukhari)."});
+P("abdullah_r","Abdullah bin Muhammad","m","muhammad","khadijah",{k:"ath-Thayyib · ath-Thahir",n:"Wafat ketika masih kecil di Makkah. Banyak ulama berpendapat ath-Thayyib dan ath-Thahir adalah julukan Abdullah, bukan anak yang lain."});
+P("mariyah","Mariyah al-Qibthiyyah","f",null,null,{c:"Qibthi (Mesir)",n:"Hadiah dari al-Muqauqis, penguasa Mesir. Ibu Ibrahim."});
+P("ibrahim","Ibrahim bin Muhammad","m","muhammad","mariyah",{n:"Lahir 8 H di Madinah dan wafat pada usia sekitar 16–18 bulan. Pada hari wafatnya terjadi gerhana matahari, lalu Nabi ﷺ menegaskan gerhana tidak terjadi karena mati atau hidupnya seseorang (HR. Bukhari)."});
+
+/* Para istri Nabi yang lain */
+P("saudah","Saudah bint Zam'ah","f",null,null,{ft:"Zam'ah bin Qais",c:"Bani Amir bin Lu'ay (Quraisy)",k:"Ummul Mukminin",n:"Dinikahi setelah Khadijah wafat. Ia janda Sakran bin Amr. Di usia tuanya ia menghadiahkan gilirannya kepada Aisyah (HR. Bukhari)."});
+P("sakran","Sakran bin Amr","m",null,null,{c:"Bani Amir bin Lu'ay (Quraisy)",n:"Berhijrah ke Habasyah bersama Saudah, wafat di Makkah sekembalinya dari sana."});
+M("sakran","saudah",{o:1,n:"Wafat; Saudah lalu dinikahi Nabi ﷺ."});
+P("zainab_khuz","Zainab bint Khuzaimah","f",null,null,{ft:"Khuzaimah bin al-Harits",c:"Bani Hilal bin Amir",k:"Ummul Masakin",n:"Dijuluki “ibu orang-orang miskin” karena kedermawanannya. Wafat beberapa bulan setelah pernikahan; selain Khadijah, hanya dia istri yang wafat semasa Nabi ﷺ hidup. Suami sebelumnya diperselisihkan."});
+P("juwairiyah","Juwairiyah bint al-Harits","f",null,null,{ft:"al-Harits bin Abi Dhirar",c:"Bani al-Musthaliq (Khuza'ah)",k:"Ummul Mukminin",n:"Putri pemimpin Bani al-Musthaliq. Setelah pernikahannya, para sahabat membebaskan tawanan kaumnya karena kini mereka kerabat Rasulullah; Aisyah berkata tak ada wanita yang lebih besar berkahnya bagi kaumnya (HR. Abu Dawud). Nama aslinya Barrah, diganti Nabi (HR. Muslim)."});
+P("shafiyyah","Shafiyyah bint Huyay","f",null,null,{ft:"Huyay bin Akhthab",c:"Bani an-Nadhir, keturunan Nabi Harun",k:"Ummul Mukminin",n:"Tertawan di Khaibar (7 H), lalu dimerdekakan dan kemerdekaannya dijadikan mahar (HR. Bukhari-Muslim). Nabi ﷺ menghiburnya: “Ayahmu Harun, pamanmu Musa, dan suamimu Muhammad” (HR. Tirmidzi)."});
+
+/* ===== Bani Taim: Abu Bakar ===== */
+P("saad_taim","Sa'd bin Taim","m","taim");
+P("kab_saad","Ka'b bin Sa'd","m","saad_taim");
+P("amr_kab","Amr bin Ka'b","m","kab_saad");
+P("amir_kab","Amir bin Ka'b","m","kab_saad");
+P("amir_amr","Amir bin Amr","m","amr_kab");
+P("utsman_amr","Utsman bin Amr","m","amr_kab");
+P("shakhr","Shakhr bin Amir","m","amir_kab");
+P("abuquhafah","Abu Quhafah","m","amir_amr",null,{nb:"Utsman (Abu Quhafah)",k:"Nama: Utsman bin Amir",n:"Ayah Abu Bakar. Masuk Islam saat Fathu Makkah dalam usia sangat tua; rambut dan janggutnya putih seperti bunga tsaghamah, lalu Nabi ﷺ menyuruh mengubah warnanya dan menjauhi hitam (HR. Muslim). Wafat 14 H, setelah putranya."});
+P("ummulkhair","Ummul Khair Salma bint Shakhr","f","shakhr",null,{n:"Ibu Abu Bakar, sepupu suaminya. Masuk Islam di masa awal setelah Abu Bakar membawanya kepada Nabi ﷺ di rumah al-Arqam (riwayat sirah)."});
+M("abuquhafah","ummulkhair");
+P("abubakar","Abu Bakar ash-Shiddiq","m","abuquhafah","ummulkhair",{nb:"Abdullah (Abu Bakar)",ar:"أبو بكر الصديق",k:"Nama: Abdullah · Atiq",al:"abu bakr siddiq",n:"Laki-laki dewasa pertama yang beriman dan teman Nabi ﷺ di Gua Tsur (at-Taubah: 40). Khalifah pertama (11–13 H). Mertua Nabi melalui Aisyah."});
+P("ummufarwah","Ummu Farwah bint Abi Quhafah","f","abuquhafah",null,{n:"Saudari Abu Bakar. Dinikahkan dengan al-Asy'ats bin Qais al-Kindi setelah ia kembali kepada Islam usai perang Riddah."});
+P("asyats","al-Asy'ats bin Qais","m",null,null,{c:"Kindah (Yaman)"});
+M("asyats","ummufarwah");
+P("qutailah","Qutailah bint Abdil Uzza","f",null,null,{c:"Bani Amir bin Lu'ay (Quraisy)",n:"Dicerai Abu Bakar di masa jahiliyah. Ketika ia mengunjungi Asma' di Madinah dalam keadaan musyrik, Nabi ﷺ menyuruh Asma' tetap menyambung hubungan dengan ibunya (HR. Bukhari-Muslim)."});
+P("ummuruman","Ummu Ruman","f",null,null,{k:"Nama: Zainab bint Amir",c:"Bani Kinanah",n:"Ibu Aisyah dan Abdurrahman."});
+P("habibah_kharijah","Habibah bint Kharijah","f",null,null,{ft:"Kharijah bin Zaid",c:"Anshar · Khazraj",n:"Istri Abu Bakar dari kalangan Anshar. Melahirkan Ummu Kultsum setelah Abu Bakar wafat."});
+M("abubakar","qutailah",{end:"cerai",t:"Masa jahiliyah"});
+M("abubakar","ummuruman");
+M("abubakar","asma_umais",{o:2,t:"Setelah Ja'far syahid (8 H)"});
+M("abubakar","habibah_kharijah");
+P("abdullah_ab","Abdullah bin Abi Bakar","m","abubakar","qutailah",{n:"Pada malam-malam di Gua Tsur ia menginap bersama Nabi ﷺ dan Abu Bakar, membawa kabar Quraisy (HR. Bukhari). Terkena panah di Tha'if dan wafat karenanya di awal khilafah ayahnya. Suami pertama Atikah bint Zaid."});
+P("asma_ab","Asma' bint Abi Bakar","f","abubakar","qutailah",{k:"Dzatun Nithaqain",n:"Membelah ikat pinggangnya untuk mengikat bekal hijrah (HR. Bukhari). Istri az-Zubair. Wafat 73 H, tak lama setelah putranya Abdullah bin az-Zubair terbunuh."});
+P("aisyah","Aisyah bint Abi Bakar","f","abubakar","ummuruman",{ar:"عائشة بنت أبي بكر",k:"Ummul Mukminin · Ummu Abdillah",n:"Akad di Makkah dan serumah dengan Nabi ﷺ di Madinah. Satu-satunya istri yang dinikahi dalam keadaan gadis. Nabi wafat di kamarnya dan dimakamkan di sana. Termasuk perawi hadits terbanyak. Kunyahnya diambil dari keponakannya, Abdullah bin az-Zubair."});
+P("abdurrahman_ab","Abdurrahman bin Abi Bakar","m","abubakar","ummuruman",{n:"Berada di pihak Quraisy pada Badr dan Uhud, lalu masuk Islam sekitar Hudaibiyah. Siwaknya dipakai Nabi ﷺ di saat-saat terakhir beliau (HR. Bukhari)."});
+P("muhammad_ab","Muhammad bin Abi Bakar","m","abubakar","asma_umais",{n:"Lahir di Dzul Hulaifah ketika Haji Wada' (HR. Muslim). Diasuh Ali setelah ibunya menikah dengannya. Gubernur Mesir di masa Ali, terbunuh 38 H."});
+P("ummukultsum_ab","Ummu Kultsum bint Abi Bakar","f","abubakar","habibah_kharijah",{n:"Lahir setelah Abu Bakar wafat; sebelum wafat Abu Bakar sudah menduga bayi itu perempuan (Muwaththa'). Istri Thalhah bin Ubaidillah."});
+
+/* Thalhah */
+P("ubaidullah_utsman","Ubaidullah bin Utsman","m","utsman_amr",null,{nb:"Ubaidillah"});
+P("talhah","Thalhah bin Ubaidillah","m","ubaidullah_utsman",null,{mt:"ash-Sha'bah bint al-Hadhrami",al:"talhah thalhah",n:"Salah satu dari sepuluh sahabat yang dijamin surga, satu kabilah (Taim) dengan Abu Bakar. Melindungi Nabi ﷺ di Uhud dengan tangannya hingga lumpuh (HR. Bukhari). Gugur dalam Perang Jamal (36 H)."});
+M("talhah","hamnah",{o:2,n:"Hamnah sebelumnya istri Mush'ab bin Umair."});
+M("talhah","ummukultsum_ab");
+P("muhammad_talhah","Muhammad bin Thalhah","m","talhah","hamnah",{k:"as-Sajjad",n:"Dikenal tekun beribadah; gugur bersama ayahnya dalam Perang Jamal."});
+P("aisyah_talhah","Aisyah bint Thalhah","f","talhah","ummukultsum_ab",{n:"Keponakan Aisyah Ummul Mukminin dan meriwayatkan hadits darinya."});
+
+/* ===== Bani Adi: Umar ===== */
+P("razah","Razah bin Adi","m","adi");
+P("qurth","Qurth bin Razah","m","razah");
+P("abdullah_qurth","Abdullah bin Qurth","m","qurth",null,{nb:"Abdillah"});
+P("riyah","Riyah bin Abdillah","m","abdullah_qurth");
+P("abduluzza_r","Abdul Uzza bin Riyah","m","riyah",null,{nb:"Abdil Uzza"});
+P("nufail","Nufail bin Abdil Uzza","m","abduluzza_r");
+P("khattab","al-Khaththab bin Nufail","m","nufail",null,{al:"khattab",n:"Ayah Umar. Dikenal keras; menurut riwayat sirah ia yang menekan dan mengusir keponakannya, Zaid bin Amr, karena meninggalkan penyembahan berhala."});
+P("amr_nufail","Amr bin Nufail","m","nufail");
+P("zaid_amr","Zaid bin Amr bin Nufail","m","amr_nufail",null,{n:"Seorang hanif di masa jahiliyah: menolak berhala dan sembelihan untuk selain Allah, serta menyelamatkan bayi perempuan yang hendak dikubur hidup-hidup (HR. Bukhari). Wafat sebelum kenabian. Ayah Sa'id bin Zaid."});
+P("hantamah","Hantamah bint Hasyim","f","hasyim_m",null,{n:"Ibu Umar, dari Bani Makhzum. Ayahnya, Hasyim bin al-Mughirah, adalah saudara al-Walid bin al-Mughirah; jadi ia sepupu Khalid bin al-Walid. Sebagian riwayat menyebutnya bint Hisyam (saudari Abu Jahal); banyak ahli nasab menguatkan bint Hasyim (sepupu Abu Jahal). Diperselisihkan."});
+P("asma_wahb","Asma' bint Wahb","f",null,null,{c:"Bani Asad bin Khuzaimah",n:"Istri al-Khaththab, ibu Zaid bin al-Khaththab."});
+M("khattab","hantamah");M("khattab","asma_wahb");
+P("umar","Umar bin al-Khaththab","m","khattab","hantamah",{ar:"عمر بن الخطاب",k:"Abu Hafsh · al-Faruq",al:"umar khattab faruq",n:"Masuk Islam pada tahun ke-6 kenabian; kisahnya bermula di rumah adiknya Fathimah dan iparnya Sa'id bin Zaid yang sedang membaca surat Thaha (riwayat sirah). Khalifah kedua (13–23 H), syahid ditikam Abu Lu'lu'ah. Mertua Nabi ﷺ melalui Hafshah."});
+P("zaid_khattab","Zaid bin al-Khaththab","m","khattab","asma_wahb",{n:"Kakak Umar seayah dan lebih dulu masuk Islam. Pembawa panji kaum muslimin dan gugur syahid di Yamamah (12 H)."});
+P("fathimah_khattab","Fathimah bint al-Khaththab","f","khattab","hantamah",{n:"Adik Umar. Masuk Islam lebih dulu bersama suaminya, Sa'id bin Zaid. Ketika Umar memukulnya karena mendapati mereka membaca Thaha, keteguhannya justru melunakkan hati Umar (riwayat sirah)."});
+P("said_zaid","Sa'id bin Zaid","m","zaid_amr",null,{mt:"Fathimah bint Ba'jah (Khuza'ah)",n:"Salah satu dari sepuluh sahabat yang dijamin surga. Sepupu sekaligus ipar Umar."});
+M("said_zaid","fathimah_khattab");
+P("atikah_zaid","Atikah bint Zaid","f","zaid_amr",null,{n:"Saudari Sa'id bin Zaid, terkenal cantik dan pandai bersyair. Suaminya berturut-turut: Abdullah bin Abi Bakar, Umar bin al-Khaththab, lalu az-Zubair bin al-Awwam; ketiganya wafat terbunuh atau karena luka perang, sehingga beredar ungkapan “siapa ingin mati syahid, nikahilah Atikah” (atsar)."});
+M("abdullah_ab","atikah_zaid",{o:1});
+M("umar","atikah_zaid",{o:2,t:"Masa khilafah Umar"});
+M("zubair","atikah_zaid",{o:3});
+P("zainab_mazhun","Zainab bint Mazh'un","f",null,null,{ft:"Mazh'un bin Habib",c:"Bani Jumah (Quraisy)",n:"Saudari sahabat Utsman bin Mazh'un. Ibu Abdullah bin Umar dan Hafshah."});
+P("mulaikah","Mulaikah bint Jarwal","f",null,null,{k:"Ummu Kultsum",c:"Khuza'ah",n:"Dicerai Umar setelah Hudaibiyah, ketika turun al-Mumtahanah: 10 yang melarang mempertahankan istri musyrikah (HR. Bukhari menyebut Umar menceraikan dua istrinya)."});
+P("qaribah","Qaribah bint Abi Umayyah","f","abuumayyah",null,{n:"Saudari seayah Ummu Salamah. Juga dicerai Umar setelah turunnya al-Mumtahanah: 10."});
+P("jamilah","Jamilah bint Tsabit","f",null,null,{ft:"Tsabit bin Abil Aqlah",c:"Anshar · Aus",n:"Nama aslinya Ashiyah (“pembangkang”), diganti Nabi ﷺ menjadi Jamilah (HR. Muslim). Saudari Ashim bin Tsabit, syahid ar-Raji'. Ibu Ashim bin Umar."});
+P("ummuhakim_h","Ummu Hakim bint al-Harits","f","harits_hisyam",null,{n:"Istri Ikrimah bin Abi Jahal. Saat Fathu Makkah ia menyusul Ikrimah yang lari ke pantai dan membawanya pulang untuk masuk Islam. Setelah Ikrimah syahid, ia menikah dengan Khalid bin Sa'id bin al-Ash yang juga syahid, kemudian dengan Umar."});
+M("umar","zainab_mazhun",{t:"Masa jahiliyah"});
+M("umar","mulaikah",{end:"cerai",t:"Masa jahiliyah"});
+M("umar","qaribah",{end:"cerai",t:"Masa jahiliyah"});
+M("umar","jamilah",{t:"Madinah"});
+M("umar","ummuhakim_h",{o:3,t:"Masa khilafah Umar"});
+M("umar","ummukultsum_ali",{t:"Masa khilafah Umar",n:"Menurut riwayat Ibnu Sa'd, Umar ingin bersambung nasab dan kekerabatan dengan Rasulullah ﷺ melalui pernikahan ini."});
+P("abdullah_umar","Abdullah bin Umar","m","umar","zainab_mazhun",{k:"Abu Abdirrahman",n:"Masuk Islam ketika kecil bersama ayahnya. Ditolak ikut Uhud karena belum cukup umur, diterima saat Khandaq (HR. Bukhari). Sangat teliti mengikuti sunnah; perawi hadits terbanyak kedua. Wafat 73 H."});
+P("hafshah","Hafshah bint Umar","f","umar","zainab_mazhun",{ar:"حفصة بنت عمر",k:"Ummul Mukminin",n:"Janda Khunais bin Hudzafah. Umar sempat menawarkannya kepada Utsman lalu Abu Bakar sebelum Nabi ﷺ meminangnya (HR. Bukhari). Lembaran mushaf hasil kodifikasi Abu Bakar disimpan padanya."});
+P("ubaidullah_umar","Ubaidullah bin Umar","m","umar","mulaikah",{n:"Setelah ayahnya terbunuh, ia membunuh al-Hurmuzan dan putri Abu Lu'lu'ah. Gugur di Shiffin di pihak Mu'awiyah."});
+P("ashim_umar","Ashim bin Umar","m","umar","jamilah",{n:"Kakek Umar bin Abdul Aziz dari pihak ibu. Menurut kisah yang masyhur (sanadnya diperbincangkan), Umar menikahkannya dengan gadis penjual susu yang jujur."});
+P("fathimah_umar","Fathimah bint Umar","f","umar","ummuhakim_h");
+P("zaid_umar","Zaid bin Umar","m","umar","ummukultsum_ali",{n:"Cucu Ali dan Fathimah dari pihak ibu. Ia dan ibunya wafat pada waktu yang sama dan dishalatkan bersama (HR. an-Nasa'i)."});
+P("ummuashim","Ummu Ashim bint Ashim","f","ashim_umar",null,{k:"Nama: Laila",n:"Cucu Umar bin al-Khaththab, istri Abdul Aziz bin Marwan, dan ibu Umar bin Abdul Aziz."});
+P("khunais","Khunais bin Hudzafah","m",null,null,{c:"Bani Sahm (Quraisy)",n:"Ikut Perang Badr, lalu wafat di Madinah."});
+M("khunais","hafshah",{o:1,n:"Wafat; Hafshah lalu dinikahi Nabi ﷺ."});
+
+/* ===== Bani Abdi Syams & Umayyah: Utsman, Abu Sufyan ===== */
+P("abdusyams","Abdu Syams bin Abdi Manaf","m","abdmanaf",null,{nb:"Abdi Syams"});
+P("muththalib_am","al-Muththalib bin Abdi Manaf","m","abdmanaf",null,{n:"Bani al-Muththalib berdiri bersama Bani Hasyim selama pemboikotan di Syi'ib Abi Thalib."});
+P("ubaidah_harits","Ubaidah bin al-Harits","m",null,null,{up:["al-Harits"],anc:"muththalib_am",n:"Kerabat Nabi ﷺ dari Bani al-Muththalib. Maju dalam duel pembuka Badr, terluka parah dan wafat dalam perjalanan pulang."});
+P("umayyah","Umayyah bin Abdi Syams","m","abdusyams");
+P("abulash_u","Abul Ash bin Umayyah","m","umayyah",null,{nb:"Abil Ash"});
+P("harb","Harb bin Umayyah","m","umayyah");
+P("affan","Affan bin Abil Ash","m","abulash_u",null,{n:"Ayah Utsman, wafat di masa jahiliyah."});
+P("hakam","al-Hakam bin Abil Ash","m","abulash_u",null,{n:"Paman Utsman. Masuk Islam saat Fathu Makkah. Ayah Marwan."});
+P("marwan","Marwan bin al-Hakam","m","hakam",null,{n:"Sepupu dan juru tulis Utsman; kelak khalifah Bani Umayyah."});
+P("abdulaziz_marwan","Abdul Aziz bin Marwan","m","marwan",null,{nb:"Abdil Aziz",n:"Gubernur Mesir di masa Bani Umayyah."});
+M("abdulaziz_marwan","ummuashim");
+P("umar2","Umar bin Abdul Aziz","m","abdulaziz_marwan","ummuashim",{n:"Khalifah Bani Umayyah (99–101 H) yang masyhur keadilannya, sering disebut khalifah rasyid kelima. Cicit Umar bin al-Khaththab dari jalur ibu."});
+P("habib_as","Habib bin Abdi Syams","m","abdusyams");
+P("rabiah_habib","Rabi'ah bin Habib","m","habib_as");
+P("kuraiz","Kuraiz bin Rabi'ah","m","rabiah_habib");
+M("kuraiz","ummuhakim_am");
+P("arwa_kuraiz","Arwa bint Kuraiz","f","kuraiz","ummuhakim_am",{n:"Ibu Utsman. Ibunya adalah Ummu Hakim al-Baidha', bibi Nabi ﷺ, sehingga Arwa adalah sepupu Nabi. Setelah Affan wafat ia menikah dengan Uqbah bin Abi Mu'aith. Ia masuk Islam dan berhijrah."});
+M("affan","arwa_kuraiz",{o:1});
+M("uqbah","arwa_kuraiz",{o:2});
+P("uqbah","Uqbah bin Abi Mu'aith","m",null,null,{up:["Abi Mu'aith","Abi Amr"],anc:"umayyah",n:"Penentang yang meletakkan kotoran isi perut unta di punggung Nabi ﷺ ketika sujud di dekat Ka'bah (HR. Bukhari-Muslim). Ditawan di Badr lalu dihukum mati."});
+P("utsman","Utsman bin Affan","m","affan","arwa_kuraiz",{ar:"عثمان بن عفان",k:"Abu Abdillah · Dzun Nurain",al:"usman othman",n:"Masuk Islam melalui ajakan Abu Bakar. Menikahi dua putri Nabi ﷺ. Membeli sumur Rumah, membiayai Jaisyul Usrah (Tabuk), dan menyatukan mushaf. Khalifah ketiga (23–35 H), syahid di rumahnya ketika dikepung."});
+P("aminah_affan","Aminah bint Affan","f","affan","arwa_kuraiz",{n:"Saudari kandung Utsman."});
+P("walid_uqbah","al-Walid bin Uqbah","m","uqbah","arwa_kuraiz",{n:"Saudara seibu Utsman. Masuk Islam saat Fathu Makkah. Banyak mufassir menyebut al-Hujurat: 6 (perintah tabayyun) turun berkaitan dengannya. Gubernur Kufah di masa Utsman."});
+P("ummukultsum_uqbah","Ummu Kultsum bint Uqbah","f","uqbah","arwa_kuraiz",{n:"Saudari seibu Utsman. Masuk Islam di Makkah dan berhijrah seorang diri ke Madinah setelah Hudaibiyah; berkenaan dengannya turun al-Mumtahanah: 10 (HR. Bukhari). Suaminya berturut-turut: Zaid bin Haritsah, az-Zubair, Abdurrahman bin Auf, lalu Amr bin al-Ash."});
+P("amr_ash","Amr bin al-Ash","m",null,null,{ft:"al-Ash bin Wa'il",c:"Bani Sahm (Quraisy)",n:"Masuk Islam bersama Khalid bin al-Walid sebelum Fathu Makkah. Penakluk Mesir."});
+M("utsman","ruqayyah",{o:2,t:"Makkah",n:"Berhijrah bersama ke Habasyah."});
+M("utsman","ummukultsum_r",{o:2,t:"3 H"});
+M("utsman","ummuamr_jundub");
+M("utsman","ramlah_syaibah");
+M("utsman","nailah",{n:"Mendampingi Utsman hingga hari terbunuhnya."});
+P("abdullah_utsman","Abdullah bin Utsman","m","utsman","ruqayyah",{n:"Cucu Nabi ﷺ dari Ruqayyah. Lahir di Habasyah dan wafat ketika masih kecil (4 H)."});
+P("ummuamr_jundub","Ummu Amr bint Jundub","f",null,null,{c:"Azd",n:"Istri Utsman, ibu Aban dan saudara-saudaranya."});
+P("aban_utsman","Aban bin Utsman","m","utsman","ummuamr_jundub",{n:"Tabi'in yang faqih, pernah menjadi gubernur Madinah."});
+P("nailah","Na'ilah bint al-Farafishah","f",null,null,{c:"Kalb",n:"Jari-jarinya terpotong ketika melindungi Utsman dari para pembunuhnya."});
+P("abuhudzaifah","Abu Hudzaifah bin Utbah","m","utbah",null,{n:"Masuk Islam sangat awal, berbeda jalan dengan ayahnya. Tuan dari Salim maula Abi Hudzaifah. Gugur syahid di Yamamah bersama Salim."});
+P("rabiah_as","Rabi'ah bin Abdi Syams","m","abdusyams");
+P("utbah","Utbah bin Rabi'ah","m","rabiah_as",null,{n:"Pembesar Quraisy. Menurut riwayat sirah ia pernah menawarkan harta dan kekuasaan kepada Nabi ﷺ, lalu terdiam mendengar awal surat Fushshilat. Terbunuh dalam duel pembuka Perang Badr."});
+P("syaibah","Syaibah bin Rabi'ah","m","rabiah_as",null,{n:"Saudara Utbah, terbunuh dalam duel pembuka Badr."});
+P("walid_utbah","al-Walid bin Utbah","m","utbah",null,{n:"Terbunuh dalam duel pembuka Badr di tangan Ali."});
+P("ramlah_syaibah","Ramlah bint Syaibah","f","syaibah",null,{n:"Putri Syaibah yang terbunuh di Badr. Masuk Islam, berhijrah, dan menikah dengan Utsman."});
+P("hind_utbah","Hind bint Utbah","f","utbah",null,{n:"Ayahnya, pamannya Syaibah, dan saudaranya al-Walid terbunuh di Badr. Dalam sirah Ibnu Ishaq ia disebut berperan atas terbunuhnya Hamzah di Uhud; dalam riwayat Bukhari, yang menjanjikan kemerdekaan kepada Wahsyi adalah tuannya, Jubair bin Muth'im. Masuk Islam saat Fathu Makkah."});
+P("abusufyan","Abu Sufyan bin Harb","m","harb",null,{nb:"Abi Sufyan",k:"Nama: Shakhr",n:"Pemimpin Quraisy di Uhud dan Khandaq. Masuk Islam di malam Fathu Makkah; Nabi ﷺ bersabda, “Siapa masuk rumah Abu Sufyan, ia aman” (HR. Muslim). Jangan tertukar dengan Abu Sufyan bin al-Harits, sepupu Nabi."});
+P("ummujamil","Ummu Jamil bint Harb","f","harb",null,{k:"Nama: Arwa",n:"Saudari Abu Sufyan dan istri Abu Lahab; “pembawa kayu bakar” dalam surat al-Lahab."});
+P("shafiyyah_abulash","Shafiyyah bint Abil Ash","f","abulash_u",null,{n:"Bibi Utsman bin Affan dan ibu Ummu Habibah. Karena itu Utsman adalah sepupu Ummu Habibah."});
+P("zainab_naufal","Zainab bint Naufal","f",null,null,{c:"Bani Kinanah",n:"Istri Abu Sufyan, ibu Yazid bin Abi Sufyan."});
+M("abusufyan","shafiyyah_abulash");M("abusufyan","hind_utbah");M("abusufyan","zainab_naufal");
+P("ummuhabibah","Ummu Habibah bint Abi Sufyan","f","abusufyan","shafiyyah_abulash",{k:"Nama: Ramlah · Ummul Mukminin",n:"Berhijrah ke Habasyah bersama suaminya, Ubaidullah bin Jahsy, yang kemudian murtad menjadi Nasrani dan wafat di sana. Dinikahkan dengan Nabi ﷺ dari jauh dan maharnya dibayarkan an-Najasyi (HR. Abu Dawud). Menurut riwayat Ibnu Sa'd, ia melipat tikar Nabi agar ayahnya yang masih musyrik tidak duduk di atasnya."});
+P("muawiyah","Mu'awiyah bin Abi Sufyan","m","abusufyan","hind_utbah",{n:"Masuk Islam sekitar Fathu Makkah dan termasuk juru tulis Nabi ﷺ (HR. Muslim). Gubernur Syam di masa Umar dan Utsman, lalu khalifah pendiri Daulah Umayyah (41–60 H)."});
+P("yazid_abisufyan","Yazid bin Abi Sufyan","m","abusufyan","zainab_naufal",{n:"Panglima penaklukan Syam di masa Abu Bakar. Wafat karena wabah Amwas (18 H) lalu jabatannya diteruskan saudaranya, Mu'awiyah. Jangan tertukar dengan Yazid bin Mu'awiyah."});
+M("abulahab","ummujamil");
+P("utbah_al","Utbah bin Abi Lahab","m","abulahab","ummujamil",{n:"Masuk Islam saat Fathu Makkah bersama saudaranya, Mu'attib."});
+P("utaibah","Utaibah bin Abi Lahab","m","abulahab","ummujamil",{n:"Menurut riwayat sirah, ia diterkam binatang buas setelah didoakan keburukan oleh Nabi ﷺ."});
+P("durrah_al","Durrah bint Abi Lahab","f","abulahab","ummujamil",{n:"Masuk Islam dan berhijrah ke Madinah."});
+M("utbah_al","ruqayyah",{o:1,end:"cerai",n:"Baru akad. Dicerai atas perintah Abu Lahab setelah turun surat al-Lahab."});
+M("utaibah","ummukultsum_r",{o:1,end:"cerai",n:"Baru akad. Dicerai atas perintah Abu Lahab setelah turun surat al-Lahab."});
+
+/* Abul Ash bin ar-Rabi' */
+P("abduluzza_as","Abdul Uzza bin Abdi Syams","m","abdusyams",null,{nb:"Abdil Uzza"});
+P("rabi_au","ar-Rabi' bin Abdil Uzza","m","abduluzza_as");
+M("rabi_au","halah_khuwailid");
+P("abulash_rabi","Abul Ash bin ar-Rabi'","m","rabi_au","halah_khuwailid",{nb:"Abil Ash",n:"Keponakan Khadijah dan menantu Nabi ﷺ. Tertawan di Badr dan dibebaskan dengan syarat mengizinkan Zainab berhijrah. Masuk Islam sebelum Fathu Makkah dan Zainab kembali kepadanya. Nabi memujinya: “Ia berbicara kepadaku lalu jujur, berjanji lalu menepati” (HR. Bukhari)."});
+M("abulash_rabi","zainab_r");
+P("umamah_abulash","Umamah bint Abil Ash","f","abulash_rabi","zainab_r",{n:"Cucu Nabi ﷺ yang beliau gendong ketika shalat (HR. Bukhari-Muslim). Dinikahi Ali setelah Fathimah wafat, sesuai wasiat Fathimah."});
+P("ali_abulash","Ali bin Abil Ash","m","abulash_rabi","zainab_r",{n:"Cucu laki-laki Nabi ﷺ dari Zainab. Wafat dalam usia muda."});
+
+/* ===== Keluarga Abu Thalib ===== */
+M("abuthalib","fathimah_asad");
+P("thalib","Thalib bin Abi Thalib","m","abuthalib","fathimah_asad",{n:"Putra sulung Abu Thalib. Dipaksa Quraisy berangkat ke Badr dan tidak kembali; tidak diketahui keislamannya."});
+P("aqil","Aqil bin Abi Thalib","m","abuthalib","fathimah_asad",{n:"Ahli nasab Quraisy. Tertawan di Badr bersama al-Abbas lalu ditebus. Masuk Islam sebelum Fathu Makkah."});
+P("jafar","Ja'far bin Abi Thalib","m","abuthalib","fathimah_asad",{k:"Dzul Janahain · ath-Thayyar",al:"jafar jakfar",n:"Juru bicara kaum muhajirin di hadapan an-Najasyi di Habasyah. Kembali saat Khaibar; Nabi ﷺ bersabda, “Engkau mirip rupa dan akhlakku” (HR. Bukhari). Syahid memimpin pasukan di Mu'tah (8 H)."});
+P("ali","Ali bin Abi Thalib","m","abuthalib","fathimah_asad",{ar:"علي بن أبي طالب",k:"Abul Hasan · Abu Turab",n:"Diasuh Nabi ﷺ sejak kecil dan termasuk yang pertama beriman. Tidur di ranjang Nabi pada malam hijrah. Menikahi Fathimah (2 H). Khalifah keempat (35–40 H), syahid ditikam Ibnu Muljam di Kufah."});
+P("ummuhani","Ummu Hani' bint Abi Thalib","f","abuthalib","fathimah_asad",{k:"Nama: Fakhitah",n:"Saat Fathu Makkah ia memberi perlindungan kepada dua kerabat suaminya, lalu Nabi ﷺ bersabda, “Kami lindungi siapa yang engkau lindungi” (HR. Bukhari-Muslim)."});
+M("ali","fathimah",{t:"2 H",n:"Selama Fathimah hidup, Ali tidak menikah lagi. Ketika Ali hendak meminang putri Abu Jahal, Nabi ﷺ tidak mengizinkannya (HR. Bukhari-Muslim)."});
+M("ali","umamah_abulash",{t:"Setelah Fathimah wafat"});
+M("ali","asma_umais",{o:3,t:"Setelah Abu Bakar wafat"});
+M("ali","khaulah");
+M("ali","ummulbanin");
+P("hasan","al-Hasan bin Ali","m","ali","fathimah",{n:"“Al-Hasan dan al-Husain adalah pemimpin pemuda penghuni surga” (HR. Tirmidzi). Menyerahkan khilafah kepada Mu'awiyah pada 41 H, mewujudkan sabda Nabi bahwa Allah akan mendamaikan dua kelompok besar kaum muslimin melaluinya (HR. Bukhari)."});
+P("husain","al-Husain bin Ali","m","ali","fathimah",{n:"Cucu kesayangan Nabi ﷺ. Syahid di Karbala, 10 Muharram 61 H."});
+P("zainab_ali","Zainab bint Ali","f","ali","fathimah",{n:"Menyaksikan tragedi Karbala dan menjaga keluarga yang tersisa. Istri sepupunya, Abdullah bin Ja'far."});
+P("ummukultsum_ali","Ummu Kultsum bint Ali","f","ali","fathimah",{n:"Cucu Nabi ﷺ dari Fathimah. Dinikahi Umar bin al-Khaththab di masa khilafahnya."});
+P("khaulah","Khaulah bint Ja'far","f",null,null,{c:"Bani Hanifah",n:"Berasal dari Bani Hanifah di Yamamah. Ibu Muhammad bin al-Hanafiyyah."});
+P("ummulbanin","Ummul Banin bint Hizam","f",null,null,{c:"Bani Kilab",n:"Empat putranya bersama Ali gugur di Karbala membela al-Husain."});
+P("muhammad_hanafiyyah","Muhammad bin al-Hanafiyyah","m","ali","khaulah",{n:"Putra Ali yang dinisbatkan kepada kabilah ibunya."});
+P("abbas_ali","al-Abbas bin Ali","m","ali","ummulbanin",{n:"Pembawa panji al-Husain, gugur di Karbala."});
+P("yahya_ali","Yahya bin Ali","m","ali","asma_umais",{n:"Putra Ali dari Asma' bint Umais; wafat semasa ayahnya hidup."});
+P("alihusain","Ali bin al-Husain","m","husain",null,{k:"Zainal Abidin",n:"Satu-satunya putra al-Husain yang selamat dari Karbala; keturunan al-Husain berlanjut darinya."});
+
+/* Asma' bint Umais & saudari-saudarinya */
+P("hind_auf","Hind bint Auf","f",null,null,{c:"Kinanah (diperselisihkan)",n:"Disebut “mertua paling mulia di muka bumi”: menantunya dari putri-putrinya antara lain Rasulullah ﷺ (Maimunah), al-Abbas (Ummul Fadhl), Hamzah (Salma), serta Ja'far, Abu Bakar, dan Ali (Asma') (riwayat Ibnu Sa'd)."});
+P("harits_hazn","al-Harits bin Hazn","m",null,null,{c:"Bani Hilal bin Amir"});
+P("umais","Umais bin Ma'ad","m",null,null,{c:"Khats'am"});
+M("harits_hazn","hind_auf");M("umais","hind_auf");
+P("maimunah","Maimunah bint al-Harits","f","harits_hazn","hind_auf",{k:"Ummul Mukminin",n:"Istri terakhir yang dinikahi Nabi ﷺ, di Saraf saat Umrah Qadha (7 H), dan ia pun wafat di Saraf. Nama aslinya Barrah. Bibi Abdullah bin Abbas dan Khalid bin al-Walid."});
+P("ummulfadhl","Ummul Fadhl Lubabah al-Kubra","f","harits_hazn","hind_auf",{n:"Istri al-Abbas. Ibnu Sa'd menyebutnya wanita kedua yang masuk Islam setelah Khadijah. Ia yang mengirim segelas susu kepada Nabi ﷺ di Arafah sehingga orang tahu beliau tidak berpuasa (HR. Bukhari)."});
+P("lubabah_shughra","Lubabah ash-Shughra bint al-Harits","f","harits_hazn",null,{k:"al-'Ashma'",n:"Ibu Khalid bin al-Walid. Saudari Maimunah dan Ummul Fadhl dari pihak ayah. Karena itu Khalid adalah keponakan Ummul Mukminin Maimunah dan sepupu Abdullah bin Abbas."});
+P("asma_umais","Asma' bint Umais","f","umais","hind_auf",{n:"Berhijrah ke Habasyah bersama Ja'far dan kembali ketika Khaibar. Suaminya berturut-turut: Ja'far bin Abi Thalib, Abu Bakar, lalu Ali bin Abi Thalib. Ia yang memandikan jenazah Abu Bakar sesuai wasiatnya (Muwaththa')."});
+P("salma_umais","Salma bint Umais","f","umais","hind_auf",{n:"Istri Hamzah, saudari kandung Asma' bint Umais."});
+M("jafar","asma_umais",{o:1});
+P("abdullah_jafar","Abdullah bin Ja'far","m","jafar","asma_umais",{n:"Lahir di Habasyah. Terkenal sangat dermawan. Suami sepupunya, Zainab bint Ali."});
+M("abdullah_jafar","zainab_ali");
+M("hamzah","salma_umais");
+P("umamah_hamzah","Umamah bint Hamzah","f","hamzah","salma_umais",{n:"Seusai Umrah Qadha (7 H), Ali, Ja'far, dan Zaid berselisih ingin mengasuhnya. Nabi ﷺ menyerahkannya kepada Ja'far karena istrinya, Asma' bint Umais, adalah bibinya, dan bersabda, “Bibi dari pihak ibu sama kedudukannya dengan ibu” (HR. Bukhari)."});
+M("abbas","ummulfadhl");
+P("fadhl","al-Fadhl bin Abbas","m","abbas","ummulfadhl",{n:"Dibonceng Nabi ﷺ dari Muzdalifah ke Mina saat Haji Wada'; Nabi memalingkan wajahnya dari memandang wanita Khats'am (HR. Bukhari)."});
+P("abdullah_abbas","Abdullah bin Abbas","m","abbas","ummulfadhl",{k:"Turjumanul Qur'an",al:"ibnu abbas",n:"Lahir di Syi'ib Abi Thalib sekitar tiga tahun sebelum hijrah. Nabi ﷺ mendoakannya, “Ya Allah, pahamkan ia dalam agama” (HR. Bukhari) “dan ajarkan ia takwil” (HR. Ahmad). Sepupu Nabi dan sepupu Khalid bin al-Walid."});
+P("ubaidullah_abbas","Ubaidullah bin Abbas","m","abbas","ummulfadhl",{n:"Gubernur Yaman di masa Ali, terkenal dermawan."});
+P("qutsam","Qutsam bin Abbas","m","abbas","ummulfadhl",{n:"Wafat di Samarkand ketika berjihad."});
+
+/* Putra al-Harits bin Abdil Muththalib & az-Zubair bin Abdil Muththalib */
+P("abusufyan_harits","Abu Sufyan bin al-Harits","m","harits_am",null,{n:"Sepupu dan saudara sepersusuan Nabi ﷺ. Bertahun-tahun mencela Nabi lewat syair, lalu masuk Islam menjelang Fathu Makkah. Tetap memegang tali kekang bighal Nabi di Hunain (HR. Bukhari-Muslim)."});
+P("rabiah_harits","Rabi'ah bin al-Harits","m","harits_am",null,{n:"Sepupu Nabi ﷺ. Darah anaknya adalah darah jahiliyah pertama yang dihapuskan Nabi dalam khutbah Haji Wada' (HR. Muslim)."});
+P("dhubaah","Dhuba'ah bint az-Zubair","f","zubair_am",null,{n:"Sepupu Nabi ﷺ. Hadits tentang mensyaratkan diri ketika ihram ditujukan kepadanya (HR. Bukhari-Muslim). Istri al-Miqdad bin al-Aswad."});
+P("miqdad","al-Miqdad bin al-Aswad","m",null,null,{ft:"Amr bin Tsa'labah",c:"Bahra' (Qudha'ah)",n:"Dinisbatkan kepada al-Aswad bin Abdi Yaghuts yang mengangkatnya. Menurut riwayat Ahmad, ia satu-satunya penunggang kuda di pihak muslimin saat Badr."});
+M("miqdad","dhubaah");
+
+/* ===== Keluarga Jahsy & Zaid bin Haritsah ===== */
+P("jahsy","Jahsy bin Ri'ab","m",null,null,{c:"Bani Asad bin Khuzaimah, sekutu Bani Abdi Syams"});
+M("jahsy","umaimah_am");
+P("abdullah_jahsy","Abdullah bin Jahsy","m","jahsy","umaimah_am",{n:"Sepupu Nabi ﷺ. Memimpin Sariyyah Nakhlah (2 H) dan gugur syahid di Uhud; menurut riwayat sirah ia dimakamkan satu liang dengan pamannya, Hamzah."});
+P("zainab_jahsy","Zainab bint Jahsy","f","jahsy","umaimah_am",{k:"Ummul Mukminin",n:"Sepupu Nabi ﷺ. Sebelumnya istri Zaid bin Haritsah. Pernikahannya dengan Nabi disebut langsung dalam al-Ahzab: 37 dan menghapus tradisi menyamakan anak angkat dengan anak kandung. Istri pertama yang wafat sepeninggal Nabi (20 H); dialah yang “paling panjang tangannya” karena banyak bersedekah (HR. Muslim)."});
+P("hamnah","Hamnah bint Jahsy","f","jahsy","umaimah_am",{n:"Termasuk yang ikut menyebarkan berita dusta tentang Aisyah (haditsul ifki). Suami pertamanya, Mush'ab bin Umair, syahid di Uhud; lalu ia menikah dengan Thalhah."});
+P("ubaidullah_jahsy","Ubaidullah bin Jahsy","m","jahsy","umaimah_am",{n:"Masuk Islam dan berhijrah ke Habasyah bersama istrinya, Ummu Habibah, lalu murtad menjadi Nasrani dan wafat di sana."});
+M("ubaidullah_jahsy","ummuhabibah",{o:1,n:"Ubaidullah murtad dan wafat di Habasyah."});
+P("habibah_ubaidullah","Habibah bint Ubaidillah","f","ubaidullah_jahsy","ummuhabibah",{n:"Anak tiri Nabi ﷺ; kunyah ibunya diambil dari namanya."});
+P("mushab","Mush'ab bin Umair","m",null,null,{up:["Umair","Hasyim","Abdi Manaf"],anc:"abduddar",n:"Pemuda Makkah yang hidup mewah lalu meninggalkannya demi Islam. Diutus Nabi ﷺ mengajar di Yatsrib setelah Baiat Aqabah pertama. Pembawa panji di Uhud dan syahid; kain kafannya tidak cukup menutup seluruh tubuhnya (HR. Bukhari)."});
+M("mushab","hamnah",{o:1});
+P("zaid_haritsah","Zaid bin Haritsah","m",null,null,{ft:"Haritsah bin Syarahil",c:"Kalb (Qudha'ah)",k:"Hibbu Rasulillah",n:"Diculik ketika kecil dan dijual, lalu dihadiahkan Khadijah kepada Nabi ﷺ. Memilih tinggal bersama Nabi daripada pulang dengan ayahnya, sehingga diangkat anak dan dipanggil “Zaid bin Muhammad” sampai turun al-Ahzab: 5. Satu-satunya sahabat yang namanya disebut dalam al-Qur'an (al-Ahzab: 37). Syahid memimpin pasukan di Mu'tah."});
+M("zaid_haritsah","ummuaiman");
+M("zaid_haritsah","zainab_jahsy",{o:1,end:"cerai"});
+M("zaid_haritsah","ummukultsum_uqbah",{o:1});
+P("usamah","Usamah bin Zaid","m","zaid_haritsah","ummuaiman",{k:"al-Hibb ibnul Hibb",n:"Kesayangan Rasulullah, putra kesayangan beliau. Di usia belia diangkat Nabi ﷺ memimpin pasukan ke Syam; pasukan itu diberangkatkan Abu Bakar setelah Nabi wafat."});
+
+/* ===== az-Zubair ===== */
+M("awwam","shafiyyah_am");
+P("zubair","az-Zubair bin al-Awwam","m","awwam","shafiyyah_am",{k:"Hawari Rasulillah",n:"Sepupu Nabi ﷺ (putra bibinya, Shafiyyah) dan keponakan Khadijah. Salah satu dari sepuluh yang dijamin surga. “Setiap nabi punya hawari, dan hawariku adalah az-Zubair” (HR. Bukhari). Terbunuh sepulang dari Perang Jamal (36 H)."});
+M("zubair","asma_ab",{n:"Asma' menceritakan kerasnya hidup di awal pernikahan, memikul biji kurma dari kebun az-Zubair (HR. Bukhari)."});
+M("zubair","ummukultsum_uqbah",{o:2,end:"cerai"});
+P("abdullah_zubair","Abdullah bin az-Zubair","m","zubair","asma_ab",{n:"Bayi pertama kaum muhajirin di Madinah; Nabi ﷺ mentahniknya dengan kurma (HR. Bukhari). Dibaiat sebagai khalifah di Hijaz dan terbunuh 73 H."});
+P("urwah","Urwah bin az-Zubair","m","zubair","asma_ab",{n:"Salah satu tujuh fuqaha Madinah; banyak meriwayatkan dari bibinya, Aisyah."});
+P("mundzir","al-Mundzir bin az-Zubair","m","zubair","asma_ab");
+P("mushab_zubair","Mush'ab bin az-Zubair","m","zubair",null,{mt:"ar-Rabab bint Unaif (Kalb)",n:"Gubernur Irak untuk saudaranya, Abdullah; terbunuh 72 H."});
+
+/* ===== Bani Zuhrah: Sa'd & Abdurrahman ===== */
+P("malik_uhaib","Abu Waqqash Malik bin Uhaib","m","uhaib",null,{nb:"Abi Waqqash (Malik)"});
+P("saad","Sa'd bin Abi Waqqash","m","malik_uhaib",null,{mt:"Hamnah bint Sufyan bin Umayyah",al:"saad sad",n:"Kerabat Aminah dari Bani Zuhrah; Nabi ﷺ berkata, “Ini pamanku (dari pihak ibu), tunjukkan padaku paman seperti dia” (HR. Tirmidzi). Ibunya mogok makan agar ia murtad, lalu turun ayat tentang tetap berbakti tanpa menaati orang tua dalam syirik (HR. Muslim). Orang Arab pertama yang melepaskan panah di jalan Allah (HR. Bukhari). Panglima Qadisiyyah."});
+P("umair_waqqash","Umair bin Abi Waqqash","m","malik_uhaib",null,{n:"Adik Sa'd. Masih belia, ia bersembunyi agar tidak dipulangkan dari Badr; akhirnya diizinkan ikut dan gugur syahid di sana (riwayat sirah)."});
+P("utbah_waqqash","Utbah bin Abi Waqqash","m","malik_uhaib",null,{n:"Saudara Sa'd yang berada di pihak Quraisy; menurut riwayat sirah ia yang melukai wajah dan mematahkan gigi Nabi ﷺ di Uhud."});
+P("umar_saad","Umar bin Sa'd","m","saad",null,{n:"Komandan pasukan yang memerangi al-Husain di Karbala."});
+P("aisyah_saad","Aisyah bint Sa'd","f","saad",null,{n:"Tabi'iyyah yang meriwayatkan hadits dari ayahnya."});
+P("abdurrahman_auf","Abdurrahman bin Auf","m",null,null,{up:["Auf","Abdi Auf","Abd","al-Harits"],anc:"zuhrah",nb:"Abdirrahman",mt:"asy-Syifa' bint Auf",n:"Nama jahiliyahnya Abdu Amr, diganti Nabi ﷺ. Dipersaudarakan dengan Sa'd bin ar-Rabi' al-Anshari yang menawarkan separuh hartanya; ia menjawab, “Tunjukkan saja aku pasar” (HR. Bukhari). Salah satu dari sepuluh yang dijamin surga dan anggota majelis syura."});
+P("tumadhir","Tumadhir bint al-Ashbagh","f",null,null,{c:"Kalb",n:"Putri pemimpin Kalb di Dumatul Jandal; dinikahi atas arahan Nabi ﷺ ketika Abdurrahman memimpin pasukan ke sana (riwayat sirah)."});
+M("abdurrahman_auf","ummukultsum_uqbah",{o:3});
+M("abdurrahman_auf","tumadhir");
+M("amr_ash","ummukultsum_uqbah",{o:4});
+P("humaid","Humaid bin Abdirrahman","m","abdurrahman_auf","ummukultsum_uqbah",{n:"Tabi'in, perawi hadits yang terpercaya."});
+P("abusalamah_ar","Abu Salamah bin Abdirrahman","m","abdurrahman_auf","tumadhir",{n:"Tabi'in, salah satu fuqaha Madinah."});
+
+/* ===== Bani Makhzum: Khalid, Abu Jahal, Ummu Salamah ===== */
+P("makhzum","Makhzum bin Yaqazhah","m","yaqazah");
+P("umar_makhzum","Umar bin Makhzum","m","makhzum");
+P("abdullah_um","Abdullah bin Umar bin Makhzum","m","umar_makhzum",null,{nb:"Abdillah"});
+P("mughirah","al-Mughirah bin Abdillah","m","abdullah_um");
+P("hilal_m","Hilal bin Abdillah","m","abdullah_um");
+P("abdulasad","Abdul Asad bin Hilal","m","hilal_m",null,{nb:"Abdil Asad"});
+P("walid_mughirah","al-Walid bin al-Mughirah","m","mughirah",null,{n:"Pemuka Quraisy yang kaya raya. Mengakui keindahan al-Qur'an lalu menyebutnya “sihir yang dipelajari”; tentangnya turun al-Muddatstsir: 11–26. Wafat dalam kekafiran tak lama setelah hijrah."});
+P("hisyam_m","Hisyam bin al-Mughirah","m","mughirah");
+P("hasyim_m","Hasyim bin al-Mughirah","m","mughirah");
+P("abuumayyah","Abu Umayyah bin al-Mughirah","m","mughirah",null,{nb:"Abi Umayyah",k:"Nama: Hudzaifah · Zadur Rakib",n:"Dijuluki “Bekal Musafir” karena menanggung bekal teman seperjalanannya."});
+P("khalid","Khalid bin al-Walid","m","walid_mughirah","lubabah_shughra",{ar:"خالد بن الوليد",k:"Abu Sulaiman · Saifullah",n:"Panglima kavaleri Quraisy yang membalik keadaan di Uhud. Masuk Islam bersama Amr bin al-Ash dan Utsman bin Thalhah sebelum Fathu Makkah. Dijuluki Pedang Allah oleh Nabi ﷺ di Mu'tah (HR. Bukhari). Memimpin perang Riddah, Irak, dan Yarmuk. Wafat di Himsh (21 H)."});
+P("walid_walid","al-Walid bin al-Walid","m","walid_mughirah",null,{n:"Saudara Khalid. Tertawan di Badr; setelah ditebus ia masuk Islam lalu ditahan keluarganya di Makkah. Namanya disebut dalam qunut Nabi ﷺ (HR. Bukhari-Muslim). Akhirnya berhasil lolos ke Madinah."});
+P("umarah_walid","Umarah bin al-Walid","m","walid_mughirah",null,{n:"Pemuda Quraisy yang ditawarkan para pembesar kepada Abu Thalib sebagai ganti Muhammad ﷺ, dan ditolak (riwayat sirah). Wafat dalam kekafiran di Habasyah."});
+M("walid_mughirah","lubabah_shughra");
+P("ummutamim","Ummu Tamim bint al-Minhal","f",null,null,{k:"Nama: Laila",c:"Bani Tamim",n:"Janda Malik bin Nuwairah yang terbunuh dalam perang Riddah. Pernikahan Khalid dengannya mendapat teguran keras dari Umar."});
+P("bint_mujjaah","Putri Mujja'ah bin Murarah","f",null,null,{c:"Bani Hanifah",n:"Dinikahi Khalid seusai perang Yamamah melawan Musailamah; Abu Bakar menegurnya karena itu."});
+M("khalid","ummutamim");M("khalid","bint_mujjaah");
+P("sulaiman_khalid","Sulaiman bin Khalid","m","khalid",null,{n:"Kunyah Khalid, Abu Sulaiman, diambil dari namanya."});
+P("abdurrahman_khalid","Abdurrahman bin Khalid","m","khalid",null,{n:"Panglima di masa Mu'awiyah, wafat di Himsh (46 H)."});
+P("muhajir_khalid","al-Muhajir bin Khalid","m","khalid",null,{n:"Berpihak kepada Ali dan gugur di Shiffin."});
+P("abujahl","Abu Jahal","m","hisyam_m",null,{nb:"Abi Jahal",k:"Amr bin Hisyam · Abul Hakam",al:"abu jahl",n:"Penentang paling keras di Makkah. Memimpin Quraisy ke Badr dan terbunuh di sana oleh dua pemuda Anshar, lalu dituntaskan Abdullah bin Mas'ud (HR. Bukhari-Muslim). Sepupu al-Walid bin al-Mughirah dan Khalid."});
+P("harits_hisyam","al-Harits bin Hisyam","m","hisyam_m",null,{n:"Saudara Abu Jahal. Lari dari Badr. Masuk Islam saat Fathu Makkah; menurut sebagian riwayat dialah yang dilindungi Ummu Hani'. Berjihad ke Syam dan wafat di sana karena wabah Amwas."});
+P("salamah_hisyam","Salamah bin Hisyam","m","hisyam_m",null,{n:"Saudara Abu Jahal yang masuk Islam lebih awal lalu ditahan di Makkah. Namanya disebut dalam qunut Nabi ﷺ: “Ya Allah, selamatkan al-Walid bin al-Walid, Salamah bin Hisyam, dan Ayyasy bin Abi Rabi'ah” (HR. Bukhari-Muslim)."});
+P("ikrimah","Ikrimah bin Abi Jahal","m","abujahl",null,{n:"Lari ke arah Yaman saat Fathu Makkah, dijemput istrinya Ummu Hakim, lalu masuk Islam. Gugur syahid di Syam (Yarmuk atau Ajnadain, diperselisihkan)."});
+M("ikrimah","ummuhakim_h",{o:1});
+M("abdulasad","barrah_am");
+P("abusalamah","Abu Salamah bin Abdil Asad","m","abdulasad","barrah_am",{nb:"Abi Salamah",k:"Nama: Abdullah",n:"Sepupu Nabi ﷺ (ibunya Barrah bint Abdil Muththalib) sekaligus saudara sepersusuan beliau melalui Tsuwaibah (HR. Bukhari-Muslim). Termasuk yang pertama berhijrah ke Habasyah dan ke Madinah. Terluka di Uhud dan wafat karenanya (4 H)."});
+P("ummusalamah","Ummu Salamah","f","abuumayyah",null,{k:"Nama: Hind · Ummul Mukminin",mt:"Atikah bint Amir (Bani Kinanah)",n:"Janda Abu Salamah. Termasuk yang pertama berhijrah ke Habasyah dan ke Madinah. Sarannya di Hudaibiyah, agar Nabi menyembelih dan bercukur lebih dulu, diikuti para sahabat (HR. Bukhari). Istri Nabi yang paling akhir wafat (±61 H)."});
+M("abusalamah","ummusalamah",{o:1,n:"Abu Salamah wafat 4 H; Ummu Salamah lalu dinikahi Nabi ﷺ."});
+P("zainab_abusalamah","Zainab bint Abi Salamah","f","abusalamah","ummusalamah",{n:"Anak tiri Nabi ﷺ yang tumbuh di rumah beliau. Nama aslinya Barrah, diganti Nabi (HR. Muslim)."});
+P("umar_abusalamah","Umar bin Abi Salamah","m","abusalamah","ummusalamah",{n:"Anak tiri Nabi ﷺ yang diajari adab makan: “Sebutlah nama Allah, makanlah dengan tangan kanan, dan makanlah yang dekat denganmu” (HR. Bukhari-Muslim)."});
+M("abuumayyah","atikah_am");
+P("abdullah_aumayyah","Abdullah bin Abi Umayyah","m","abuumayyah","atikah_am",{n:"Sepupu Nabi ﷺ dan saudara seayah Ummu Salamah. Lama menentang, lalu masuk Islam menjelang Fathu Makkah dan gugur syahid di Tha'if (8 H)."});
+P("zuhair_aumayyah","Zuhair bin Abi Umayyah","m","abuumayyah","atikah_am",{n:"Termasuk orang-orang yang menggerakkan pembatalan piagam boikot terhadap Bani Hasyim, karena ibunya putri Abdul Muththalib (riwayat sirah)."});
+
+/* ===== Lainnya ===== */
+P("abuubaidah","Abu Ubaidah bin al-Jarrah","m",null,null,{up:["Abdillah","al-Jarrah","Hilal","Uhaib","Dhabbah"],anc:"harits_fihr",k:"Nama: Amir · Aminul Ummah",n:"“Setiap umat punya orang kepercayaan, dan orang kepercayaan umat ini adalah Abu Ubaidah” (HR. Bukhari). Salah satu dari sepuluh yang dijamin surga. Wafat karena wabah Amwas (18 H)."});
+P("yasir","Yasir bin Amir","m",null,null,{c:"Madzhij (Yaman), sekutu Bani Makhzum",n:"Wafat karena siksaan kaum musyrikin di Makkah."});
+P("sumayyah","Sumayyah bint Khayyath","f",null,null,{c:"Maula Bani Makhzum",n:"Syahidah pertama dalam Islam. “Bersabarlah wahai keluarga Yasir, tempat yang dijanjikan bagi kalian adalah surga” (HR. al-Hakim)."});
+M("yasir","sumayyah");
+P("ammar","Ammar bin Yasir","m","yasir","sumayyah",{n:"“Ammar akan dibunuh oleh kelompok yang baghi” (HR. Bukhari-Muslim). Gugur di Shiffin di pihak Ali (37 H)."});
+
+/* ===== Kisah ===== */
+const KS=[];function K(id,e,t,p,src,x){KS.push({id,e,t,p,src,x})}
+const ERAS={pra:"Sebelum kenabian",mk:"Periode Makkah",hj:"Hijrah",md:"Periode Madinah",ps:"Sepeninggal Rasulullah ﷺ"};
+
+K("zamzam","pra","Zamzam dan nazar Abdul Muththalib",["abdulmuththalib","abdullah_am","harits_am","fathimah_amr"],"Sirah Ibnu Hisyam (riwayat sirah)",[
+"Sumur Zamzam lama tertimbun sejak kabilah Jurhum meninggalkan Makkah. Abdul Muththalib bermimpi diperintahkan menggalinya kembali. Ia menggali hanya ditemani putranya satu-satunya saat itu, al-Harits, sementara Quraisy mengejek dan berusaha ikut mengklaim sumur itu.",
+"Merasa lemah karena hanya punya seorang anak, ia bernazar: jika dikaruniai sepuluh putra yang tumbuh dewasa dan bisa membelanya, salah satunya akan disembelih di sisi Ka'bah. Ketika tiba saatnya menunaikan nazar, undian jatuh pada Abdullah, putra yang paling ia cintai.",
+"Kaumnya mencegahnya, terutama keluarga ibu Abdullah dari Bani Makhzum. Atas saran seorang peramal, ia mengundi antara Abdullah dan sepuluh unta, menambah sepuluh unta setiap kali undian tetap jatuh pada Abdullah. Undian baru berpindah ke unta ketika jumlahnya mencapai seratus, dan seratus unta itulah tebusan Abdullah. Tak lama kemudian Abdullah dinikahkan dengan Aminah."]);
+
+K("nikah-khadijah","pra","Pernikahan Muhammad dan Khadijah",["muhammad","khadijah","abuthalib","hamzah"],"Sirah Ibnu Hisyam (riwayat sirah)",[
+"Khadijah adalah saudagar terpandang yang mempekerjakan orang untuk membawa dagangannya. Mendengar kejujuran Muhammad, ia mengutusnya berdagang ke Syam ditemani pelayannya, Maisarah. Dagangan itu membawa laba lebih besar dari biasanya, dan Maisarah menceritakan akhlak mulia yang ia saksikan selama perjalanan.",
+"Khadijah lalu menyampaikan keinginannya menikah melalui sahabatnya, Nafisah bint Munyah. Muhammad membicarakannya dengan paman-pamannya; menurut riwayat sirah, Hamzah ikut mendampinginya melamar, dan Abu Thalib menyampaikan khutbah nikah. Saat itu Muhammad berusia 25 tahun. Usia Khadijah menurut riwayat yang masyhur 40 tahun, sementara riwayat lain menyebutnya lebih muda.",
+"Pernikahan ini berlangsung sekitar 25 tahun. Dari Khadijah lahir semua putra-putri Nabi ﷺ kecuali Ibrahim, dan selama Khadijah hidup beliau tidak menikah dengan wanita lain."]);
+
+K("wahyu-pertama","mk","Wahyu pertama dan Waraqah bin Naufal",["muhammad","khadijah","waraqah"],"Shahih al-Bukhari dan Muslim (hadits Aisyah)",[
+"Menjelang usia 40 tahun Nabi ﷺ gemar menyendiri beribadah di Gua Hira. Di sanalah Jibril datang dan memerintahkan, “Bacalah!” Beliau menjawab, “Aku tidak bisa membaca.” Jibril mendekapnya kuat-kuat sampai tiga kali, lalu membacakan awal surat al-'Alaq.",
+"Beliau pulang dengan gemetar dan berkata kepada Khadijah, “Selimuti aku, selimuti aku.” Setelah tenang, beliau menceritakan kekhawatirannya. Khadijah menjawab, “Demi Allah, Allah tidak akan menghinakanmu selamanya. Engkau menyambung silaturahim, menanggung orang yang lemah, memberi orang yang tidak punya, memuliakan tamu, dan menolong orang yang tertimpa musibah.”",
+"Khadijah membawa beliau kepada sepupunya, Waraqah bin Naufal, yang sudah tua dan buta. Waraqah berkata, “Ini adalah Namus yang dulu diturunkan Allah kepada Musa. Andai aku masih hidup ketika kaummu mengusirmu.” Nabi bertanya, “Apakah mereka akan mengusirku?” Waraqah menjawab, “Tidak ada seorang pun yang membawa seperti yang engkau bawa kecuali dimusuhi.” Tak lama kemudian Waraqah wafat."]);
+
+K("pertama-beriman","mk","Orang-orang pertama yang beriman",["khadijah","abubakar","ali","zaid_haritsah","utsman","zubair","abdurrahman_auf","saad","talhah"],"Sirah Ibnu Hisyam",[
+"Yang pertama beriman adalah Khadijah. Dari kalangan anak-anak, Ali bin Abi Thalib yang tinggal di rumah Nabi ﷺ; dari kalangan mantan budak, Zaid bin Haritsah; dan dari laki-laki dewasa, Abu Bakar.",
+"Abu Bakar adalah pedagang yang disukai kaumnya dan ahli nasab Quraisy. Ia segera mengajak orang-orang yang ia percayai. Melalui dakwahnya masuk Islam Utsman bin Affan, az-Zubair bin al-Awwam, Abdurrahman bin Auf, Sa'd bin Abi Waqqash, dan Thalhah bin Ubaidillah. Kelimanya kelak termasuk sepuluh sahabat yang dijamin surga.",
+"Lihat jaringan keluarganya: Utsman adalah anak sepupu Nabi dari pihak ibu, az-Zubair putra bibi Nabi sekaligus keponakan Khadijah, Sa'd dan Abdurrahman dari Bani Zuhrah (kabilah Aminah), dan Thalhah satu kabilah dengan Abu Bakar."]);
+
+K("zaid-memilih","mk","Zaid memilih Rasulullah daripada ayahnya",["zaid_haritsah","muhammad","khadijah"],"Thabaqat Ibnu Sa'd, Sirah Ibnu Hisyam; ayat al-Ahzab: 5 dari Shahih al-Bukhari",[
+"Ketika kecil, Zaid diculik dalam sebuah serangan saat ikut ibunya mengunjungi keluarga, lalu dijual di pasar Ukazh. Hakim bin Hizam membelinya untuk bibinya, Khadijah, yang kemudian menghadiahkannya kepada Muhammad.",
+"Bertahun-tahun ayahnya, Haritsah, mencarinya sambil melantunkan syair kesedihan. Ketika akhirnya menemukannya di Makkah, ia datang hendak menebus. Muhammad memberi Zaid pilihan: ikut ayahnya tanpa tebusan atau tetap tinggal. Zaid memilih tinggal. Muhammad lalu membawanya ke Ka'bah dan mengumumkan Zaid sebagai anaknya, sehingga orang memanggilnya Zaid bin Muhammad.",
+"Panggilan itu berlaku sampai turun al-Ahzab: 5, “Panggillah mereka dengan nama ayah mereka.” Sejak itu ia kembali disebut Zaid bin Haritsah (HR. Bukhari)."]);
+
+K("bukit-shafa","mk","Seruan di Bukit Shafa dan surat al-Lahab",["muhammad","abulahab","ummujamil","utbah_al","utaibah","ruqayyah","ummukultsum_r"],"Shahih al-Bukhari dan Muslim (Ibnu Abbas); Thabaqat Ibnu Sa'd",[
+"Ketika turun perintah “Berilah peringatan kepada kerabat-kerabatmu yang terdekat” (asy-Syu'ara': 214), Nabi ﷺ naik ke Bukit Shafa dan memanggil kabilah-kabilah Quraisy satu per satu. Beliau bertanya, “Bagaimana jika aku kabarkan ada pasukan berkuda di balik lembah ini yang akan menyerang kalian, apakah kalian percaya?” Mereka menjawab, “Kami tidak pernah mendapatimu berdusta.”",
+"Beliau bersabda, “Sesungguhnya aku pemberi peringatan bagi kalian sebelum datangnya azab yang pedih.” Pamannya, Abu Lahab, menyahut, “Celakalah engkau sepanjang hari! Hanya untuk inikah engkau mengumpulkan kami?” Lalu turunlah surat al-Lahab.",
+"Surat itu juga menyebut istrinya, Ummu Jamil, saudari Abu Sufyan, sebagai pembawa kayu bakar. Dua putra mereka, Utbah dan Utaibah, yang sudah diakadkan dengan Ruqayyah dan Ummu Kultsum putri Nabi, diperintahkan orang tuanya menceraikan keduanya."]);
+
+K("keluarga-yasir","mk","Keluarga Yasir di bawah siksaan",["yasir","sumayyah","ammar","abujahl"],"Thabaqat Ibnu Sa'd; Mustadrak al-Hakim; Tafsir ath-Thabari",[
+"Yasir datang dari Yaman dan menetap di Makkah sebagai sekutu Bani Makhzum, lalu menikah dengan Sumayyah, budak milik seorang dari Bani Makhzum. Mereka sekeluarga termasuk yang pertama masuk Islam. Karena tidak punya kabilah yang melindungi, mereka disiksa di bawah terik matahari.",
+"Nabi ﷺ melewati mereka dan bersabda, “Bersabarlah wahai keluarga Yasir, tempat yang dijanjikan bagi kalian adalah surga” (HR. al-Hakim). Sumayyah wafat ditikam Abu Jahal, menjadi syahidah pertama dalam Islam. Yasir pun wafat karena siksaan.",
+"Ammar dipaksa mengucapkan kata-kata kufur. Ia datang kepada Nabi sambil menangis. Nabi bertanya, “Bagaimana hatimu?” Ia menjawab, “Tenteram dengan iman.” Para mufassir menyebut an-Nahl: 106 turun berkenaan dengannya."]);
+
+K("isi-perut-unta","mk","Kotoran unta di punggung Nabi yang sedang sujud",["muhammad","uqbah","abujahl","fathimah","utbah","syaibah","walid_utbah"],"Shahih al-Bukhari dan Muslim (Abdullah bin Mas'ud)",[
+"Suatu hari Nabi ﷺ shalat di dekat Ka'bah sementara sekelompok pembesar Quraisy duduk-duduk. Abu Jahal berkata, “Siapa yang mau mengambil kotoran isi perut unta milik keluarga si fulan, lalu meletakkannya di punggung Muhammad ketika ia sujud?” Uqbah bin Abi Mu'aith, yang paling celaka di antara mereka, bangkit melakukannya. Mereka tertawa hingga saling bersandar.",
+"Nabi tetap bersujud dan tidak mengangkat kepala. Seseorang memberi tahu Fathimah yang saat itu masih kecil. Ia datang, menyingkirkan kotoran itu, lalu menghadap mereka dan mencela perbuatan mereka.",
+"Selesai shalat, Nabi berdoa keburukan atas mereka dengan menyebut nama: Abu Jahal, Utbah bin Rabi'ah, Syaibah bin Rabi'ah, al-Walid bin Utbah, Umayyah bin Khalaf, dan Uqbah bin Abi Mu'aith. Abdullah bin Mas'ud bersaksi bahwa ia melihat orang-orang yang disebut itu terbunuh di Badr."]);
+
+K("hamzah-islam","mk","Hamzah membela keponakannya",["hamzah","abujahl","muhammad"],"Sirah Ibnu Hisyam dari Ibnu Ishaq (riwayat sirah)",[
+"Suatu hari Abu Jahal mencaci Nabi ﷺ dengan kasar di dekat Bukit Shafa, dan beliau tidak membalas. Seorang budak perempuan menyaksikannya. Sore itu Hamzah pulang berburu dengan busur tergantung di bahunya, dan budak itu menceritakan apa yang menimpa keponakannya.",
+"Hamzah marah. Ia langsung menuju majelis Quraisy, mendapati Abu Jahal di sana, dan memukul kepalanya dengan busur hingga terluka sambil berkata, “Engkau mencacinya, padahal aku memeluk agamanya? Aku mengatakan apa yang ia katakan!” Orang-orang Bani Makhzum bangkit hendak membela, tetapi Abu Jahal mencegah mereka dan mengakui ia memang telah mencaci keponakan Hamzah dengan buruk.",
+"Keislaman Hamzah, paman sekaligus saudara sepersusuan Nabi, membuat Quraisy menahan sebagian gangguan mereka karena tahu ia akan membela beliau."]);
+
+K("saad-ibunya","mk","Sa'd bin Abi Waqqash dan mogok makan ibunya",["saad","muhammad"],"Shahih Muslim; Sunan at-Tirmidzi",[
+"Ketika Sa'd bin Abi Waqqash masuk Islam di usia muda, ibunya, Hamnah bint Sufyan, bersumpah tidak akan makan dan minum sampai Sa'd kembali ke agama nenek moyang. Ia berkata, “Bukankah Allah menyuruhmu berbakti kepada ibumu? Aku ibumu, dan aku memerintahkanmu ini.”",
+"Ia bertahan tiga hari hingga pingsan karena lapar, tetapi Sa'd tetap pada keyakinannya. Lalu turun ayat yang memerintahkan berbuat baik kepada orang tua tanpa menaati mereka dalam kesyirikan (HR. Muslim; lihat al-'Ankabut: 8 dan Luqman: 15).",
+"Sa'd berasal dari Bani Zuhrah, kabilah ibunda Nabi ﷺ. Suatu ketika ia datang, dan Nabi bersabda, “Ini pamanku (dari pihak ibu). Tunjukkan kepadaku paman seperti dia” (HR. Tirmidzi)."]);
+
+K("habasyah","mk","Hijrah ke Habasyah: Ja'far di hadapan an-Najasyi",["jafar","utsman","ruqayyah","ummusalamah","abusalamah","asma_umais","amr_ash"],"Musnad Ahmad (riwayat Ummu Salamah); Sirah Ibnu Hisyam",[
+"Pada tahun ke-5 kenabian, Nabi ﷺ mengizinkan para sahabat yang tertindas berhijrah ke Habasyah, karena di sana ada raja yang tidak menzalimi siapa pun. Di antara rombongan itu ada Utsman bersama istrinya Ruqayyah, Abu Salamah dan Ummu Salamah, kemudian Ja'far bersama istrinya, Asma' bint Umais.",
+"Quraisy mengutus Amr bin al-Ash dan Abdullah bin Abi Rabi'ah membawa hadiah untuk an-Najasyi agar ia memulangkan mereka. An-Najasyi memanggil kaum muslimin, dan Ja'far menjadi juru bicara. Ia menggambarkan keadaan mereka di masa jahiliyah, lalu apa yang diajarkan Nabi: kejujuran, amanah, silaturahim, dan menyembah Allah saja. Ketika diminta membacakan wahyu, ia membaca awal surat Maryam, dan an-Najasyi menangis hingga basah janggutnya.",
+"Esok harinya Amr mencoba lagi dengan menanyakan pandangan mereka tentang Isa. Ja'far menjawab bahwa Isa adalah hamba Allah, rasul-Nya, ruh-Nya, dan kalimat-Nya. An-Najasyi memungut sebatang ranting dan berkata bahwa Isa tidak melebihi perkataan itu sedikit pun. Utusan Quraisy pulang dengan tangan hampa. Ummu Salamah, yang menyaksikan peristiwa ini, meriwayatkannya."]);
+
+K("umar-islam","mk","Masuk Islamnya Umar bin al-Khaththab",["umar","fathimah_khattab","said_zaid","hamzah","muhammad","abujahl"],"Sunan at-Tirmidzi; Shahih al-Bukhari; Sirah Ibnu Hisyam (riwayat sirah)",[
+"Nabi ﷺ pernah berdoa, “Ya Allah, muliakanlah Islam dengan salah satu dari dua orang yang lebih Engkau cintai: Abu Jahal atau Umar bin al-Khaththab” (HR. Tirmidzi). Saat itu Umar termasuk yang paling keras memusuhi kaum muslimin.",
+"Menurut riwayat sirah, suatu hari Umar keluar dengan pedang terhunus hendak membunuh Nabi. Di jalan seseorang memberitahunya bahwa adiknya sendiri, Fathimah, dan suaminya, Sa'id bin Zaid, sudah masuk Islam. Umar berbalik ke rumah adiknya dan mendengar bacaan al-Qur'an. Ia memukul Sa'id dan melukai Fathimah. Melihat darah adiknya dan keteguhannya, Umar melunak lalu meminta lembaran yang mereka baca, yaitu awal surat Thaha.",
+"Setelah membacanya Umar berkata, “Betapa indah dan mulianya kalam ini.” Ia menuju rumah al-Arqam, tempat Nabi berada. Para sahabat cemas melihatnya datang membawa pedang, tetapi Hamzah berkata, “Biarkan ia masuk. Jika ia datang dengan niat baik, kita sambut; jika berniat buruk, kita bunuh dengan pedangnya sendiri.” Umar masuk dan mengucapkan syahadat. Abdullah bin Mas'ud berkata, “Kami terus menjadi mulia sejak Umar masuk Islam” (HR. Bukhari)."]);
+
+K("utbah-fushshilat","mk","Utbah bin Rabi'ah dan surat Fushshilat",["utbah","muhammad"],"Sirah Ibnu Hisyam (riwayat sirah)",[
+"Melihat Islam terus menyebar, Utbah bin Rabi'ah menawarkan diri kepada Quraisy untuk berbicara dengan Muhammad ﷺ. Ia mendatangi beliau dan menawarkan apa saja: harta hingga beliau menjadi yang terkaya, kedudukan sebagai pemimpin, bahkan kerajaan, atau pengobatan bila beliau dianggap terkena gangguan jin.",
+"Setelah Utbah selesai, Nabi bertanya, “Sudah selesai, wahai Abul Walid?” lalu membacakan awal surat Fushshilat. Utbah mendengarkan sambil bersandar pada kedua tangannya, sampai Nabi sujud pada ayat sajdah.",
+"Utbah kembali kepada kaumnya dengan wajah berubah. Ia berkata telah mendengar perkataan yang bukan syair, bukan sihir, dan bukan mantra dukun, lalu menyarankan agar mereka membiarkan Muhammad. Quraisy menuduhnya telah tersihir. Utbah sendiri tetap dalam kekafiran dan terbunuh di Badr."]);
+
+K("boikot","mk","Pemboikotan di Syi'ib Abi Thalib",["abuthalib","abulahab","zuhair_aumayyah","abdullah_abbas","khadijah","muhammad"],"Sirah Ibnu Hisyam (riwayat sirah)",[
+"Karena Bani Hasyim dan Bani al-Muththalib tetap melindungi Nabi ﷺ, Quraisy menulis piagam boikot: tidak boleh menikah dengan mereka, berjual beli dengan mereka, atau bergaul dengan mereka sampai Muhammad diserahkan. Piagam itu digantung di dalam Ka'bah. Abu Thalib membawa keluarganya bertahan di lembah yang dikenal sebagai Syi'ib Abi Thalib. Abu Lahab satu-satunya dari Bani Hasyim yang memihak Quraisy.",
+"Selama sekitar tiga tahun mereka hidup dalam kelaparan hingga terdengar tangis anak-anak dari balik lembah. Abdullah bin Abbas lahir di masa itu.",
+"Akhirnya beberapa orang Quraisy yang punya ikatan kerabat tergerak membatalkannya: Hisyam bin Amr, Zuhair bin Abi Umayyah yang ibunya putri Abdul Muththalib, al-Muth'im bin Adi, Abul Bakhtari, dan Zam'ah bin al-Aswad. Ketika piagam diturunkan, ternyata telah dimakan rayap kecuali tulisan “Bismika Allahumma”."]);
+
+K("tahun-kesedihan","mk","Tahun Kesedihan: wafatnya Abu Thalib dan Khadijah",["abuthalib","khadijah","muhammad","abujahl","abdullah_aumayyah"],"Shahih al-Bukhari dan Muslim (al-Musayyab bin Hazn); Sirah Ibnu Hisyam",[
+"Ketika Abu Thalib menjelang wafat, Nabi ﷺ datang dan mendapati di sisinya Abu Jahal dan Abdullah bin Abi Umayyah. Beliau berkata, “Wahai pamanku, ucapkanlah La ilaha illallah, kalimat yang akan aku jadikan hujjah untukmu di sisi Allah.” Kedua orang itu berkata, “Apakah engkau membenci agama Abdul Muththalib?” Abu Thalib wafat di atas agama Abdul Muththalib.",
+"Nabi bersabda, “Aku akan terus memohonkan ampun untukmu selama tidak dilarang.” Lalu turun at-Taubah: 113 dan al-Qashash: 56, “Sesungguhnya engkau tidak dapat memberi petunjuk kepada orang yang engkau cintai.”",
+"Pada tahun yang sama Khadijah juga wafat. Kehilangan pelindung di luar rumah dan penenang di dalam rumah membuat tahun itu disebut Tahun Kesedihan. Abdullah bin Abi Umayyah, yang hadir di sisi Abu Thalib, kelak masuk Islam dan gugur di Tha'if."]);
+
+K("aqabah","mk","Baiat Aqabah dan duta pertama ke Yatsrib",["mushab","abbas","muhammad"],"Sirah Ibnu Hisyam; Musnad Ahmad",[
+"Pada musim haji tahun ke-12 kenabian, dua belas orang dari Yatsrib berbaiat kepada Nabi ﷺ di Aqabah. Ketika mereka pulang, Nabi mengutus Mush'ab bin Umair untuk mengajarkan al-Qur'an. Dengan kelembutannya, Mush'ab mengajak Usaid bin Hudhair dan Sa'd bin Mu'adz, dua pemimpin Bani Abdil Asyhal. Setelah Sa'd masuk Islam, seluruh kaumnya mengikutinya.",
+"Setahun kemudian lebih dari tujuh puluh orang datang untuk baiat kedua, diam-diam di malam hari. Nabi datang ditemani pamannya, al-Abbas, yang belum masuk Islam. Al-Abbas berbicara lebih dulu: Muhammad terlindungi di tengah kaumnya, maka jika mereka sanggup membelanya, silakan; jika tidak, tinggalkan ia sejak sekarang. Kaum Anshar menjawab dengan baiat untuk melindungi beliau seperti melindungi keluarga mereka sendiri."]);
+
+K("hijrah-tsur","hj","Hijrah: tiga malam di Gua Tsur",["muhammad","abubakar","ali","asma_ab","abdullah_ab","aisyah"],"Shahih al-Bukhari (hadits Aisyah); Shahih al-Bukhari dan Muslim; Sirah Ibnu Hisyam",[
+"Ketika Quraisy bersepakat membunuh Nabi ﷺ, beliau datang ke rumah Abu Bakar di siang hari, waktu yang tidak biasa, dan mengabarkan izin hijrah. Abu Bakar menangis gembira karena terpilih menemani. Aisyah dan Asma' menyiapkan bekal. Karena tidak ada tali, Asma' membelah ikat pinggangnya menjadi dua untuk mengikat bekal itu, sehingga ia dijuluki Dzatun Nithaqain.",
+"Malam itu Ali tidur di ranjang Nabi berselimut kain beliau, sementara para pemuda Quraisy mengepung rumah. Nabi dan Abu Bakar bersembunyi tiga malam di Gua Tsur. Abdullah bin Abi Bakar menginap bersama mereka dan pagi-pagi kembali ke Makkah seolah bermalam di sana, mendengarkan rencana Quraisy lalu melaporkannya di malam hari. Amir bin Fuhairah, maula Abu Bakar, menggembalakan kambing di dekat gua untuk menghapus jejak dan menyediakan susu.",
+"Ketika para pengejar berdiri di mulut gua, Abu Bakar berbisik, “Seandainya salah seorang dari mereka melihat ke bawah kakinya, ia pasti melihat kita.” Nabi menjawab, “Wahai Abu Bakar, apa dugaanmu terhadap dua orang yang Allah adalah yang ketiganya?” (HR. Bukhari-Muslim). Peristiwa ini diabadikan dalam at-Taubah: 40."]);
+
+K("batu-asma","hj","Asma' menenangkan kakeknya yang buta",["abuquhafah","asma_ab","abubakar"],"Musnad Ahmad; Sirah Ibnu Hisyam",[
+"Abu Bakar berhijrah dengan membawa seluruh hartanya, sekitar lima atau enam ribu dirham. Kakek Asma', Abu Quhafah, yang sudah buta dan belum masuk Islam, datang dan berkata, “Demi Allah, aku kira ia telah menyusahkan kalian dengan hartanya sebagaimana dengan dirinya.”",
+"Asma' menjawab, “Tidak, kakek. Ia meninggalkan banyak kebaikan untuk kami.” Ia mengambil batu-batu, meletakkannya di lubang tempat Abu Bakar biasa menyimpan uang, menutupinya dengan kain, lalu meletakkan tangan kakeknya di atasnya. Abu Quhafah berkata, “Tidak mengapa jika ia meninggalkan ini untuk kalian.” Asma' berkata, “Padahal demi Allah, ia tidak meninggalkan apa pun untuk kami. Aku hanya ingin menenangkan hati orang tua itu.”"]);
+
+K("lahir-ibnu-zubair","hj","Bayi pertama kaum muhajirin",["asma_ab","zubair","abdullah_zubair","muhammad","aisyah"],"Shahih al-Bukhari dan Muslim; Sunan Abu Dawud (kunyah Aisyah)",[
+"Asma' berhijrah ke Madinah dalam keadaan hamil tua dan melahirkan di Quba'. Ia membawa bayinya kepada Nabi ﷺ, yang meletakkannya di pangkuan, mengunyah sebutir kurma lalu memasukkannya ke mulut bayi itu, mendoakannya, dan menamainya Abdullah.",
+"Kaum muslimin sangat bergembira, karena sebelumnya tersiar kabar bahwa orang-orang Yahudi telah menyihir mereka sehingga tidak akan lahir anak bagi kaum muhajirin. Abdullah adalah bayi pertama yang lahir dari kaum muhajirin setelah hijrah.",
+"Bibinya, Aisyah, tidak memiliki anak, dan Nabi mengizinkannya berkunyah Ummu Abdillah, dengan nama keponakannya ini."]);
+
+K("tunjukkan-pasar","hj","“Tunjukkan saja aku pasar”",["abdurrahman_auf"],"Shahih al-Bukhari",[
+"Setibanya di Madinah, Nabi ﷺ mempersaudarakan Abdurrahman bin Auf dengan Sa'd bin ar-Rabi', seorang Anshar yang kaya. Sa'd berkata, “Aku orang Anshar yang paling banyak hartanya. Akan kubagi dua hartaku untukmu. Aku juga punya dua istri; lihatlah mana yang engkau suka, akan kuceraikan, dan setelah masa iddahnya selesai nikahilah ia.”",
+"Abdurrahman menjawab, “Semoga Allah memberkahi keluarga dan hartamu. Tunjukkan saja kepadaku di mana pasar kalian.” Ia mulai berdagang keju dan minyak samin. Tak lama kemudian ia datang dengan bekas wewangian kuning; ternyata ia sudah menikah dengan mahar emas seberat biji kurma. Nabi bersabda, “Adakan walimah walau dengan seekor kambing.”",
+"Kelak ia menjadi salah satu sahabat terkaya dan terkenal sangat dermawan."]);
+
+K("hijrah-ummu-salamah","hj","Ummu Salamah: setahun menangis di tempat perpisahan",["ummusalamah","abusalamah","muhammad"],"Sirah Ibnu Hisyam (riwayat sirah); Shahih Muslim",[
+"Ketika Abu Salamah hendak berhijrah ke Madinah membawa istri dan bayinya, keluarga Ummu Salamah dari Bani Makhzum merebut tali untanya dan menahannya. Keluarga Abu Salamah dari Bani Abdil Asad marah lalu merebut bayi mereka, Salamah, hingga tangannya terlepas sendi. Abu Salamah berangkat sendirian; ayah, ibu, dan anak terpisah di tiga tempat.",
+"Selama sekitar setahun Ummu Salamah keluar setiap pagi ke tempat perpisahan itu dan menangis sampai sore. Akhirnya keluarganya iba dan mengizinkannya pergi, dan anaknya pun dikembalikan. Ia berangkat sendiri bersama bayinya, lalu Utsman bin Thalhah, yang saat itu belum masuk Islam, mengantarnya dengan sopan sampai Quba'.",
+"Abu Salamah wafat pada 4 H karena luka di Uhud. Ummu Salamah teringat sabda Nabi ﷺ: siapa yang tertimpa musibah lalu berdoa, “Allahumma'jurni fi mushibati wa akhlif li khairan minha,” Allah akan menggantinya dengan yang lebih baik. Ia berdoa sambil bertanya dalam hati siapa yang lebih baik dari Abu Salamah. Kemudian Rasulullah ﷺ meminangnya (HR. Muslim)."]);
+
+K("mimpi-atikah","md","Mimpi Atikah sebelum Badr",["atikah_am","abbas","abujahl"],"Sirah Ibnu Hisyam (riwayat sirah)",[
+"Tiga hari sebelum utusan Abu Sufyan tiba di Makkah meminta pertolongan untuk kafilahnya, Atikah bint Abdil Muththalib bermimpi melihat seorang penunggang unta berseru agar Quraisy berangkat menuju kebinasaan mereka dalam tiga hari. Lalu sebuah batu dilempar dari atas gunung, dan pecahannya masuk ke setiap rumah di Makkah.",
+"Ia menceritakannya kepada saudaranya, al-Abbas, dan kabar itu tersebar. Abu Jahal mengejek al-Abbas: belum puas laki-laki Bani Abdul Muththalib mengaku nabi, kini perempuannya ikut bernubuat. Tiga hari kemudian utusan Abu Sufyan datang berteriak di lembah Makkah, dan Quraisy berangkat menuju Badr."]);
+
+K("duel-badr","md","Duel pembuka Perang Badr",["hamzah","ali","ubaidah_harits","utbah","syaibah","walid_utbah","hind_utbah"],"Shahih al-Bukhari; Sunan Abu Dawud; Sirah Ibnu Hisyam",[
+"Sebelum pasukan bertemu di Badr (Ramadhan 2 H), tiga orang Quraisy maju menantang duel: Utbah bin Rabi'ah, saudaranya Syaibah, dan putranya al-Walid. Tiga pemuda Anshar maju, tetapi mereka menolak dan meminta lawan yang setara dari kaum mereka sendiri.",
+"Nabi ﷺ memerintahkan tiga kerabat terdekatnya maju: Hamzah, Ali, dan Ubaidah bin al-Harits. Menurut riwayat Ibnu Ishaq, Hamzah melawan Syaibah, Ali melawan al-Walid, dan Ubaidah melawan Utbah; riwayat Abu Dawud dari Ali sedikit berbeda dalam pasangan lawannya. Ketiga musyrik itu terbunuh. Kaki Ubaidah terputus, dan ia wafat dalam perjalanan pulang.",
+"Abu Dzar bersumpah bahwa al-Hajj: 19, “Inilah dua golongan yang bertengkar tentang Tuhan mereka,” turun tentang enam orang yang berduel itu (HR. Bukhari). Hind bint Utbah kehilangan ayah, paman, dan saudaranya pada hari itu, dan dendam itu terbawa sampai Uhud."]);
+
+K("abu-jahal-badr","md","Dua pemuda Anshar dan Abu Jahal",["abujahl","abdurrahman_auf","ikrimah"],"Shahih al-Bukhari dan Muslim; Sirah Ibnu Hisyam",[
+"Abdurrahman bin Auf bercerita: saat berdiri di barisan Badr, ia diapit dua pemuda Anshar. Salah satunya berbisik, “Paman, tunjukkan kepadaku mana Abu Jahal. Aku dengar ia mencaci Rasulullah ﷺ. Demi Allah, jika aku melihatnya, aku tidak akan berpisah darinya sampai salah satu dari kami mati.” Pemuda yang lain membisikkan hal yang sama.",
+"Abdurrahman menunjukkannya, dan keduanya segera menyerbu dan menebasnya. Mereka adalah Mu'adz bin Amr bin al-Jamuh dan Mu'adz bin Afra'. Nabi bersabda, “Kalian berdua telah membunuhnya.” Abdullah bin Mas'ud kemudian mendapatinya sekarat dan menuntaskannya (HR. Bukhari-Muslim).",
+"Menurut riwayat sirah, putra Abu Jahal, Ikrimah, menebas bahu Mu'adz bin Amr hingga tangannya hampir putus. Mu'adz terus bertempur sambil menyeret tangannya, lalu menginjaknya dan menariknya lepas. Ikrimah sendiri kelak masuk Islam dan gugur sebagai syahid."]);
+
+K("tawanan-badr","md","Al-Abbas dan rahasia harta di Makkah",["abbas","aqil","ummulfadhl","fadhl","abdullah_abbas","qutsam","walid_walid","salma_najjar"],"Shahih al-Bukhari; Sirah Ibnu Hisyam (riwayat sirah)",[
+"Di antara tawanan Badr terdapat paman Nabi ﷺ, al-Abbas, dan sepupunya, Aqil bin Abi Thalib. Beberapa orang Anshar meminta izin, “Izinkan kami membebaskan tebusan keponakan kami, al-Abbas.” Mereka menyebutnya keponakan karena nenek al-Abbas, Salma bint Amr, berasal dari Bani an-Najjar. Nabi menjawab, “Jangan kalian sisakan satu dirham pun” (HR. Bukhari).",
+"Menurut riwayat sirah, al-Abbas berkata ia tidak punya harta. Nabi bertanya, “Lalu di mana harta yang engkau simpan bersama Ummul Fadhl, ketika engkau berkata kepadanya: jika aku terbunuh, ini untuk al-Fadhl, Abdullah, dan Qutsam?” Al-Abbas terkejut, karena tidak ada yang mengetahuinya selain ia dan istrinya. Ia pun menebus dirinya dan Aqil.",
+"Al-Walid bin al-Walid, saudara Khalid, juga tertawan dan ditebus keluarganya. Setelah bebas ia masuk Islam, lalu ditahan keluarganya di Makkah, dan Nabi mendoakannya dalam qunut sampai ia berhasil lolos ke Madinah."]);
+
+K("kalung-zainab","md","Kalung Zainab dan kejujuran Abul Ash",["zainab_r","abulash_rabi","khadijah","muhammad","umamah_abulash"],"Sunan Abu Dawud; Shahih al-Bukhari; Sirah Ibnu Hisyam",[
+"Abul Ash tetap musyrik ketika istrinya, Zainab, masuk Islam, dan ia ikut Quraisy ke Badr hingga tertawan. Zainab mengirim harta untuk menebusnya, termasuk kalung yang dulu dihadiahkan Khadijah ketika Zainab menikah. Melihat kalung itu, Nabi ﷺ sangat tersentuh dan berkata kepada para sahabat, “Jika kalian berpendapat untuk membebaskan tawanannya dan mengembalikan hartanya, lakukanlah.” Mereka pun setuju (HR. Abu Dawud).",
+"Abul Ash dibebaskan dengan syarat mengizinkan Zainab berhijrah, dan ia menepatinya. Menurut riwayat sirah, ketika Zainab berangkat, Habbar bin al-Aswad mengejar dan menakuti untanya hingga Zainab terjatuh dan keguguran.",
+"Beberapa tahun kemudian kafilah dagang Abul Ash dirampas pasukan muslim. Ia datang malam-malam ke Madinah meminta perlindungan Zainab, dan Zainab mengumumkannya di masjid. Hartanya dikembalikan. Ia pulang ke Makkah, menyerahkan setiap titipan kepada pemiliknya, lalu masuk Islam dan berhijrah, dan Nabi mengembalikan Zainab kepadanya. Beliau memujinya, “Ia berbicara kepadaku lalu jujur, berjanji lalu menepati” (HR. Bukhari)."]);
+
+K("tawaran-hafshah","md","Umar menawarkan Hafshah",["umar","hafshah","utsman","abubakar","ruqayyah","khunais","ummukultsum_r"],"Shahih al-Bukhari",[
+"Hafshah menjadi janda setelah suaminya, Khunais bin Hudzafah, wafat di Madinah. Pada waktu yang hampir bersamaan, Utsman kehilangan istrinya, Ruqayyah putri Nabi ﷺ, yang wafat ketika Perang Badr.",
+"Umar menawarkan Hafshah kepada Utsman. Setelah beberapa hari Utsman menjawab, “Sepertinya aku belum ingin menikah saat ini.” Umar lalu menawarkannya kepada Abu Bakar, yang diam tidak menjawab, dan Umar lebih kesal kepadanya daripada kepada Utsman. Beberapa hari kemudian Rasulullah ﷺ meminang Hafshah.",
+"Setelah itu Abu Bakar menemui Umar dan menjelaskan, “Aku tidak menjawabmu karena aku tahu Rasulullah pernah menyebut-nyebutnya, dan aku tidak ingin membuka rahasia beliau. Seandainya beliau meninggalkannya, aku pasti menerimanya” (HR. Bukhari). Utsman sendiri kemudian dinikahkan dengan putri Nabi yang lain, Ummu Kultsum."]);
+
+K("ali-fathimah","md","Rumah tangga Ali dan Fathimah",["ali","fathimah","muhammad"],"Shahih al-Bukhari dan Muslim; Sunan Abu Dawud dan an-Nasa'i",[
+"Ketika Ali hendak meminang Fathimah, ia tidak punya apa-apa. Nabi ﷺ bertanya, “Mana baju besi huthamiyyah milikmu?” Baju besi itulah yang dijadikan mahar (HR. Abu Dawud, an-Nasa'i). Pernikahan berlangsung di Madinah pada tahun ke-2 H.",
+"Rumah tangga mereka sederhana. Fathimah menggiling gandum hingga tangannya melepuh, dan Ali mengangkut air. Ketika mendengar ada tawanan yang datang, Fathimah meminta seorang pelayan kepada ayahnya. Malam harinya Nabi mendatangi mereka yang sudah berbaring, duduk di antara keduanya, dan bersabda, “Maukah aku tunjukkan yang lebih baik dari pelayan? Jika kalian hendak tidur, bertasbihlah 33 kali, bertahmid 33 kali, dan bertakbir 34 kali” (HR. Bukhari-Muslim). Ali berkata ia tidak pernah meninggalkannya sejak itu.",
+"Suatu kali Nabi mendapati Ali tidur di masjid dengan tubuh berdebu setelah berselisih dengan Fathimah. Beliau membersihkan debunya sambil berkata, “Bangunlah, wahai Abu Turab.” Julukan itu menjadi yang paling disukai Ali (HR. Bukhari)."]);
+
+K("uhud","md","Perang Uhud: bukit pemanah dan pasukan berkuda Khalid",["muhammad","khalid","talhah","saad","mushab","abusufyan"],"Shahih al-Bukhari; Shahih Muslim",[
+"Pada Perang Uhud (3 H), Nabi ﷺ menempatkan lima puluh pemanah di atas bukit di bawah pimpinan Abdullah bin Jubair dan berpesan agar mereka tidak meninggalkan posisi apa pun yang terjadi. Kaum muslimin unggul di awal. Melihat musuh lari, sebagian besar pemanah turun untuk mengambil rampasan (HR. Bukhari).",
+"Khalid bin al-Walid, yang memimpin pasukan berkuda Quraisy, melihat bukit itu kosong. Ia memutar dan menyerang dari belakang, sehingga keadaan berbalik. Pembawa panji, Mush'ab bin Umair, gugur. Wajah Nabi terluka dan gigi seri beliau patah (HR. Muslim).",
+"Di saat genting itu Thalhah bin Ubaidillah melindungi Nabi dengan tangannya hingga lumpuh (HR. Bukhari). Sa'd bin Abi Waqqash terus memanah di sisi beliau, dan Nabi bersabda kepadanya, “Panahlah, tebusanmu ayah dan ibuku” (HR. Bukhari). Usai pertempuran Abu Sufyan berseru, “Agungkan Hubal!” dan Nabi menyuruh para sahabat menjawab, “Allah lebih tinggi dan lebih agung” (HR. Bukhari). Khalid, yang membalik keadaan hari itu, lima tahun kemudian masuk Islam."]);
+
+K("hamzah-wahsyi","md","Gugurnya Hamzah di Uhud",["hamzah","hind_utbah","muhammad"],"Shahih al-Bukhari; Sirah Ibnu Hisyam",[
+"Wahsyi adalah budak Habasyah milik Jubair bin Muth'im. Paman Jubair, Thu'aimah bin Adi, terbunuh di Badr oleh Hamzah, dan Jubair menjanjikan kemerdekaan bila Wahsyi membunuh Hamzah. Di Uhud Wahsyi bersembunyi di balik batu, lalu melemparkan tombaknya dari jauh hingga mengenai Hamzah. Ia pun dimerdekakan (HR. Bukhari).",
+"Riwayat sirah menyebut Hind bint Utbah, yang kehilangan ayah, paman, dan saudaranya di Badr, juga menjanjikan hadiah dan merusak jenazah Hamzah. Nabi ﷺ sangat berduka melihat jenazah pamannya.",
+"Wahsyi masuk Islam setelah Fathu Makkah. Nabi menerimanya, tetapi bersabda, “Bisakah engkau tidak menampakkan wajahmu di hadapanku?” Wahsyi kemudian ikut perang Yamamah dan menombak Musailamah al-Kadzdzab, seakan menebus perbuatannya dahulu (HR. Bukhari)."]);
+
+K("mushab","md","Mush'ab bin Umair dan sehelai kain kafan",["mushab","hamnah","abdurrahman_auf"],"Shahih al-Bukhari; Thabaqat Ibnu Sa'd",[
+"Sebelum Islam, Mush'ab bin Umair adalah pemuda Makkah yang paling harum dan paling bagus pakaiannya, sangat dimanja ibunya. Setelah masuk Islam ia ditahan dan disiksa keluarganya, lalu berhijrah ke Habasyah dan kembali dalam keadaan miskin.",
+"Ia diutus Nabi ﷺ ke Yatsrib sebagai pengajar pertama. Di Uhud ia membawa panji kaum muslimin hingga gugur. Khabbab bin al-Aratt bercerita, mereka tidak mendapati kain untuk mengafaninya selain sehelai burdah: jika kepalanya ditutup kakinya terbuka, jika kakinya ditutup kepalanya terbuka. Nabi menyuruh menutup kepalanya dan menaruh rumput idzkhir di kakinya (HR. Bukhari).",
+"Bertahun-tahun kemudian, Abdurrahman bin Auf yang sudah kaya disuguhi makanan ketika berpuasa. Ia menangis teringat Mush'ab yang dikafani hanya dengan sehelai kain, dan khawatir kebaikan mereka telah disegerakan di dunia (HR. Bukhari). Mush'ab meninggalkan istrinya, Hamnah bint Jahsy, yang kemudian menikah dengan Thalhah."]);
+
+K("zainab-jahsy","md","Zaid, Zainab, dan ayat al-Ahzab",["zaid_haritsah","zainab_jahsy","muhammad"],"Shahih al-Bukhari; Tafsir Ibnu Katsir",[
+"Nabi ﷺ meminang sepupunya, Zainab bint Jahsy, untuk Zaid bin Haritsah, mantan budak yang beliau angkat anak. Zainab dan saudaranya semula enggan karena ia keturunan Quraisy terpandang. Lalu turun al-Ahzab: 36 dan mereka menerima. Pernikahan ini meruntuhkan anggapan jahiliyah tentang derajat keturunan.",
+"Rumah tangga itu tidak harmonis dan Zaid akhirnya menceraikan Zainab. Allah lalu menikahkan Zainab dengan Nabi melalui al-Ahzab: 37, untuk menghapus tradisi yang menyamakan anak angkat dengan anak kandung dalam hukum pernikahan. Zaid adalah satu-satunya sahabat yang namanya disebut dalam al-Qur'an.",
+"Zainab biasa berbangga kepada istri-istri Nabi yang lain, “Kalian dinikahkan oleh keluarga kalian, sedangkan aku dinikahkan oleh Allah dari atas tujuh langit” (HR. Bukhari). Pada walimah pernikahannya turun ayat hijab, al-Ahzab: 53 (HR. Bukhari)."]);
+
+K("ifki","md","Haditsul Ifki: fitnah atas Aisyah",["aisyah","abubakar","ummuruman","ali","usamah","zainab_jahsy","hamnah","muhammad"],"Shahih al-Bukhari dan Muslim (hadits Aisyah)",[
+"Sepulang dari perang Bani al-Musthaliq, Aisyah tertinggal rombongan karena mencari kalungnya yang hilang. Shafwan bin al-Mu'aththal menemukannya dan mengantarnya menyusul pasukan. Orang-orang munafik yang dipimpin Abdullah bin Ubay menyebarkan tuduhan keji, dan beberapa orang muslim ikut membicarakannya, di antaranya Hamnah bint Jahsy.",
+"Selama sebulan wahyu tidak turun. Aisyah jatuh sakit dan baru mengetahui berita itu belakangan, lalu pulang ke rumah orang tuanya dan menangis tanpa henti. Nabi ﷺ meminta pendapat Ali dan Usamah. Usamah hanya menyebut kebaikan. Ali menyarankan bertanya kepada pembantu Aisyah, Barirah, yang bersaksi tidak pernah melihat keburukan padanya. Zainab bint Jahsy, madu Aisyah, juga ditanya dan menjawab, “Aku menjaga pendengaran dan penglihatanku; aku tidak mengetahui darinya kecuali kebaikan.” Aisyah berkata, Allah menjaga Zainab dengan sifat wara'nya.",
+"Akhirnya turun an-Nur: 11–20 yang membersihkan nama Aisyah. Ibunya menyuruhnya bangkit berterima kasih kepada Nabi, tetapi Aisyah berkata, “Aku tidak akan memuji kecuali Allah.” Abu Bakar sempat bersumpah berhenti menafkahi kerabatnya, Misthah, yang ikut menyebarkan berita itu. Lalu turun an-Nur: 22, dan ia kembali menafkahinya."]);
+
+K("hudaibiyah","md","Perjanjian Hudaibiyah",["muhammad","utsman","umar","abubakar","ummusalamah","mulaikah","qaribah","ummukultsum_uqbah"],"Shahih al-Bukhari",[
+"Pada 6 H Nabi ﷺ berangkat umrah bersama sekitar 1.400 sahabat, tetapi dihadang Quraisy di Hudaibiyah. Beliau mengutus Utsman ke Makkah karena kerabatnya banyak di sana. Ketika tersiar kabar Utsman dibunuh, para sahabat berbaiat di bawah pohon (Baiat Ridhwan). Nabi meletakkan tangan kanannya di atas tangan kirinya dan bersabda, “Ini untuk Utsman.”",
+"Isi perjanjian tampak merugikan kaum muslimin. Umar mendatangi Nabi lalu Abu Bakar, “Bukankah kita di atas kebenaran?” Abu Bakar menjawab, “Berpeganglah pada perintahnya, sungguh ia Rasulullah.” Ketika Nabi memerintahkan menyembelih hewan dan bercukur, tak seorang pun bergerak. Beliau masuk menemui Ummu Salamah, yang menyarankan, “Keluarlah, jangan berbicara dengan siapa pun, sembelihlah untamu dan panggil tukang cukurmu.” Melihat itu para sahabat pun berlomba menyembelih dan bercukur.",
+"Setelah perjanjian turun al-Mumtahanah: 10 tentang wanita mukminah yang berhijrah dan larangan mempertahankan istri musyrikah. Umar menceraikan dua istrinya yang masih musyrik. Ummu Kultsum bint Uqbah, saudari seibu Utsman, datang berhijrah; saudara-saudaranya menyusul untuk menjemputnya, tetapi ia tidak dikembalikan. Allah menyebut perjanjian ini “kemenangan yang nyata” (al-Fath: 1)."]);
+
+K("khalid-islam","md","Khalid bin al-Walid masuk Islam",["khalid","amr_ash","walid_walid","muhammad"],"Sirah Ibnu Hisyam, al-Waqidi (riwayat sirah); Shahih Muslim",[
+"Setelah Hudaibiyah, Khalid bin al-Walid merenung bahwa Muhammad ﷺ selalu dimenangkan. Menurut riwayat sirah, saudaranya, al-Walid bin al-Walid, yang sudah di Madinah, menulis surat kepadanya: Rasulullah pernah menanyakan Khalid dan berkata bahwa orang secerdas dia tidak mungkin terus jauh dari Islam.",
+"Khalid berangkat ke Madinah. Di jalan ia bertemu Amr bin al-Ash dan Utsman bin Thalhah, penjaga kunci Ka'bah, yang ternyata berniat sama. Mereka bertiga masuk Islam di hadapan Nabi pada awal 8 H. Ketika Amr meminta syarat agar dosa-dosanya diampuni, Nabi menjawab, “Tidakkah engkau tahu bahwa Islam menghapus dosa sebelumnya?” (HR. Muslim).",
+"Beberapa bulan kemudian, di Mu'tah, Khalid menyelamatkan pasukan, dan Nabi menyebutnya “salah satu pedang Allah”."]);
+
+K("khaibar","md","Khaibar: panji untuk Ali dan kedatangan Ja'far",["ali","shafiyyah","jafar","asma_umais","umar","hafshah","muhammad"],"Shahih al-Bukhari dan Muslim",[
+"Pada 7 H kaum muslimin mengepung benteng-benteng Khaibar. Nabi ﷺ bersabda, “Besok akan kuserahkan panji kepada seorang lelaki yang mencintai Allah dan Rasul-Nya, dan dicintai Allah dan Rasul-Nya. Allah akan memberi kemenangan melalui tangannya.” Malam itu para sahabat berharap-harap. Paginya beliau memanggil Ali yang sedang sakit mata, meniup matanya hingga sembuh, lalu menyerahkan panji itu. Benteng pun jatuh.",
+"Di antara tawanan Khaibar ada Shafiyyah bint Huyay, putri pemimpin Bani an-Nadhir. Nabi memerdekakannya dan menikahinya dengan kemerdekaan itu sebagai mahar.",
+"Pada hari-hari itu Ja'far dan rombongan dari Habasyah tiba setelah lebih dari sepuluh tahun di sana. Suatu hari Asma' bint Umais berkunjung ke rumah Hafshah. Umar masuk dan berkata, “Kami lebih dahulu berhijrah, maka kami lebih berhak atas Rasulullah daripada kalian.” Asma' mengadukannya kepada Nabi, yang bersabda, “Ia tidak lebih berhak atasku daripada kalian. Ia dan sahabatnya mendapat satu hijrah, sedangkan kalian, ahli kapal, mendapat dua hijrah.”"]);
+
+K("umrah-qadha","md","Umrah Qadha dan perebutan hak asuh Umamah",["maimunah","abbas","umamah_hamzah","ali","jafar","zaid_haritsah","asma_umais","muhammad"],"Shahih al-Bukhari; Sirah Ibnu Hisyam",[
+"Sesuai perjanjian Hudaibiyah, pada 7 H Nabi ﷺ dan para sahabat melaksanakan umrah dan tinggal tiga hari di Makkah. Di masa itu beliau menikahi Maimunah bint al-Harits, saudari ipar al-Abbas; menurut riwayat sirah al-Abbas yang mengurus pernikahannya. Pernikahan dilangsungkan di Saraf, dekat Makkah.",
+"Ketika rombongan meninggalkan Makkah, Umamah putri Hamzah mengikuti sambil memanggil, “Paman, paman!” Ali mengambilnya, lalu Ali, Ja'far, dan Zaid berselisih siapa yang paling berhak mengasuh. Ali berkata, “Aku yang mengambilnya, dan ia putri pamanku.” Ja'far berkata, “Ia putri pamanku, dan bibinya adalah istriku.” Zaid berkata, “Ia putri saudaraku,” karena Nabi pernah mempersaudarakan Zaid dengan Hamzah.",
+"Nabi memutuskan Umamah untuk bibinya dengan bersabda, “Bibi dari pihak ibu sama kedudukannya dengan ibu.” Beliau lalu menghibur ketiganya: kepada Ali, “Engkau dariku dan aku darimu”; kepada Ja'far, “Engkau mirip rupa dan akhlakku”; kepada Zaid, “Engkau saudara dan maula kami” (HR. Bukhari)."]);
+
+K("mutah","md","Perang Mu'tah: tiga panglima dan pedang Allah",["zaid_haritsah","jafar","khalid","asma_umais","abdullah_jafar","muhammad"],"Shahih al-Bukhari; Sunan Abu Dawud dan at-Tirmidzi",[
+"Pada 8 H Nabi ﷺ mengirim 3.000 pasukan ke Mu'tah di perbatasan Syam. Beliau berpesan: pemimpinnya Zaid bin Haritsah; jika Zaid gugur, Ja'far bin Abi Thalib; jika Ja'far gugur, Abdullah bin Rawahah (HR. Bukhari). Pasukan berhadapan dengan tentara Romawi dan sekutu Arabnya yang jauh lebih besar.",
+"Ketiganya gugur berturut-turut. Abdullah bin Umar menghitung lebih dari lima puluh luka tusukan dan panah di tubuh Ja'far, semuanya di bagian depan (HR. Bukhari). Panji lalu diambil Khalid bin al-Walid, yang berhasil menarik pasukan dengan selamat. Di Madinah, Nabi mengabarkan kematian mereka dengan berlinang air mata, “hingga panji diambil oleh salah satu pedang Allah, lalu Allah memberi kemenangan” (HR. Bukhari).",
+"Nabi mendatangi rumah Ja'far, memanggil anak-anaknya dan menciumi mereka. Beliau bersabda, “Buatkan makanan untuk keluarga Ja'far, karena telah datang kepada mereka urusan yang menyibukkan” (HR. Abu Dawud, Tirmidzi). Ja'far dijuluki Dzul Janahain, karena diberi ganti dua sayap di surga."]);
+
+K("tikar-ummu-habibah","md","Ummu Habibah melipat tikar Nabi",["abusufyan","ummuhabibah"],"Thabaqat Ibnu Sa'd; Sirah Ibnu Hisyam (riwayat sirah)",[
+"Setelah Quraisy melanggar perjanjian Hudaibiyah dengan membantu sekutunya menyerang Bani Khuza'ah, Abu Sufyan datang ke Madinah untuk memperbarui perjanjian. Ia masuk ke rumah putrinya, Ummu Habibah, istri Nabi ﷺ. Ketika ia hendak duduk di atas tikar Nabi, Ummu Habibah segera melipatnya.",
+"Abu Sufyan bertanya, “Wahai putriku, apakah engkau tidak suka aku duduk di tikar itu, atau tikar itu tidak pantas untukku?” Ummu Habibah menjawab, “Ini tikar Rasulullah, dan engkau seorang musyrik yang najis. Aku tidak suka engkau duduk di atasnya.” Abu Sufyan berkata, “Demi Allah, engkau telah tertimpa keburukan setelah berpisah dariku.” Ia pulang tanpa hasil, dan beberapa minggu kemudian Makkah ditaklukkan."]);
+
+K("fathu-makkah","md","Fathu Makkah: kerabat-kerabat yang kembali",["abusufyan","abbas","hind_utbah","ikrimah","ummuhakim_h","ummuhani","abuquhafah","abusufyan_harits","abdullah_aumayyah","ummusalamah"],"Shahih Muslim; Shahih al-Bukhari; Sirah Ibnu Hisyam",[
+"Dalam perjalanan menuju Makkah (Ramadhan 8 H), dua kerabat yang dulu memusuhi Nabi ﷺ datang menyerah: sepupunya, Abu Sufyan bin al-Harits, dan Abdullah bin Abi Umayyah, saudara Ummu Salamah. Semula beliau berpaling. Ummu Salamah memintakan agar mereka diterima, dan keduanya pun masuk Islam (riwayat sirah).",
+"Malam sebelum memasuki Makkah, al-Abbas membawa Abu Sufyan bin Harb kepada Nabi, dan ia masuk Islam. Nabi mengumumkan, “Siapa masuk rumah Abu Sufyan ia aman, siapa menutup pintunya ia aman, dan siapa masuk Masjidil Haram ia aman” (HR. Muslim). Makkah ditaklukkan hampir tanpa pertumpahan darah. Ayah Abu Bakar, Abu Quhafah yang sudah tua, dibawa kepada Nabi dan masuk Islam (HR. Muslim). Ummu Hani' melindungi dua kerabat suaminya, dan Nabi bersabda, “Kami lindungi siapa yang engkau lindungi” (HR. Bukhari-Muslim).",
+"Ikrimah bin Abi Jahal melarikan diri ke pantai hendak menyeberang ke Yaman. Istrinya, Ummu Hakim, memintakan jaminan keamanan untuknya, lalu menyusul dan membawanya pulang, dan Ikrimah masuk Islam (riwayat sirah). Hind bint Utbah ikut berbaiat. Ia pernah mengadu bahwa Abu Sufyan kikir, dan Nabi bersabda, “Ambillah apa yang mencukupimu dan anakmu dengan cara yang patut” (HR. Bukhari)."]);
+
+K("hunain","md","Hunain: yang tetap berdiri di sisi Nabi",["abbas","abusufyan_harits","muhammad"],"Shahih al-Bukhari dan Muslim; Shahih Muslim",[
+"Sebulan setelah Fathu Makkah, sekitar 12.000 pasukan muslim berangkat menghadapi Hawazin dan Tsaqif. Sebagian merasa tak akan kalah karena jumlahnya besar (at-Taubah: 25). Di lembah Hunain mereka disergap panah dari tempat persembunyian, dan banyak yang lari.",
+"Nabi ﷺ tetap maju di atas bighalnya sambil berseru, “Aku Nabi, bukan dusta. Aku putra Abdul Muththalib.” Sepupunya, Abu Sufyan bin al-Harits, memegang tali kekang bighal itu (HR. Bukhari-Muslim). Nabi menyuruh al-Abbas, yang suaranya lantang, memanggil para sahabat yang dulu berbaiat di bawah pohon. Mendengar seruannya, mereka berbalik datang sambil menjawab “labbaik”, dan pertempuran dimenangkan (HR. Muslim).",
+"Abu Sufyan bin al-Harits, yang dulu bertahun-tahun mencela Nabi dengan syairnya, kini termasuk segelintir orang yang tidak bergeser dari sisi beliau."]);
+
+K("tabuk","md","Tabuk: Utsman, Abu Bakar, Umar, dan Ali",["utsman","abubakar","umar","ali","muhammad"],"Sunan at-Tirmidzi; Sunan Abu Dawud; Shahih al-Bukhari dan Muslim",[
+"Pada 9 H, di musim panas yang sulit, Nabi ﷺ menyerukan persiapan menghadapi Romawi di Tabuk. Pasukan ini disebut Jaisyul Usrah, pasukan di masa sulit. Utsman menyumbangkan perlengkapan dalam jumlah besar dan datang membawa seribu dinar yang ia tuangkan ke pangkuan Nabi. Beliau membolak-baliknya sambil bersabda, “Tidak ada yang membahayakan Utsman, apa pun yang ia lakukan setelah hari ini” (HR. Tirmidzi).",
+"Umar bercerita: ia datang membawa separuh hartanya dan berharap bisa mengungguli Abu Bakar kali ini. Abu Bakar datang membawa seluruh hartanya. Ketika ditanya apa yang ia sisakan untuk keluarganya, ia menjawab, “Allah dan Rasul-Nya.” Umar berkata, “Aku tidak akan pernah bisa mengunggulinya” (HR. Tirmidzi, Abu Dawud).",
+"Nabi meninggalkan Ali untuk menjaga keluarganya di Madinah. Ali bertanya, “Engkau meninggalkanku bersama perempuan dan anak-anak?” Beliau menjawab, “Tidakkah engkau rida kedudukanmu di sisiku seperti Harun di sisi Musa, hanya saja tidak ada nabi sesudahku?” (HR. Bukhari-Muslim)."]);
+
+K("wafat-nabi","md","Hari-hari terakhir Rasulullah ﷺ",["muhammad","aisyah","abdurrahman_ab","abubakar","umar","fathimah","abbas","ali"],"Shahih al-Bukhari dan Muslim",[
+"Di hari-hari sakitnya, Nabi ﷺ meminta izin istri-istrinya untuk dirawat di rumah Aisyah. Al-Abbas berkata kepada Ali, “Demi Allah, aku mengenali kematian di wajah anak-anak Abdul Muththalib” (HR. Bukhari). Fathimah datang, dan Nabi membisikkan sesuatu sehingga ia menangis, lalu membisikkan lagi sehingga ia tertawa. Belakangan ia bercerita: beliau mengabarkan akan wafat, lalu mengabarkan bahwa Fathimah adalah keluarganya yang pertama menyusul beliau (HR. Bukhari-Muslim).",
+"Abdurrahman bin Abi Bakar masuk membawa siwak. Aisyah melihat Nabi memandanginya, lalu melunakkan siwak itu dengan giginya dan memberikannya kepada beliau. Nabi wafat bersandar di dada Aisyah sambil mengucapkan, “Bersama ar-Rafiq al-A'la” (HR. Bukhari), pada Rabi'ul Awwal 11 H.",
+"Umar tidak percaya dan berbicara keras kepada orang-orang. Abu Bakar datang dari as-Sunh, menyingkap wajah Nabi dan menciumnya, lalu keluar dan berkhutbah, “Siapa yang menyembah Muhammad, sesungguhnya Muhammad telah wafat. Siapa yang menyembah Allah, sesungguhnya Allah Maha Hidup dan tidak mati,” kemudian membaca Ali Imran: 144. Umar berkata kakinya lemas, seakan baru pertama kali mendengar ayat itu (HR. Bukhari)."]);
+
+K("saqifah","ps","Saqifah Bani Sa'idah",["abubakar","umar","abuubaidah"],"Shahih al-Bukhari",[
+"Ketika jenazah Nabi ﷺ masih disiapkan, kaum Anshar berkumpul di Saqifah Bani Sa'idah untuk memilih pemimpin. Abu Bakar, Umar, dan Abu Ubaidah mendatangi mereka. Sebagian Anshar mengusulkan, “Dari kami seorang pemimpin dan dari kalian seorang pemimpin.”",
+"Abu Bakar berbicara dengan tenang tentang keutamaan Anshar, lalu menyebut bahwa orang Arab hanya akan tunduk kepada Quraisy, dan menawarkan, “Baiatlah salah satu dari dua orang ini: Umar atau Abu Ubaidah.” Umar menjawab, “Kami membaiatmu. Engkau pemimpin kami, yang terbaik di antara kami, dan yang paling dicintai Rasulullah ﷺ.” Ia menjabat tangan Abu Bakar dan membaiatnya, lalu kaum Muhajirin dan Anshar mengikuti."]);
+
+K("riddah-yamamah","ps","Perang Riddah, Yamamah, dan pengumpulan al-Qur'an",["abubakar","khalid","zaid_khattab","abuhudzaifah","ummutamim","bint_mujjaah","umar","hafshah"],"Shahih al-Bukhari dan Muslim; Tarikh ath-Thabari",[
+"Sepeninggal Nabi ﷺ, banyak kabilah murtad atau menolak membayar zakat, dan beberapa orang mengaku nabi. Umar sempat ragu memerangi para penolak zakat, tetapi Abu Bakar berkata, “Demi Allah, aku akan memerangi siapa yang memisahkan shalat dan zakat” (HR. Bukhari-Muslim). Khalid bin al-Walid memimpin pasukan utama.",
+"Di Buthah, Malik bin Nuwairah terbunuh dan Khalid menikahi jandanya, Ummu Tamim. Umar mendesak agar Khalid dihukum dan dicopot, tetapi Abu Bakar menerima alasan Khalid. Menurut riwayat sejarah, ia berkata tidak akan menyarungkan pedang yang Allah hunus untuk orang-orang kafir.",
+"Pertempuran paling berat terjadi di Yamamah melawan Musailamah (12 H). Di antara yang gugur adalah Zaid bin al-Khaththab, kakak Umar, serta Abu Hudzaifah bin Utbah bersama maulanya, Salim. Seusai perang Khalid menikahi putri Mujja'ah dan Abu Bakar menegurnya. Banyaknya penghafal al-Qur'an yang gugur di Yamamah mendorong Umar mengusulkan pengumpulan al-Qur'an. Zaid bin Tsabit ditugasi menghimpunnya, dan lembaran-lembaran itu disimpan Abu Bakar, lalu Umar, lalu Hafshah (HR. Bukhari)."]);
+
+K("khalid-dicopot","ps","Umar mencopot Khalid",["umar","khalid","abuubaidah","hantamah"],"Tarikh ath-Thabari; Siyar A'lam an-Nubala'; Shahih al-Bukhari (mu'allaq)",[
+"Ketika Umar menjadi khalifah (13 H), salah satu keputusan pertamanya adalah mengalihkan komando tertinggi pasukan di Syam dari Khalid kepada Abu Ubaidah. Menurut riwayat sejarah, surat itu tiba saat pertempuran Yarmuk, dan Abu Ubaidah menyimpannya sampai pertempuran usai. Khalid tetap berperang di bawah Abu Ubaidah tanpa mengeluh.",
+"Beberapa tahun kemudian Umar mencopot Khalid sepenuhnya. Menurut riwayat sejarah, Umar menjelaskan bahwa ia tidak memecatnya karena marah atau karena pengkhianatan, tetapi karena khawatir manusia terfitnah dan mengira kemenangan datang dari Khalid, padahal Allah-lah yang memberi kemenangan.",
+"Khalid wafat di Himsh pada 21 H, di atas ranjangnya. Ketika kabar wafatnya sampai, wanita-wanita Bani Makhzum, kabilah ibu Umar sendiri, menangisinya. Umar berkata, “Biarkan mereka menangisi Abu Sulaiman, selama tidak meratap” (diriwayatkan Bukhari secara mu'allaq)."]);
+
+K("amwas","ps","Wabah Amwas: lari dari takdir menuju takdir",["umar","abuubaidah","abdurrahman_auf","yazid_abisufyan","harits_hisyam","muawiyah"],"Shahih al-Bukhari dan Muslim; Tarikh ath-Thabari",[
+"Pada 17–18 H, Umar berangkat ke Syam. Di Sargh ia disambut Abu Ubaidah dan para panglima, yang mengabarkan wabah sedang merebak di Syam. Setelah bermusyawarah dengan Muhajirin, Anshar, dan para tokoh Quraisy, Umar memutuskan kembali. Abu Ubaidah bertanya, “Apakah engkau lari dari takdir Allah?” Umar menjawab, “Ya, kita lari dari takdir Allah menuju takdir Allah.”",
+"Lalu datang Abdurrahman bin Auf menyampaikan sabda Nabi ﷺ: “Jika kalian mendengar wabah di suatu negeri, jangan memasukinya; dan jika terjadi di negeri tempat kalian berada, jangan keluar darinya karena lari darinya.” Umar memuji Allah karena keputusannya sesuai sunnah (HR. Bukhari-Muslim).",
+"Wabah Amwas merenggut banyak sahabat, di antaranya Abu Ubaidah bin al-Jarrah, Mu'adz bin Jabal, Yazid bin Abi Sufyan, dan al-Harits bin Hisyam. Kepemimpinan Syam kemudian diserahkan kepada Mu'awiyah, adik Yazid."]);
+
+K("wafat-umar","ps","Wafatnya Umar dan enam anggota syura",["umar","abdullah_umar","aisyah","utsman","ali","zubair","talhah","saad","abdurrahman_auf","ubaidullah_umar"],"Shahih al-Bukhari; Tarikh ath-Thabari",[
+"Pada Dzulhijjah 23 H, Abu Lu'lu'ah, budak Persia milik al-Mughirah bin Syu'bah, menikam Umar ketika ia memimpin shalat Subuh. Umar menyuruh Abdurrahman bin Auf melanjutkan shalat. Ia bersyukur karena pembunuhnya bukan orang yang pernah sujud kepada Allah.",
+"Ia mengutus putranya, Abdullah, meminta izin kepada Aisyah agar dimakamkan di samping dua sahabatnya. Aisyah berkata tempat itu ia siapkan untuk dirinya sendiri, tetapi ia mendahulukan Umar. Umar menyerahkan penentuan khalifah kepada enam orang yang ketika wafat Nabi ﷺ rida kepada mereka: Utsman, Ali, Thalhah, az-Zubair, Sa'd bin Abi Waqqash, dan Abdurrahman bin Auf. Abdullah bin Umar boleh hadir tetapi tidak boleh dipilih (HR. Bukhari).",
+"Abdurrahman bin Auf mengundurkan diri dari pencalonan, lalu bermusyawarah dengan banyak orang selama tiga hari sebelum membaiat Utsman. Sementara itu putra Umar, Ubaidullah, membunuh al-Hurmuzan dan putri Abu Lu'lu'ah karena menduga mereka terlibat, perkara yang kemudian diputuskan Utsman."]);
+
+K("mushaf-utsmani","ps","Utsman menyatukan mushaf",["utsman","hafshah","abdullah_zubair"],"Shahih al-Bukhari",[
+"Di masa Utsman, Hudzaifah bin al-Yaman, yang ikut berperang di Armenia dan Azerbaijan, melihat penduduk Syam dan Irak berselisih tentang bacaan al-Qur'an. Ia datang kepada Utsman dan berkata, “Selamatkan umat ini sebelum mereka berselisih tentang kitab seperti Yahudi dan Nasrani.”",
+"Utsman meminjam lembaran-lembaran yang disimpan Hafshah, hasil pengumpulan di masa Abu Bakar, lalu menugaskan Zaid bin Tsabit, Abdullah bin az-Zubair, Sa'id bin al-Ash, dan Abdurrahman bin al-Harits bin Hisyam menyalinnya menjadi beberapa mushaf dengan dialek Quraisy. Salinan-salinan itu dikirim ke berbagai wilayah, dan lembaran aslinya dikembalikan kepada Hafshah."]);
+
+K("terbunuhnya-utsman","ps","Pengepungan dan terbunuhnya Utsman",["utsman","nailah","hasan","husain","abdullah_zubair"],"Shahih al-Bukhari dan Muslim; Tarikh ath-Thabari",[
+"Pada akhir masa Utsman, kelompok pemberontak dari Mesir, Kufah, dan Bashrah mengepung rumahnya di Madinah selama berminggu-minggu, bahkan menghalangi air untuknya. Sejumlah sahabat dan putra-putra mereka, termasuk al-Hasan, al-Husain, dan Abdullah bin az-Zubair, siap membelanya. Menurut riwayat sejarah, Utsman melarang mereka berperang karena tidak ingin darah tertumpah demi dirinya.",
+"Nabi ﷺ pernah mengabarkan bahwa Utsman akan masuk surga disertai musibah yang menimpanya (HR. Bukhari-Muslim). Pada Dzulhijjah 35 H para pemberontak menerobos masuk dan membunuhnya ketika ia sedang membaca mushaf. Istrinya, Na'ilah, berusaha menghalangi pedang hingga jari-jarinya terpotong.",
+"Terbunuhnya Utsman membuka pintu fitnah besar di tengah umat. Tuntutan atas darahnya menjadi latar Perang Jamal dan Shiffin."]);
+
+K("jamal","ps","Perang Jamal",["aisyah","talhah","zubair","ali","muhammad_talhah","muhammad_ab"],"Musnad Ahmad; Mustadrak al-Hakim; Tarikh ath-Thabari",[
+"Setelah Ali dibaiat, Aisyah, Thalhah, dan az-Zubair berangkat ke Bashrah menuntut agar para pembunuh Utsman dihukum. Pada 36 H kedua pihak bertemu, dan perundingan hampir mencapai kesepakatan. Menurut riwayat sejarah, pertempuran dipicu oleh pihak-pihak yang tidak menginginkan perdamaian.",
+"Menurut riwayat al-Hakim, Ali mengingatkan az-Zubair tentang sabda Nabi ﷺ bahwa suatu hari ia akan memerangi Ali dalam keadaan zalim. Az-Zubair pun meninggalkan medan perang, tetapi dibunuh oleh Ibnu Jurmuz di Wadi as-Siba'. Ketika pembunuhnya datang membawa pedang az-Zubair, Ali berkata, “Kabarkan kepada pembunuh putra Shafiyyah bahwa ia di neraka” (HR. Ahmad). Thalhah gugur terkena panah, dan putranya, Muhammad as-Sajjad, juga terbunuh. Ali menyesali kematian mereka.",
+"Seusai perang, Ali memuliakan Aisyah dan memulangkannya ke Madinah dengan pengawalan, disertai saudaranya, Muhammad bin Abi Bakar, yang berada di pihak Ali."]);
+
+K("shiffin","ps","Shiffin dan gugurnya Ammar",["ali","muawiyah","ammar","ubaidullah_umar","muhajir_khalid","abdurrahman_khalid","amr_ash"],"Shahih al-Bukhari dan Muslim; Tarikh ath-Thabari",[
+"Mu'awiyah, gubernur Syam dan kerabat Utsman dari Bani Umayyah, menolak membaiat Ali sebelum pembunuh Utsman dihukum. Kedua pasukan bertemu di Shiffin (37 H). Di sana kerabat-kerabat terpecah: putra-putra Khalid bin al-Walid berada di dua pihak, Abdurrahman bersama Mu'awiyah dan al-Muhajir bersama Ali. Ubaidullah bin Umar gugur di pihak Mu'awiyah.",
+"Ammar bin Yasir, yang sudah lanjut usia, gugur di pihak Ali. Para sahabat teringat sabda Nabi ﷺ ketika membangun masjid di Madinah: “Kasihan Ammar, ia akan dibunuh oleh kelompok yang baghi” (HR. Bukhari-Muslim).",
+"Ketika pasukan Syam terdesak, Amr bin al-Ash menyarankan mengangkat mushaf di ujung tombak untuk meminta tahkim. Pertempuran berhenti, dan perselisihan berlanjut di meja perundingan."]);
+
+K("amul-jamaah","ps","Al-Hasan dan Tahun Persatuan",["hasan","muawiyah","husain"],"Shahih al-Bukhari",[
+"Setelah Ali syahid (40 H), penduduk Kufah membaiat putranya, al-Hasan. Dua pasukan besar kembali berhadapan dengan pasukan Mu'awiyah. Al-Hasan memilih berdamai dan menyerahkan kepemimpinan kepada Mu'awiyah pada 41 H, sehingga tahun itu dikenal sebagai 'Amul Jama'ah, tahun persatuan.",
+"Abu Bakrah bercerita, Nabi ﷺ pernah berkhutbah sementara al-Hasan kecil berada di sisinya, lalu bersabda, “Sesungguhnya cucuku ini adalah sayyid, dan semoga Allah mendamaikan dengannya dua kelompok besar kaum muslimin” (HR. Bukhari)."]);
+
+K("karbala","ps","Karbala",["husain","abbas_ali","zainab_ali","alihusain","umar_saad"],"Tarikh ath-Thabari; Siyar A'lam an-Nubala'; Sunan at-Tirmidzi",[
+"Setelah Mu'awiyah wafat (60 H) dan putranya, Yazid, naik takhta, al-Husain menolak berbaiat. Penduduk Kufah mengirim banyak surat memintanya datang. Ia berangkat bersama keluarga dan sedikit pengikut, meskipun sahabat-sahabat seperti Ibnu Abbas dan Ibnu Umar menasihatinya agar tidak pergi.",
+"Di Karbala rombongannya dihadang pasukan Gubernur Kufah, Ubaidullah bin Ziyad, yang dipimpin Umar bin Sa'd bin Abi Waqqash. Mereka dihalangi dari air sungai Eufrat. Pada 10 Muharram 61 H, al-Husain gugur bersama banyak keluarganya, termasuk saudaranya, al-Abbas bin Ali.",
+"Putranya, Ali Zainal Abidin, selamat karena sedang sakit, dan saudarinya, Zainab bint Ali, menjaga perempuan dan anak-anak yang tersisa. Dari Ali Zainal Abidin keturunan al-Husain berlanjut. Nabi ﷺ pernah bersabda, “Al-Hasan dan al-Husain adalah pemimpin pemuda penghuni surga” (HR. Tirmidzi)."]);
+
+K("asma-hajjaj","ps","Asma' di hadapan al-Hajjaj",["asma_ab","abdullah_zubair"],"Shahih Muslim; Tarikh ath-Thabari",[
+"Abdullah bin az-Zubair dibaiat sebagai khalifah di Hijaz dan wilayah-wilayah lainnya, hingga pasukan Abdul Malik bin Marwan di bawah al-Hajjaj mengepungnya di Makkah pada 73 H. Menurut riwayat sejarah, ia menemui ibunya, Asma', yang sudah berusia hampir seratus tahun dan buta, untuk meminta nasihat. Asma' berpesan agar ia tidak menyerah bila yakin berada di atas kebenaran.",
+"Abdullah gugur dan jasadnya disalib. Al-Hajjaj kemudian mendatangi Asma'. Asma' berkata kepadanya, “Rasulullah ﷺ pernah bercerita kepada kami bahwa di Tsaqif akan ada seorang pendusta dan seorang perusak. Pendusta itu sudah kami lihat; adapun si perusak, aku tidak mengira kecuali engkau orangnya.” Al-Hajjaj pergi tanpa menjawab (HR. Muslim). Asma' wafat tak lama kemudian."]);
+// DATA END
+
+/* ===== Mesin ===== */
+const CLANS={hasyim:["h","Bani Hasyim"],muththalib_am:["oq","Bani al-Muththalib"],umayyah:["u","Bani Umayyah"],abdusyams:["u","Bani Abdi Syams"],asad_q:["a","Bani Asad"],abduddar:["oq","Bani Abdid Dar"],zuhrah:["z","Bani Zuhrah"],taim:["t","Bani Taim"],makhzum:["mk","Bani Makhzum"],adi:["ad","Bani Adi"],harits_fihr:["oq","Bani al-Harits bin Fihr"],fihr:["oq","Quraisy"]};
+const LEG=[["h","Bani Hasyim"],["u","Bani Umayyah / Abdi Syams"],["t","Bani Taim"],["ad","Bani Adi"],["mk","Bani Makhzum"],["z","Bani Zuhrah"],["a","Bani Asad"],["oq","Quraisy lainnya"],["out","Di luar Quraisy"]];
+const MARS=MAR;
+const ADJ={};
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function clanOf(id){let cur=PP[id],last=cur;const seen=new Set();while(cur&&!seen.has(cur.id)){seen.add(cur.id);last=cur;if(CLANS[cur.id])return CLANS[cur.id];cur=cur.fa?PP[cur.fa]:(cur.anc?PP[cur.anc]:null)}
+  const c=last&&last.c;if(!c)return["out","—"];return[/Quraisy/.test(c)?"oq":"out",c]}
+function short(p){return p.nb||p.name.split(/ bin | bint /)[0]}
+function chip(id,extra){const p=PP[id];if(!p)return"";const cl=clanOf(id);
+  return `<button type="button" class="p ${p.sex}${id==="muhammad"?" nabi":""}${extra||""}" style="--cc:var(--c-${cl[0]})" data-go="${id}"><span class="d"></span>${esc(p.name)}</button>`}
+function link(id,label){return `<button type="button" class="nl" data-go="${id}">${esc(label||PP[id].name)}</button>`}
+function ancestors(id){const out=[];let cur=PP[id];const seen=new Set([id]);
+  while(cur){if(cur.fa&&PP[cur.fa]&&!seen.has(cur.fa)){cur=PP[cur.fa];seen.add(cur.id);out.push({id:cur.id})}
+    else if(cur.up){cur.up.forEach(t=>out.push({t}));if(cur.anc&&PP[cur.anc]){cur=PP[cur.anc];seen.add(cur.id);out.push({id:cur.id})}else break}
+    else{if(cur.ft)out.push({t:cur.ft});break}}
+  return out}
+function nasabHTML(id){const p=PP[id];const a=ancestors(id);if(!a.length)return"";
+  return `<b>${esc(p.name.split(/ bin | bint /)[0])}</b>`+a.map((x,i)=>` ${i===0&&p.sex==="f"?"bint":"bin"} `+(x.id?link(x.id,short(PP[x.id])):esc(x.t))).join("")}
+const KIDS={};LIST.forEach(p=>{[p.fa,p.mo].forEach(x=>{if(x&&PP[x])(KIDS[x]||(KIDS[x]=[])).push(p)})});
+function sibs(id){const p=PP[id];const r=[];if(!p.fa&&!p.mo)return r;
+  for(const q of LIST){if(q.id===id)continue;const sf=p.fa&&q.fa===p.fa,sm=p.mo&&q.mo===p.mo;if(!sf&&!sm)continue;
+    let k;if(sf&&sm)k="Saudara kandung";else if(sf)k=(p.mo&&q.mo)?"Saudara seayah":"Saudara seayah (ibu tidak tercatat)";else k=(p.fa&&q.fa)?"Saudara seibu":"Saudara seibu (ayah tidak tercatat)";
+    r.push({q,k})}return r}
+function spousesOf(id){return MARS.filter(m=>m.h===id||m.w===id).map(m=>({m,s:m.h===id?m.w:m.h}))}
+
+function addE(a,b,l,w){if(!PP[a]||!PP[b])return;(ADJ[a]||(ADJ[a]=[])).push({to:b,l,w:w||1})}
+LIST.forEach(p=>{const cl=p.sex==="f"?"putrinya":"putranya";
+  if(p.fa&&PP[p.fa]){addE(p.id,p.fa,"ayahnya");addE(p.fa,p.id,cl)}
+  if(p.mo&&PP[p.mo]){addE(p.id,p.mo,"ibunya");addE(p.mo,p.id,cl)}
+  if(p.anc&&PP[p.anc]){const g=p.up.length+1;addE(p.id,p.anc,`leluhurnya (${g} generasi ke atas)`,g);addE(p.anc,p.id,`keturunannya (${g} generasi)`,g)}
+  sibs(p.id).forEach(({q})=>addE(p.id,q.id,q.sex==="f"?"saudarinya":"saudaranya"))});
+MARS.forEach(m=>{addE(m.h,m.w,m.end?"(mantan) istrinya":"istrinya");addE(m.w,m.h,m.end?"(mantan) suaminya":"suaminya")});
+SPEC.forEach(s=>{addE(s.a,s.b,s.la);addE(s.b,s.a,s.lb)});
+
+function findPath(a,b){if(a===b)return[{id:a}];const dist={},prev={},done=new Set();dist[a]=0;
+  while(true){let u=null,best=Infinity;for(const k in dist)if(!done.has(k)&&dist[k]<best){best=dist[k];u=k}
+    if(u===null)return null;if(u===b)break;done.add(u);
+    for(const e of ADJ[u]||[]){const nd=best+e.w;if(dist[e.to]===undefined||nd<dist[e.to]){dist[e.to]=nd;prev[e.to]={from:u,l:e.l}}}}
+  const path=[{id:b}];let cur=b;while(cur!==a){const pr=prev[cur];path[0].l=pr.l;path.unshift({id:pr.from});cur=pr.from}return path}
+function commonAnc(a,b){const A=[{id:a},...ancestors(a)],B=[{id:b},...ancestors(b)];const ib={};B.forEach((x,i)=>{if(x.id&&ib[x.id]===undefined)ib[x.id]=i});
+  for(let i=0;i<A.length;i++){const x=A[i];if(x.id&&ib[x.id]!==undefined)return{id:x.id,ga:i,gb:ib[x.id]}}return null}
+function pathHTML(path,vertical){if(!path)return"";return `<div class="path">`+path.map((x,i)=>(i?`<span class="arr">${vertical?"↓":"→"} <b>${esc(x.l)}</b></span>`:"")+chip(x.id)).join("")+`</div>`}
+function ancText(a,b,ca){if(!ca)return"";const P1=PP[a],P2=PP[b],C=PP[ca.id];
+  if(ca.ga===0)return `${link(a,P1.name)} adalah leluhur ${link(b,P2.name)} dari garis ayah, ${ca.gb} generasi di atasnya.`;
+  if(ca.gb===0)return `${link(b,P2.name)} adalah leluhur ${link(a,P1.name)} dari garis ayah, ${ca.ga} generasi di atasnya.`;
+  if(ca.ga===1&&ca.gb===1)return `Keduanya satu ayah: ${link(ca.id,C.name)}.`;
+  return `Garis ayah keduanya bertemu pada ${link(ca.id,C.name)}: leluhur ke-${ca.ga} bagi ${esc(P1.name)} dan ke-${ca.gb} bagi ${esc(P2.name)}.`}
+
+/* Diagram */
+const DW=152,DH=80,DGX=14,DGY=64,STEP=DW+DGX,DPAD=20;
+let DZ=null,DZuser=false,DSIZE={w:0,h:0};
+const dscroll=document.getElementById("dscroll"),dsizer=document.getElementById("dsizer"),dstage=document.getElementById("dstage");
+function shortName(id){return PP[id].name.split(/ bin | bint /)[0]}
+function sortedSpouses(id){const sp=spousesOf(id);return PP[id].sex==="f"?sp.slice().sort((a,b)=>(a.m.o||50)-(b.m.o||50)):sp}
+function renderDiagram(id){
+  const p=PP[id],N=[];
+  const node=(pid,x,row,rel,kind,extra)=>{const n={id:pid,x,row,rel,kind,extra};N.push(n);return n};
+  const sb=sibs(id);
+  const sibN=sb.map((s,j)=>{const ss=spousesOf(s.q.id).map(o=>shortName(o.s));
+    return node(s.q.id,-(sb.length-j)*STEP,0,(s.q.sex==="f"?"Saudari ":"Saudara ")+s.k.split(" ")[1],"sib",ss.length?"∞ "+ss.join(", "):"")});
+  const self=node(id,0,0,id==="muhammad"?"Rasulullah ﷺ":"Tokoh terpilih","self");
+  const sps=sortedSpouses(id);
+  const spN=sps.map((o,i)=>node(o.s,(i+1)*STEP,0,(p.sex==="f"?"Suami":"Istri")+(o.m.end?" · cerai":(o.m.kind?" · "+o.m.kind.toLowerCase():"")),"sp"));
+  const fa=p.fa&&PP[p.fa]?p.fa:null,mo=p.mo&&PP[p.mo]?p.mo:null;
+  const mid=(sibN.length?sibN[0].x:0)/2;let faN=null,moN=null;
+  if(fa&&mo){faN=node(fa,mid-STEP/2,-1,"Ayah","par");moN=node(mo,mid+STEP/2,-1,"Ibu","par")}
+  else if(fa)faN=node(fa,mid,-1,"Ayah","par");else if(mo)moN=node(mo,mid,-1,"Ibu","par");
+  const pairs=[];[[faN,"ayah"],[moN,"ibu"]].forEach(([pn,side])=>{if(!pn)return;const q=PP[pn.id],a=[];
+    if(q.fa&&PP[q.fa])a.push([q.fa,"Kakek · pihak "+side]);if(q.mo&&PP[q.mo])a.push([q.mo,"Nenek · pihak "+side]);
+    if(a.length)pairs.push({pn,pos:a.map((g,i)=>({g,x:pn.x-(a.length-1)*STEP/2+i*STEP}))})});
+  if(pairs.length===2){const a=pairs[0].pos,b=pairs[1].pos,over=a[a.length-1].x+STEP+DGX-b[0].x;if(over>0){a.forEach(n=>n.x-=over/2);b.forEach(n=>n.x+=over/2)}}
+  pairs.forEach(pr=>{pr.gn=pr.pos.map(n=>node(n.g[0],n.x,-2,n.g[1],"gp"))});
+  const kids=KIDS[id]||[],groups=[],used=new Set();
+  sps.forEach((o,i)=>{const ks=kids.filter(k=>(k.fa===o.s||k.mo===o.s)&&!used.has(k.id));ks.forEach(k=>used.add(k.id));if(ks.length)groups.push({src:spN[i],ks})});
+  const rest=kids.filter(k=>!used.has(k.id));if(rest.length)groups.push({src:self,ks:rest});
+  const blocks=[];groups.forEach((g,gi)=>g.ks.forEach(k=>{const sp=sortedSpouses(k.id),gk=KIDS[k.id]||[];
+    blocks.push({gi,k,sp,gk,w:Math.max(1+sp.length,gk.length)*STEP-DGX})}));
+  let x=0;blocks.forEach((b,i)=>{if(i&&blocks[i-1].gi!==b.gi)x+=DGX*3;b.l=x;x+=b.w+DGX});
+  const tot=x-DGX,cMid=(spN.length?spN[spN.length-1].x:0)/2,off=cMid-tot/2;
+  let nGk=0;
+  blocks.forEach(b=>{const l=b.l+off,top=1+b.sp.length,ts=l+(b.w-(top*STEP-DGX))/2+DW/2;
+    b.kn=node(b.k.id,ts,1,b.k.sex==="f"?"Putri":"Putra","kid");
+    b.spn=b.sp.map((o,i)=>node(o.s,ts+(i+1)*STEP,1,"Menantu"+(o.m.end?" · cerai":""),"mn"));
+    const gs=l+(b.w-(b.gk.length*STEP-DGX))/2+DW/2;nGk+=b.gk.length;
+    b.gn=b.gk.map((g,i)=>node(g.id,gs+i*STEP,2,g.sex==="f"?"Cucu perempuan":"Cucu laki-laki","gk"))});
+  // koordinat
+  const rows=[...new Set(N.map(n=>n.row))].sort((a,b)=>a-b),RY={};rows.forEach((r,i)=>RY[r]=DPAD+i*(DH+DGY));
+  const minX=Math.min(...N.map(n=>n.x))-DW/2,maxX=Math.max(...N.map(n=>n.x))+DW/2;
+  const W=maxX-minX+DPAD*2,H=rows.length*(DH+DGY)-DGY+DPAD*2;
+  const cx=n=>n.x-minX+DPAD,top=n=>RY[n.row],bot=n=>RY[n.row]+DH,midY=n=>RY[n.row]+DH/2;
+  let ln="",mr="";
+  const marry=(a,list)=>{if(list.length)mr+=`M${cx(a)} ${midY(a)}H${cx(list[list.length-1])}`};
+  const bus=(sx,sy,targets,by)=>{if(!targets.length)return;const tx=targets.map(cx),lo=Math.min(sx,...tx),hi=Math.max(sx,...tx);
+    ln+=`M${sx} ${sy}V${by}M${lo} ${by}H${hi}`+tx.map(t=>`M${t} ${by}V${top(targets[0])}`).join("")};
+  const fromCouple=(a,b)=>a&&b?[(cx(a)+cx(b))/2,midY(a)]:[cx(a||b),bot(a||b)];
+  pairs.forEach(pr=>{const g=pr.gn;if(g.length===2)marry(g[0],[g[1]]);const [sx,sy]=g.length===2?fromCouple(g[0],g[1]):[cx(g[0]),bot(g[0])];bus(sx,sy,[pr.pn],top(pr.pn)-DGY/2)});
+  if(faN&&moN)marry(faN,[moN]);
+  if(faN||moN){const [sx,sy]=fromCouple(faN,moN);bus(sx,sy,[...sibN,self],top(self)-DGY/2)}
+  marry(self,spN);
+  groups.forEach((g,gi)=>{const ks=blocks.filter(b=>b.gi===gi).map(b=>b.kn);bus(cx(g.src),bot(g.src),ks,Math.min(bot(self)+16+gi*8,bot(self)+DGY-12))});
+  blocks.forEach(b=>{marry(b.kn,b.spn);if(b.gn.length){const [sx,sy]=b.spn.length===1?fromCouple(b.kn,b.spn[0]):[cx(b.kn),bot(b.kn)];bus(sx,sy,b.gn,top(b.gn[0])-DGY/2)}});
+  const html=N.map(n=>{const q=PP[n.id],cl=clanOf(n.id);
+    return `<button type="button" class="dn ${q.sex} ${n.kind}${n.id==="muhammad"?" nabi":""}" style="left:${cx(n)-DW/2}px;top:${top(n)}px;--cc:var(--c-${cl[0]});--d:${(n.row+2)*70}ms" data-go="${n.id}" title="${esc(q.name)}"><span class="dr">${esc(n.rel)}</span><span class="dnm">${esc(q.name)}</span>${n.extra?`<span class="dx">${esc(n.extra)}</span>`:""}</button>`}).join("");
+  dstage.style.width=W+"px";dstage.style.height=H+"px";
+  dstage.innerHTML=`<svg class="dsvg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true"><path class="mr" d="${mr}"/><path class="ln" d="${ln}"/></svg>`+html;
+  DSIZE={w:W,h:H,selfX:cx(self),selfY:midY(self)};
+  document.getElementById("dtitle").textContent="Keluarga "+p.name;
+  const parts=[];if(sb.length)parts.push(sb.length+" saudara");if(sps.length)parts.push(sps.length+(p.sex==="f"?" suami":" istri"));if(kids.length)parts.push(kids.length+" anak");if(nGk)parts.push(nGk+" cucu");
+  document.getElementById("dsub").textContent=parts.length?parts.join(" · ")+" tercatat":"Belum ada kerabat dekat yang tercatat di data ini";
+  if(!DZuser)DZ=fitZoom();applyZoom(true)}
+function fitZoom(){const w=dscroll.clientWidth-2;return Math.max(.72,Math.min(1,w/DSIZE.w))}
+function applyZoom(center){dstage.style.transform=`scale(${DZ})`;dsizer.style.width=DSIZE.w*DZ+"px";dsizer.style.height=DSIZE.h*DZ+"px";
+  if(center){dscroll.scrollLeft=Math.max(0,DSIZE.selfX*DZ-dscroll.clientWidth/2);dscroll.scrollTop=Math.max(0,DSIZE.selfY*DZ-dscroll.clientHeight/2)}}
+document.getElementById("zin").addEventListener("click",()=>{DZ=Math.min(1.6,+(DZ+.15).toFixed(2));DZuser=true;applyZoom(true)});
+document.getElementById("zout").addEventListener("click",()=>{DZ=Math.max(.35,+(DZ-.15).toFixed(2));DZuser=true;applyZoom(true)});
+document.getElementById("zfit").addEventListener("click",()=>{DZuser=false;DZ=Math.max(.35,Math.min(1,(dscroll.clientWidth-2)/DSIZE.w));applyZoom(true)});
+
+/* Kisah */
+const KBY={},KID={};KS.forEach((k,i)=>{k.i=i;KID[k.id]=k;k.p.forEach(id=>(KBY[id]||(KBY[id]=[])).push(k))});
+function teaser(k,n){const t=k.x[0];return t.length>n?t.slice(0,t.lastIndexOf(" ",n))+"…":t}
+function storyBtn(k,withEra,cls,lead){return `<button type="button" class="kl${cls?" "+cls:""}" data-k="${k.id}">${lead?`<span class="ke">${lead}</span>`:(withEra?`<span class="ke">${esc(ERAS[k.e])}</span>`:"")}<span class="kt">${esc(k.t)}</span>${lead?"":`<span class="kx">${esc(teaser(k,withEra?110:130))}</span>`}</button>`}
+const reader=document.getElementById("reader");let lastFocus=null;
+function openStory(kid){const k=KID[kid];if(!k)return;if(reader.hidden)lastFocus=document.activeElement;
+  document.getElementById("rera").textContent=ERAS[k.e];
+  document.getElementById("rtitle").textContent=k.t;
+  const prev=KS[k.i-1],next=KS[k.i+1];
+  document.getElementById("rbody").innerHTML=`<div class="rtext">${k.x.map(p=>`<p>${esc(p)}</p>`).join("")}</div>`+
+    `<div class="sect"><span class="lbl">Tokoh dalam kisah ini</span><div class="row">${k.p.map(id=>chip(id)).join("")}</div></div>`+
+    `<div class="rsrc">Sumber: ${esc(k.src)}</div>`+
+    `<div class="rnav">${prev?storyBtn(prev,false,"prev","← Sebelumnya"):"<span></span>"}${next?storyBtn(next,false,"next","Berikutnya →"):""}</div>`;
+  reader.hidden=false;reader.scrollTop=0;document.body.style.overflow="hidden";
+  try{history.replaceState(null,"","#kisah-"+kid)}catch(e){}
+  document.getElementById("rclose").focus({preventScroll:true})}
+function closeStory(restore){if(reader.hidden)return;reader.hidden=true;document.body.style.overflow="";
+  try{history.replaceState(null,"","#"+CUR)}catch(e){}
+  if(restore&&lastFocus&&document.contains(lastFocus))lastFocus.focus({preventScroll:true})}
+document.getElementById("rclose").addEventListener("click",()=>closeStory(true));
+reader.addEventListener("click",e=>{if(e.target===reader)closeStory(true)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!reader.hidden){e.preventDefault();closeStory(true)}});
+document.getElementById("storyIndex").innerHTML=Object.keys(ERAS).map(e=>{const list=KS.filter(k=>k.e===e);return list.length?`<h3>${esc(ERAS[e])} <span class="kcount">${list.length} kisah</span></h3><div class="klist">${list.map(k=>storyBtn(k,false)).join("")}</div>`:""}).join("");
+
+let CUR="umar";
+function txt(s){return `<span class="t">${esc(s)}</span>`}
+function renderProfile(id){const p=PP[id];const cl=clanOf(id);const el=document.getElementById("profile");
+  let h=`<div class="ph"><div><div class="eyebrow">${p.sex==="f"?"Tokoh perempuan":"Tokoh"}</div><h2>${esc(p.name)}</h2></div>${p.ar?`<div class="ar" lang="ar" dir="rtl">${esc(p.ar)}</div>`:""}</div>`;
+  h+=`<div class="meta"><span class="clan" style="--cc:var(--c-${cl[0]})">${esc(cl[1])}</span>${p.k?`<span>· ${esc(p.k)}</span>`:""}</div>`;
+  const ns=nasabHTML(id);if(ns)h+=`<div class="nasab"><span class="lbl">Nasab</span>${ns}</div>`;
+  if(p.n)h+=`<p class="note">${esc(p.n)}</p>`;
+  if(id!=="muhammad"){const path=findPath(id,"muhammad");const ca=commonAnc(id,"muhammad");
+    h+=`<div class="rel"><span class="lbl">Hubungan dengan Rasulullah ﷺ</span>`+(path?pathHTML(path):`<p>Tidak tersambung dalam data ini.</p>`)+(ca?`<p>${ancText(id,"muhammad",ca)}</p>`:"")+`</div>`}
+  const ks=KBY[id]||[];
+  if(ks.length)h+=`<div class="sect"><span class="lbl">Kisah terkait (${ks.length})</span><div class="klist">${ks.map(k=>storyBtn(k,true)).join("")}</div></div>`;
+  // orang tua & kakek-nenek
+  const parentCell=(pid,alt)=>pid&&PP[pid]?chip(pid):(alt?txt(alt):`<span class="empty">tidak tercatat</span>`);
+  const faAlt=p.ft||(p.up?p.up[0]:null);
+  h+=`<div class="sect"><span class="lbl">Keluarga asal</span><div class="fam">`;
+  h+=`<div><span class="lbl">Ayah</span><div class="row">${parentCell(p.fa,faAlt)}</div></div>`;
+  h+=`<div><span class="lbl">Ibu</span><div class="row">${parentCell(p.mo,p.mt)}</div></div>`;
+  const gp=[];[p.fa,p.mo].forEach((x,i)=>{if(x&&PP[x]){const q=PP[x];const side=i?"dari ibu":"dari ayah";
+    if(q.fa&&PP[q.fa])gp.push([q.fa,"kakek "+side]);if(q.mo&&PP[q.mo])gp.push([q.mo,"nenek "+side])}});
+  if(gp.length)h+=`<div><span class="lbl">Kakek & nenek</span><div class="row">${gp.map(g=>chip(g[0])).join("")}</div></div>`;
+  h+=`</div></div>`;
+  // saudara
+  const sb=sibs(id);if(sb.length){const g={};sb.forEach(({q,k})=>(g[k]||(g[k]=[])).push(q.id));
+    h+=`<div class="sect"><span class="lbl">Saudara (${sb.length})</span>`+Object.keys(g).map(k=>`<div class="sibg"><div class="k">${esc(k)}</div><div class="row">${g[k].map(x=>chip(x)).join("")}</div></div>`).join("")+`</div>`}
+  // pasangan & anak
+  const sp=spousesOf(id);const kids=(KIDS[id]||[]);const used=new Set();
+  if(sp.length||kids.length){
+    const sorted=p.sex==="f"?sp.slice().sort((a,b)=>(a.m.o||50)-(b.m.o||50)):sp;
+    h+=`<div class="sect"><span class="lbl">${p.sex==="f"?"Suami":"Istri"} & anak</span><div class="spouses">`;
+    sorted.forEach(({m,s})=>{const ks=kids.filter(k=>k.fa===s||k.mo===s);ks.forEach(k=>used.add(k.id));
+      const tags=[];if(p.sex==="f"&&m.o&&sp.length>1)tags.push(`<span class="tag">suami ke-${m.o}</span>`);if(m.kind)tags.push(`<span class="tag">${esc(m.kind)}</span>`);if(m.t)tags.push(`<span class="tag">${esc(m.t)}</span>`);if(m.end)tags.push(`<span class="tag end">${esc(m.end)}</span>`);
+      h+=`<div class="sp"><div class="top">${chip(s)}${tags.join("")}</div>${m.n?`<p>${esc(m.n)}</p>`:""}`+
+        `<div class="kids">${ks.length?`<div class="k">Anak (${ks.length})</div><div class="row">${ks.map(k=>chip(k.id)).join("")}</div>`:`<div class="k">Tidak ada anak yang tercatat di sini</div>`}</div></div>`});
+    const rest=kids.filter(k=>!used.has(k.id));
+    if(rest.length){const g={};rest.forEach(k=>{const o=(k.fa===id?k.mo:k.fa)||"";(g[o]||(g[o]=[])).push(k.id)});
+      Object.keys(g).forEach(o=>{h+=`<div class="sp"><div class="top">${o&&PP[o]?chip(o):`<span class="t">${p.sex==="f"?"Ayah":"Ibu"} tidak tercatat</span>`}</div><div class="kids"><div class="k">Anak (${g[o].length})</div><div class="row">${g[o].map(k=>chip(k)).join("")}</div></div></div>`})}
+    h+=`</div></div>`}
+  // paman bibi
+  const pb=[];[["fa","pihak ayah"],["mo","pihak ibu"]].forEach(([f,lab])=>{const x=p[f];if(x&&PP[x]){const s=sibs(x).map(o=>o.q.id);if(s.length)pb.push([lab,s])}});
+  if(pb.length)h+=`<div class="sect"><span class="lbl">Paman & bibi</span><div class="fam">${pb.map(([lab,s])=>`<div><span class="lbl">${lab}</span><div class="row">${s.map(x=>chip(x)).join("")}</div></div>`).join("")}</div></div>`;
+  const sx=SPEC.filter(s=>s.a===id||s.b===id);
+  if(sx.length)h+=`<div class="sect"><span class="lbl">Ikatan lain</span><div class="row">${sx.map(s=>{const o=s.a===id?s.b:s.a,l=s.a===id?s.la:s.lb;return `<span class="arr"><b>${esc(l)}</b></span>${chip(o)}`}).join("")}</div></div>`;
+  el.innerHTML=h}
+
+function go(id,scroll){if(!PP[id])return;CUR=id;renderProfile(id);renderDiagram(id);markTree();
+  try{if(location.hash.slice(1)!==id)history.replaceState(null,"","#"+id)}catch(e){}
+  if(scroll){const el=document.querySelector(".diag");const r=el.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*0.6)el.scrollIntoView({block:"start"})}}
+
+/* Pohon */
+const TK={},VIA={};LIST.forEach(p=>{if(p.fa&&PP[p.fa])(TK[p.fa]||(TK[p.fa]=[])).push(p);else if(p.anc&&PP[p.anc])(VIA[p.anc]||(VIA[p.anc]=[])).push(p)});
+function husbandsHTML(p){const hs=MARS.filter(m=>m.w===p.id).map(m=>m.h);if(!hs.length)return"";return `<span class="w">istri ${hs.map(h=>link(h,PP[h].name.split(/ bin /)[0])).join(", ")}</span>`}
+function tnode(p,via){const kids=(TK[p.id]||[]).concat(VIA[p.id]||[]);
+  const lab=(via?`<span class="via">via ${esc(p.up.slice().reverse().join(" › "))} ›</span> `:"")+chip(p.id)+(p.sex==="f"?husbandsHTML(p):"");
+  if(!kids.length||p.sex==="f")return `<li class="leaf" data-n="${p.id}">${lab}</li>`;
+  return `<li data-n="${p.id}"><details open><summary>${lab}</summary><ul>${kids.map(k=>tnode(k,!k.fa&&k.anc)).join("")}</ul></details></li>`}
+function renderTree(){let h=`<ul class="tree">${tnode(PP.fihr)}</ul>`;
+  const roots=LIST.filter(p=>!p.fa&&!p.anc&&p.id!=="fihr"&&(TK[p.id]||[]).length);
+  h+=`<h3>Keluarga di luar garis Quraisy</h3><ul class="tree">${roots.map(r=>tnode(r)).join("")}</ul>`;
+  const lone=LIST.filter(p=>!p.fa&&!p.anc&&p.id!=="fihr"&&!(TK[p.id]||[]).length);
+  h+=`<div class="orph"><h3>Tokoh lain dalam data</h3><div class="row">${lone.map(p=>chip(p.id)).join("")}</div></div>`;
+  document.getElementById("tree").innerHTML=h}
+function markTree(){document.querySelectorAll("#tree .p.cur").forEach(e=>e.classList.remove("cur"));document.querySelectorAll(`#tree .p[data-go="${CUR}"]`).forEach(e=>e.classList.add("cur"))}
+
+/* Pencarian */
+const norm=s=>String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/['’`ʿʾ\-.,]/g,"").replace(/th/g,"t").replace(/dh/g,"d").replace(/sh/g,"s").replace(/kh/g,"k").replace(/(.)\1+/g,"$1").replace(/\s+/g," ").trim();
+const IDX=LIST.map(p=>({id:p.id,n:norm(p.name),x:norm([p.name,p.k||"",p.al||""].join(" "))}));
+const q=document.getElementById("q"),qr=document.getElementById("qr");
+function search(v){const s=norm(v);if(!s){qr.hidden=true;return}
+  const r=IDX.map(o=>{let sc=-1;if(o.n.startsWith(s))sc=0;else if(o.n.includes(" "+s))sc=1;else if(o.x.includes(s))sc=2;else if(s.split(" ").every(w=>o.x.includes(w)))sc=3;return{o,sc}}).filter(z=>z.sc>=0).sort((a,b)=>a.sc-b.sc||a.o.n.length-b.o.n.length).slice(0,10);
+  qr.innerHTML=r.length?r.map(({o})=>{const cl=clanOf(o.id);return `<li><button type="button" data-go="${o.id}" data-s="1">${esc(PP[o.id].name)}<small>${esc(cl[1])}</small></button></li>`}).join(""):`<li><span class="empty" style="display:block;padding:8px 10px">Tidak ditemukan. Coba ejaan lain, misalnya “Talhah” atau “Thalhah”.</span></li>`;
+  qr.hidden=false}
+q.addEventListener("input",()=>search(q.value));
+q.addEventListener("keydown",e=>{if(e.key==="Enter"){const b=qr.querySelector("button[data-go]");if(b){go(b.dataset.go,true);qr.hidden=true;q.blur()}}else if(e.key==="Escape"){qr.hidden=true}else if(e.key==="ArrowDown"){const b=qr.querySelector("button");if(b){e.preventDefault();b.focus()}}});
+qr.addEventListener("keydown",e=>{const li=e.target.closest("li");if(!li)return;if(e.key==="ArrowDown"){e.preventDefault();const n=li.nextElementSibling&&li.nextElementSibling.querySelector("button");if(n)n.focus()}else if(e.key==="ArrowUp"){e.preventDefault();const n=li.previousElementSibling&&li.previousElementSibling.querySelector("button");(n||q).focus()}else if(e.key==="Escape"){qr.hidden=true;q.focus()}});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-go]");
+  const kb=e.target.closest("[data-k]");if(kb){e.preventDefault();openStory(kb.dataset.k);return}
+  if(b){e.preventDefault();if(!reader.hidden)closeStory(false);go(b.dataset.go,true);if(b.dataset.s){qr.hidden=true;q.value=""}return}
+  if(!e.target.closest(".sbox"))qr.hidden=true});
+
+/* Pencari hubungan */
+const fa=document.getElementById("fa"),fb=document.getElementById("fb");
+const opts=LIST.slice().sort((a,b)=>a.name.localeCompare(b.name,"id")).map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join("");
+fa.innerHTML=opts;fb.innerHTML=opts;fa.value="khalid";fb.value="muhammad";
+function renderFinder(){const a=fa.value,b=fb.value,out=document.getElementById("fres");
+  if(a===b){out.innerHTML=`<p>Pilih dua tokoh yang berbeda.</p>`;return}
+  const path=findPath(a,b),ca=commonAnc(a,b);
+  out.innerHTML=(path?`<div class="lbl">Jalur kekerabatan terdekat · ${path.length-1} langkah</div>`+pathHTML(path,true):`<p>Tidak ada jalur kekerabatan dalam data ini.</p>`)+(ca?`<p>${ancText(a,b,ca)}</p>`:"")}
+fa.addEventListener("change",renderFinder);fb.addEventListener("change",renderFinder);
+document.getElementById("swap").addEventListener("click",()=>{const t=fa.value;fa.value=fb.value;fb.value=t;renderFinder()});
+
+/* Legenda & pintasan */
+document.getElementById("legend").innerHTML=LEG.map(([k,n])=>`<li><span class="sw" style="--cc:var(--c-${k})"></span>${esc(n)}</li>`).join("");
+document.getElementById("quick").innerHTML=["muhammad","abubakar","umar","utsman","ali","fathimah","aisyah","khalid","zubair","abbas","hamzah","abusufyan","talhah","saad"].map(x=>chip(x)).join("");
+document.getElementById("openAll").addEventListener("click",()=>document.querySelectorAll("#tree details").forEach(d=>d.open=true));
+document.getElementById("closeAll").addEventListener("click",()=>document.querySelectorAll("#tree details").forEach(d=>d.open=false));
+document.getElementById("showCur").addEventListener("click",()=>{const el=document.querySelector(`#tree .p[data-go="${CUR}"]`);if(!el)return;let d=el.closest("details");while(d){d.open=true;d=d.parentElement.closest("details")}el.scrollIntoView({block:"center"});el.focus({preventScroll:true})});
+
+renderTree();renderFinder();
+let start="umar",startK=null;try{const h=location.hash.slice(1);if(PP[h])start=h;else if(h.startsWith("kisah-")&&KID[h.slice(6)])startK=h.slice(6)}catch(e){}
+go(start,false);if(startK)openStory(startK);
+</script>
+</body>
+</html>
