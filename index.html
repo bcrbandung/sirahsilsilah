@@ -9,7 +9,7 @@
 <title>Nasab Para Sahabat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=Spectral:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&family=Source+Sans+3:wght@400;600&family=Spectral:wght@600&display=swap">
 <style>
 /* Layout: kartu profil keluarga di kiri, pencari hubungan di kanan, pohon nasab garis ayah di bawah. */
 :root{
@@ -112,7 +112,7 @@ main{padding-bottom:48px}
 .legend .sw{width:10px;height:10px;border-radius:2px;background:var(--cc);flex:none}
 .legend p{font-size:13.5px;color:var(--muted);margin:12px 0 0}
 
-.treeSec{margin-top:36px;padding:24px}
+.treeSec{margin-top:36px;padding:24px;content-visibility:auto;contain-intrinsic-size:auto 2400px}
 .treeSec h2{font-size:28px;font-weight:600}
 .treeSec .sub{color:var(--muted);max-width:70ch;margin:6px 0 14px}
 .tctl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
@@ -141,7 +141,7 @@ main{padding-bottom:48px}
 .kl .ke{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .kl .kt{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.25}
 .kl .kx{font-size:13.5px;color:var(--muted);line-height:1.45}
-.storySec{margin-top:36px;padding:24px}
+.storySec{margin-top:36px;padding:24px;content-visibility:auto;contain-intrinsic-size:auto 2600px}
 .storySec h2{font-size:28px;font-weight:600}
 .storySec .sub{color:var(--muted);max-width:70ch;margin:6px 0 4px}
 .storySec h3{font-size:18px;font-weight:600;margin:22px 0 10px}
@@ -964,7 +964,8 @@ function nasabHTML(id){const p=PP[id];const a=ancestors(id);if(!a.length)return"
   return `<b>${esc(p.name.split(/ bin | bint /)[0])}</b>`+a.map((x,i)=>` ${i===0&&p.sex==="f"?"bint":"bin"} `+(x.id?link(x.id,short(PP[x.id])):esc(x.t))).join("")}
 const KIDS={};LIST.forEach(p=>{[p.fa,p.mo].forEach(x=>{if(x&&PP[x])(KIDS[x]||(KIDS[x]=[])).push(p)})});
 function sibs(id){const p=PP[id];const r=[];if(!p.fa&&!p.mo)return r;
-  for(const q of LIST){if(q.id===id)continue;const sf=p.fa&&q.fa===p.fa,sm=p.mo&&q.mo===p.mo;if(!sf&&!sm)continue;
+  const pool=new Set([...(p.fa?KIDS[p.fa]||[]:[]),...(p.mo?KIDS[p.mo]||[]:[])]);
+  for(const q of LIST){if(q.id===id||!pool.has(q))continue;const sf=p.fa&&q.fa===p.fa,sm=p.mo&&q.mo===p.mo;if(!sf&&!sm)continue;
     let k;if(sf&&sm)k="Saudara kandung";else if(sf)k=(p.mo&&q.mo)?"Saudara seayah":"Saudara seayah (ibu tidak tercatat)";else k=(p.fa&&q.fa)?"Saudara seibu":"Saudara seibu (ayah tidak tercatat)";
     r.push({q,k})}return r}
 function spousesOf(id){return MARS.filter(m=>m.h===id||m.w===id).map(m=>({m,s:m.h===id?m.w:m.h}))}
@@ -1054,12 +1055,13 @@ function renderDiagram(id){
   const parts=[];if(sb.length)parts.push(sb.length+" saudara");if(sps.length)parts.push(sps.length+(p.sex==="f"?" suami":" istri"));if(kids.length)parts.push(kids.length+" anak");if(nGk)parts.push(nGk+" cucu");
   document.getElementById("dsub").textContent=parts.length?parts.join(" · ")+" tercatat":"Belum ada kerabat dekat yang tercatat di data ini";
   if(!DZuser)DZ=fitZoom();applyZoom(true)}
-function fitZoom(){const w=dscroll.clientWidth-2;return Math.max(.72,Math.min(1,w/DSIZE.w))}
+let DSW=0;const dsw=()=>DSW||(DSW=dscroll.clientWidth);window.addEventListener("resize",()=>{DSW=0});
+function fitZoom(){const w=dsw()-2;return Math.max(.72,Math.min(1,w/DSIZE.w))}
 function applyZoom(center){dstage.style.transform=`scale(${DZ})`;dsizer.style.width=DSIZE.w*DZ+"px";dsizer.style.height=DSIZE.h*DZ+"px";
-  if(center){dscroll.scrollLeft=Math.max(0,DSIZE.selfX*DZ-dscroll.clientWidth/2);dscroll.scrollTop=Math.max(0,DSIZE.selfY*DZ-dscroll.clientHeight/2)}}
+  if(center)requestAnimationFrame(()=>{dscroll.scrollLeft=Math.max(0,DSIZE.selfX*DZ-dsw()/2);dscroll.scrollTop=Math.max(0,DSIZE.selfY*DZ-dscroll.clientHeight/2)})}
 document.getElementById("zin").addEventListener("click",()=>{DZ=Math.min(1.6,+(DZ+.15).toFixed(2));DZuser=true;applyZoom(true)});
 document.getElementById("zout").addEventListener("click",()=>{DZ=Math.max(.35,+(DZ-.15).toFixed(2));DZuser=true;applyZoom(true)});
-document.getElementById("zfit").addEventListener("click",()=>{DZuser=false;DZ=Math.max(.35,Math.min(1,(dscroll.clientWidth-2)/DSIZE.w));applyZoom(true)});
+document.getElementById("zfit").addEventListener("click",()=>{DZuser=false;DZ=Math.max(.35,Math.min(1,(dsw()-2)/DSIZE.w));applyZoom(true)});
 
 /* Kisah */
 const KBY={},KID={};KS.forEach((k,i)=>{k.i=i;KID[k.id]=k;k.p.forEach(id=>(KBY[id]||(KBY[id]=[])).push(k))});
@@ -1083,7 +1085,7 @@ function closeStory(restore){if(reader.hidden)return;reader.hidden=true;document
 document.getElementById("rclose").addEventListener("click",()=>closeStory(true));
 reader.addEventListener("click",e=>{if(e.target===reader)closeStory(true)});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!reader.hidden){e.preventDefault();closeStory(true)}});
-document.getElementById("storyIndex").innerHTML=Object.keys(ERAS).map(e=>{const list=KS.filter(k=>k.e===e);return list.length?`<h3>${esc(ERAS[e])} <span class="kcount">${list.length} kisah</span></h3><div class="klist">${list.map(k=>storyBtn(k,false)).join("")}</div>`:""}).join("");
+const renderStoryIndex=()=>document.getElementById("storyIndex").innerHTML=Object.keys(ERAS).map(e=>{const list=KS.filter(k=>k.e===e);return list.length?`<h3>${esc(ERAS[e])} <span class="kcount">${list.length} kisah</span></h3><div class="klist">${list.map(k=>storyBtn(k,false)).join("")}</div>`:""}).join("");
 
 let CUR="umar";
 function txt(s){return `<span class="t">${esc(s)}</span>`}
@@ -1131,7 +1133,7 @@ function renderProfile(id){const p=PP[id];const cl=clanOf(id);const el=document.
 
 function go(id,scroll){if(!PP[id])return;CUR=id;renderProfile(id);renderDiagram(id);markTree();
   try{if(location.hash.slice(1)!==id)history.replaceState(null,"","#"+id)}catch(e){}
-  if(scroll){const el=document.querySelector(".diag");const r=el.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*0.6)el.scrollIntoView({block:"start"})}}
+  if(scroll)requestAnimationFrame(()=>{const el=document.querySelector(".diag");const r=el.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*0.6)el.scrollIntoView({block:"start"})})}
 
 /* Pohon */
 const TK={},VIA={};LIST.forEach(p=>{if(p.fa&&PP[p.fa])(TK[p.fa]||(TK[p.fa]=[])).push(p);else if(p.anc&&PP[p.anc])(VIA[p.anc]||(VIA[p.anc]=[])).push(p)});
@@ -1180,11 +1182,13 @@ document.getElementById("legend").innerHTML=LEG.map(([k,n])=>`<li><span class="s
 document.getElementById("quick").innerHTML=["muhammad","abubakar","umar","utsman","ali","fathimah","aisyah","khalid","zubair","abbas","hamzah","abusufyan","talhah","saad"].map(x=>chip(x)).join("");
 document.getElementById("openAll").addEventListener("click",()=>document.querySelectorAll("#tree details").forEach(d=>d.open=true));
 document.getElementById("closeAll").addEventListener("click",()=>document.querySelectorAll("#tree details").forEach(d=>d.open=false));
-document.getElementById("showCur").addEventListener("click",()=>{const el=document.querySelector(`#tree .p[data-go="${CUR}"]`);if(!el)return;let d=el.closest("details");while(d){d.open=true;d=d.parentElement.closest("details")}el.scrollIntoView({block:"center"});el.focus({preventScroll:true})});
+document.getElementById("showCur").addEventListener("click",()=>{if(!document.querySelector("#tree .tree")){renderTree();markTree()}const el=document.querySelector(`#tree .p[data-go="${CUR}"]`);if(!el)return;let d=el.closest("details");while(d){d.open=true;d=d.parentElement.closest("details")}el.scrollIntoView({block:"center"});el.focus({preventScroll:true})});
 
-renderTree();renderFinder();
+renderFinder();
 let start="umar",startK=null;try{const h=location.hash.slice(1);if(PP[h])start=h;else if(h.startsWith("kisah-")&&KID[h.slice(6)])startK=h.slice(6)}catch(e){}
 go(start,false);if(startK)openStory(startK);
+const idle=window.requestIdleCallback?cb=>requestIdleCallback(cb,{timeout:1500}):cb=>setTimeout(cb,200);
+idle(()=>{renderStoryIndex();idle(()=>{renderTree();markTree()})});
 </script>
 </body>
 </html>
