@@ -9,7 +9,7 @@
 <title>Nasab Para Sahabat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&family=Marcellus&family=Cormorant+Garamond:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
 /* Layout: diagram keluarga di atas, profil dan pencari hubungan di bawahnya, lalu kisah dan pohon nasab. Gaya: Mushaf Iluminasi (kertas gading, tinta lapis, emas, merah sinabar). */
 :root{
@@ -234,24 +234,53 @@ header.top h1{color:var(--head);font-size:clamp(36px,5.6vw,56px)}
 .rtext p:first-child::first-letter{font-family:var(--display);font-weight:700;float:left;font-size:3.3em;line-height:.82;padding:4px 8px 0 0;color:var(--terra)}
 .rpanel{border-radius:10px}
 .dn .dr{font-size:9.5px;letter-spacing:.04em}
+
+/* Header bergaya Malam Hijrah: satu tampilan malam, warnanya sengaja tetap di kedua tema */
+header.top{--surface:#18233F;--sunk:#141D38;--ink:#E9E3D3;--muted:#A9B2C8;--line:#2E3A5E;--accent:#4FC1B6;--accent-soft:#163543;
+  --gold:#E2B65C;--gold-soft:#262A43;--terra:#E2B65C;--head:#F3D99B;--male:#9DC0FF;--female:#F6AACB;
+  --c-h:#4FCFB3;--c-u:#B88EDD;--c-t:#EBAA55;--c-ad:#7FAAEA;--c-mk:#F08770;--c-z:#EA86B8;--c-a:#A6C95C;--c-oq:#7EC3CF;--c-out:#A3A9B0;
+  color-scheme:dark;color:var(--ink);margin-bottom:28px;padding-block:22px 24px;border-bottom:2px solid #E2B65C;
+  background:
+  radial-gradient(1.4px 1.4px at 6% 24%,#fff 50%,transparent 52%),radial-gradient(1px 1px at 14% 70%,#fffc 50%,transparent 52%),
+  radial-gradient(1.2px 1.2px at 27% 14%,#fffd 50%,transparent 52%),radial-gradient(1px 1px at 38% 58%,#fff9 50%,transparent 52%),
+  radial-gradient(1.6px 1.6px at 52% 20%,#fff 50%,transparent 52%),radial-gradient(1px 1px at 61% 78%,#fffa 50%,transparent 52%),
+  radial-gradient(1.2px 1.2px at 72% 30%,#fffd 50%,transparent 52%),radial-gradient(1px 1px at 84% 12%,#fffb 50%,transparent 52%),
+  radial-gradient(1.4px 1.4px at 93% 62%,#fff 50%,transparent 52%),radial-gradient(1px 1px at 46% 90%,#fff8 50%,transparent 52%),
+  linear-gradient(180deg,#0A1026 0%,#0F1731 100%)}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:18px 44px;align-items:start}
+@media (max-width:880px){.hgrid{grid-template-columns:minmax(0,1fr)}}
+.hbrand{display:flex;align-items:center;gap:10px}
+.moon{width:26px;height:26px;flex:none;border-radius:50%;box-shadow:inset -7px 4px 0 0 #E2B65C;transform:rotate(-20deg)}
+header.top h1{font-family:"Marcellus",Georgia,serif;font-weight:400;color:var(--head);font-size:clamp(32px,4.2vw,46px);margin-top:8px;letter-spacing:.01em}
+header.top .intro{font-size:15px;line-height:1.6;margin-top:8px;max-width:60ch}
+header.top .notice{margin-top:12px;font-size:13.5px;line-height:1.5;padding:9px 12px;background:var(--gold-soft);border-color:#3A3F5E}
+header.top .searchrow{margin-top:6px;gap:10px}
+header.top .sbox{max-width:none}
+header.top .sbox input{background:var(--surface);border-color:var(--line)}
+header.top .qlbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px}
+header.top .quick .p{font-size:13.5px;background:var(--surface)}
+header.top .p.nabi{background:#2B2A3B}
+@media (max-width:880px){header.top .quick{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}header.top .quick .p{flex:none}header.top .searchrow{margin-top:0}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 </head>
 <body>
 
-<header class="top"><div class="wrap">
-  <div class="zellige" aria-hidden="true"></div>
-  <div class="eyebrow">Silsilah keluarga dalam sirah nabawiyah</div>
-  <h1>Nasab Para Sahabat</h1>
-  <p class="intro">Pohon keluarga Rasulullah ﷺ dan sahabat-sahabat terdekat beliau. Klik nama siapa pun untuk melihat ayah, ibu, saudara, pasangan, dan anak-anaknya, bagaimana ia tersambung dengan Rasulullah ﷺ, serta kisah-kisah sirah yang melibatkannya.</p>
+<header class="top"><div class="wrap hgrid">
+  <div class="hl">
+    <div class="hbrand"><div class="moon" aria-hidden="true"></div><div class="eyebrow">Silsilah keluarga dalam sirah nabawiyah</div></div>
+    <h1>Nasab Para Sahabat</h1>
+    <p class="intro">Pohon keluarga Rasulullah ﷺ dan sahabat-sahabat terdekat beliau. Klik nama siapa pun untuk melihat ayah, ibu, saudara, pasangan, dan anak-anaknya, bagaimana ia tersambung dengan Rasulullah ﷺ, serta kisah-kisah sirah yang melibatkannya.</p>
+    <p class="notice"><b>Mohon maaf,</b> silsilah ini mungkin masih memiliki kekurangan. Ada tokoh, pernikahan, atau keturunan yang belum tercatat, dan sebagian riwayat masih diperselisihkan para ulama. Data akan terus dilengkapi dan diperbaiki.</p>
+  </div>
   <div class="searchrow">
     <div class="sbox">
       <input id="q" type="search" autocomplete="off" placeholder="Cari nama, misalnya: Hafshah, Abu Jahal, Asma' bint Umais…" aria-label="Cari tokoh">
       <ul id="qr" class="sres" hidden></ul>
     </div>
+    <div class="qlbl">Tokoh utama</div>
     <div class="quick" id="quick"></div>
   </div>
-  <p class="notice"><b>Mohon maaf,</b> silsilah ini mungkin masih memiliki kekurangan. Ada tokoh, pernikahan, atau keturunan yang belum tercatat, dan sebagian riwayat masih diperselisihkan para ulama. Data akan terus dilengkapi dan diperbaiki.</p>
 </div></header>
 
 <main class="wrap">
