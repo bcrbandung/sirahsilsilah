@@ -1110,7 +1110,7 @@ reader.addEventListener("click",e=>{if(e.target===reader)closeStory(true)});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!reader.hidden){e.preventDefault();closeStory(true)}});
 const renderStoryIndex=()=>document.getElementById("storyIndex").innerHTML=Object.keys(ERAS).map(e=>{const list=KS.filter(k=>k.e===e);return list.length?`<h3>${esc(ERAS[e])} <span class="kcount">${list.length} kisah</span></h3><div class="klist">${list.map(k=>storyBtn(k,false)).join("")}</div>`:""}).join("");
 
-let CUR="umar",HIST=[],BOOTED=false,PUSHN=0,BACKING=false;
+let CUR="muhammad",HIST=[],BOOTED=false,PUSHN=0,BACKING=false;
 const dback=document.getElementById("dback");
 function updBack(){const prev=HIST[HIST.length-1];dback.hidden=!prev;if(prev)document.getElementById("dbackname").textContent=PP[prev].name}
 function goBack(){const prev=HIST[HIST.length-1];if(!prev)return;
@@ -1165,7 +1165,7 @@ function renderProfile(id){const p=PP[id];const cl=clanOf(id);const el=document.
 function go(id,scroll,back){if(!PP[id])return;
   const push=BOOTED&&!back&&id!==CUR;if(push){HIST.push(CUR);if(HIST.length>60)HIST.shift()}
   CUR=id;renderProfile(id);renderDiagram(id);markTree();
-  try{if(location.hash.slice(1)!==id){history[push?"pushState":"replaceState"](null,"","#"+id);if(push)PUSHN++}}catch(e){}
+  try{if(location.hash.slice(1)!==id&&(BOOTED||location.hash)){history[push?"pushState":"replaceState"](null,"","#"+id);if(push)PUSHN++}}catch(e){}
   updBack();
   if(scroll&&!document.querySelector(".diag.fs"))requestAnimationFrame(()=>{const el=document.querySelector(".diag");const r=el.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*0.6)el.scrollIntoView({block:"start"})})}
 
@@ -1219,7 +1219,7 @@ document.getElementById("closeAll").addEventListener("click",()=>document.queryS
 document.getElementById("showCur").addEventListener("click",()=>{if(!document.querySelector("#tree .tree")){renderTree();markTree()}const el=document.querySelector(`#tree .p[data-go="${CUR}"]`);if(!el)return;let d=el.closest("details");while(d){d.open=true;d=d.parentElement.closest("details")}el.scrollIntoView({block:"center"});el.focus({preventScroll:true})});
 
 renderFinder();
-let start="umar",startK=null;try{const h=location.hash.slice(1);if(PP[h])start=h;else if(h.startsWith("kisah-")&&KID[h.slice(6)])startK=h.slice(6)}catch(e){}
+let start="muhammad",startK=null;try{const h=location.hash.slice(1);if(PP[h])start=h;else if(h.startsWith("kisah-")&&KID[h.slice(6)])startK=h.slice(6)}catch(e){}
 go(start,false);BOOTED=true;if(startK)openStory(startK);
 const idle=window.requestIdleCallback?cb=>requestIdleCallback(cb,{timeout:1500}):cb=>setTimeout(cb,200);
 idle(()=>{renderStoryIndex();idle(()=>{renderTree();markTree()})});
