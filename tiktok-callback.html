@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Login TikTok · Sirah Silsilah</title>
+<style>
+:root{--bg:#0F1731;--ink:#E9E3D3;--gold:#E2B65C;--muted:#A9B2C8;--box:#18233F}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,sans-serif;color-scheme:dark}
+main{max-width:640px;margin:0 auto;padding:56px max(20px,env(safe-area-inset-left))}
+h1{color:var(--gold);font:400 30px Georgia,serif;margin:0 0 12px}
+code{display:block;background:var(--box);padding:14px;border-radius:10px;word-break:break-all;font-size:14px;margin:12px 0;user-select:all}
+button{font:inherit;background:var(--gold);color:#0F1731;border:0;border-radius:8px;padding:8px 16px;cursor:pointer}
+p.m{color:var(--muted);font-size:14px}
+</style></head><body><main>
+<h1>Login TikTok berhasil</h1>
+<div id="out"><p>Memeriksa…</p></div>
+<script>
+const q=new URLSearchParams(location.search),o=document.getElementById('out');
+if(q.get('code')){
+  o.innerHTML='<p>Salin kode ini lalu tempel ke file <b>.sirah-social.env</b> setelah <b>TIKTOK_AUTH_CODE=</b>, simpan, dan kabari Claude. Kode berlaku beberapa menit saja.</p><code id="c"></code><button id="b">Salin kode</button><p class="m">State: <span id="s"></span></p>';
+  document.getElementById('c').textContent=q.get('code');document.getElementById('s').textContent=q.get('state')||'-';
+  document.getElementById('b').onclick=async()=>{try{await navigator.clipboard.writeText(q.get('code'));document.getElementById('b').textContent='Tersalin ✓'}catch(e){getSelection().selectAllChildren(document.getElementById('c'))}};
+}else{o.innerHTML='<p>Tidak ada kode login. '+(q.get('error')?'Error: '+q.get('error')+' '+(q.get('error_description')||''):'Halaman ini dipakai untuk menerima izin dari TikTok.')+'</p>';}
+</script>
+<p class="m">Halaman ini hanya dipakai pengelola Sirah Silsilah. Tidak ada data yang disimpan di server.</p>
+</main></body></html>
