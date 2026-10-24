@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Daftar kitab-kitab rujukan sejarah Islam dan sirah nabawiyah: klasik maupun kontemporer, lengkap dengan penulis, tahun terbit, dan kisi-kisi isinya.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cmask id='m'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ccircle cx='20.5' cy='12.5' r='9' fill='black'/%3E%3C/mask%3E%3Crect width='32' height='32' rx='7' fill='%231F3F8F'/%3E%3Ccircle cx='15' cy='16' r='10.5' fill='%23F2C14E' mask='url(%23m)'/%3E%3Cpath d='M23.5 18.2l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3z' fill='%23F2C14E'/%3E%3C/svg%3E">
+<title>Kitab Rujukan Sirah & Tarikh Islam</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5487103644385780" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&family=Marcellus&family=Cormorant+Garamond:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --bg:#F6F0E1;--surface:#FFFBF2;--sunk:#EFE6D2;--ink:#2B2219;--muted:#76664F;--line:#E0D2B4;
+  --accent:#1F3F8F;--accent-soft:#E6EAF6;--gold:#A2741C;--gold-soft:#F3E6C8;--terra:#A63A2B;--head:#1E2C5C;
+  --display:"Cormorant Garamond",Garamond,Georgia,serif;
+  --body:"Lora",Georgia,"Times New Roman",serif;
+  --arab:"Amiri","Traditional Arabic","Scheherazade New",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17140F;--surface:#211C15;--sunk:#1B1712;--ink:#EDE4D0;--muted:#ADA08A;--line:#3A3227;
+  --accent:#9DB4F0;--accent-soft:#232A40;--gold:#DDB15C;--gold-soft:#2E2718;--terra:#E58872;--head:#F0D9A6;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#17140F;--surface:#211C15;--sunk:#1B1712;--ink:#EDE4D0;--muted:#ADA08A;--line:#3A3227;
+  --accent:#9DB4F0;--accent-soft:#232A40;--gold:#DDB15C;--gold-soft:#2E2718;--terra:#E58872;--head:#F0D9A6;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.15;text-wrap:balance}
+.eyebrow{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* ── Nav bar ── */
+.topnav{border-bottom:1px solid var(--line);background:var(--surface);padding:0 max(16px,env(safe-area-inset-left,0px))}
+.topnav .inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:20px;height:50px}
+.topnav a{font-family:var(--body);font-size:14px;color:var(--muted);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.topnav a:hover,.topnav a.cur{color:var(--ink);border-color:var(--gold)}
+.topnav .brand{font-family:var(--display);font-size:18px;font-weight:600;color:var(--head);margin-right:8px;text-decoration:none;border:none}
+.topnav .brand:hover{color:var(--gold)}
+
+/* ── Header ── */
+header.top{padding:44px 0 32px;border-bottom:1px solid var(--line)}
+header.top .moon{width:36px;height:36px;border-radius:50%;background:var(--gold);position:relative;overflow:hidden;margin-bottom:8px}
+header.top .moon::after{content:"";position:absolute;top:4px;right:2px;width:26px;height:26px;border-radius:50%;background:var(--bg)}
+header.top h1{font-size:clamp(32px,5vw,52px);font-weight:700;color:var(--head);margin:10px 0 0}
+header.top .ar{font-family:var(--arab);font-size:28px;color:var(--gold);margin:4px 0 12px;direction:rtl}
+header.top .intro{max-width:70ch;color:var(--muted);margin:0;font-size:15.5px}
+
+/* ── Filter / sort bar ── */
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:22px 0 8px}
+.controls .lbl{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:inherit;font-size:13.5px;padding:5px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.pill:hover{border-color:var(--accent);color:var(--ink)}
+.pill.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pill[data-cat="sirah"].on{background:var(--terra);border-color:var(--terra)}
+.pill[data-cat="tarikh"].on{background:var(--accent);border-color:var(--accent)}
+.pill[data-cat="rijal"].on{background:#3F7C89;border-color:#3F7C89}
+.pill[data-cat="hadharah"].on{background:#5B7D1A;border-color:#5B7D1A}
+.pill[data-cat="kontemporer"].on{background:#7B4AA0;border-color:#7B4AA0}
+.pill[data-cat="orientalis"].on{background:#83796A;border-color:#83796A}
+
+.count{margin-left:auto;font-size:13px;color:var(--muted)}
+
+/* ── Book grid ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px;padding-bottom:60px;margin-top:16px}
+
+/* ── Book card ── */
+.kcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;overflow:hidden;transition:box-shadow .15s,border-color .15s}
+.kcard:hover{box-shadow:0 6px 28px rgba(0,0,0,.10);border-color:var(--gold)}
+.kcard-spine{height:6px;flex:none}
+.kcard[data-cat="sirah"] .kcard-spine{background:var(--terra)}
+.kcard[data-cat="tarikh"] .kcard-spine{background:var(--accent)}
+.kcard[data-cat="rijal"] .kcard-spine{background:#3F7C89}
+.kcard[data-cat="hadharah"] .kcard-spine{background:#5B7D1A}
+.kcard[data-cat="kontemporer"] .kcard-spine{background:#7B4AA0}
+.kcard[data-cat="orientalis"] .kcard-spine{background:#83796A}
+
+.kcard-body{padding:20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.kcard .cat-badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:2px 9px;border-radius:6px;background:var(--sunk);color:var(--muted);margin-bottom:2px}
+.kcard[data-cat="sirah"] .cat-badge{background:#F9EEEB;color:var(--terra)}
+.kcard[data-cat="tarikh"] .cat-badge{background:var(--accent-soft);color:var(--accent)}
+.kcard[data-cat="rijal"] .cat-badge{background:#E7F3F5;color:#3F7C89}
+.kcard[data-cat="hadharah"] .cat-badge{background:#EFF5E6;color:#5B7D1A}
+.kcard[data-cat="kontemporer"] .cat-badge{background:#F3EDF8;color:#7B4AA0}
+.kcard[data-cat="orientalis"] .cat-badge{background:#F4F2EF;color:#83796A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kcard[data-cat="sirah"] .cat-badge{background:rgba(166,58,43,.18);color:#E58872}
+:root:not([data-theme="light"]) .kcard[data-cat="tarikh"] .cat-badge{background:var(--accent-soft);color:var(--accent)}
+:root:not([data-theme="light"]) .kcard[data-cat="rijal"] .cat-badge{background:rgba(63,124,137,.18);color:#7EC3CF}
+:root:not([data-theme="light"]) .kcard[data-cat="hadharah"] .cat-badge{background:rgba(91,125,26,.18);color:#A6C95C}
+:root:not([data-theme="light"]) .kcard[data-cat="kontemporer"] .cat-badge{background:rgba(123,74,160,.18);color:#B88EDD}
+:root:not([data-theme="light"]) .kcard[data-cat="orientalis"] .cat-badge{background:rgba(131,121,106,.18);color:#A9A398}}
+:root[data-theme="dark"] .kcard[data-cat="sirah"] .cat-badge{background:rgba(166,58,43,.18);color:#E58872}
+:root[data-theme="dark"] .kcard[data-cat="tarikh"] .cat-badge{background:var(--accent-soft);color:var(--accent)}
+:root[data-theme="dark"] .kcard[data-cat="rijal"] .cat-badge{background:rgba(63,124,137,.18);color:#7EC3CF}
+:root[data-theme="dark"] .kcard[data-cat="hadharah"] .cat-badge{background:rgba(91,125,26,.18);color:#A6C95C}
+:root[data-theme="dark"] .kcard[data-cat="kontemporer"] .cat-badge{background:rgba(123,74,160,.18);color:#B88EDD}
+:root[data-theme="dark"] .kcard[data-cat="orientalis"] .cat-badge{background:rgba(131,121,106,.18);color:#A9A398}
+
+.kcard .ar-title{font-family:var(--arab);font-size:22px;color:var(--gold);direction:rtl;line-height:1.4;margin-bottom:-4px}
+.kcard h3{font-size:19px;font-weight:700;color:var(--head);margin:0}
+.kcard .author-row{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.kcard .author{font-size:14px;font-weight:600;color:var(--ink)}
+.kcard .wafat{font-size:13px;color:var(--muted)}
+.kcard .year-pill{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--muted);background:var(--sunk);padding:2px 9px;border-radius:6px}
+.kcard .desc{font-size:14.5px;color:var(--muted);margin:0;line-height:1.6}
+.kcard .topics{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+.kcard .topics li{display:flex;gap:8px;align-items:baseline;font-size:14px;color:var(--muted)}
+.kcard .topics li::before{content:"◆";font-size:8px;color:var(--gold);flex:none;margin-top:4px}
+.kcard .note{margin-top:4px;padding:10px 13px;background:var(--sunk);border-radius:8px;font-size:13px;color:var(--muted);font-style:italic}
+
+/* ── Footer ── */
+footer{border-top:1px solid var(--line);padding:24px max(16px,env(safe-area-inset-left,0px));text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <a href="/" class="brand">Silsilah Sirah</a>
+    <a href="/">Nasab & Silsilah</a>
+    <a href="/kitab-rujukan.html" class="cur">Kitab Rujukan</a>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <div class="moon" aria-hidden="true"></div>
+    <div class="eyebrow">Khazanah Keilmuan Islam</div>
+    <h1>Kitab Rujukan Sirah &amp; Tarikh</h1>
+    <p class="ar">مراجع السيرة والتاريخ الإسلامي</p>
+    <p class="intro">Kumpulan kitab-kitab pokok dalam kajian sejarah Islam dan sirah nabawiyah — dari karya ulama klasik hingga peneliti kontemporer. Disertai penulis, tahun terbit, dan kisi-kisi pokok pembahasannya.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="controls">
+      <span class="lbl">Kategori</span>
+      <div class="pill-row" id="filters">
+        <button class="pill on" data-cat="all">Semua</button>
+        <button class="pill" data-cat="sirah">Sirah Nabawiyah</button>
+        <button class="pill" data-cat="tarikh">Tarikh Umum</button>
+        <button class="pill" data-cat="rijal">Rijal &amp; Biografi</button>
+        <button class="pill" data-cat="hadharah">Peradaban &amp; Fikr</button>
+        <button class="pill" data-cat="kontemporer">Kontemporer</button>
+        <button class="pill" data-cat="orientalis">Orientalis</button>
+      </div>
+      <span class="count" id="count"></span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<footer>
+  <a href="/">← Kembali ke Nasab Para Sahabat</a> &nbsp;·&nbsp; silsilahsirah.my.id
+</footer>
+
+<script>
+const BOOKS = [
+  {
+    cat: "sirah",
+    ar: "السيرة النبوية",
+    title: "As-Sirah an-Nabawiyyah",
+    alt: "(Sirah Ibn Hisyam)",
+    author: "Abu Muhammad Ibn Hisyam al-Ma'afiri",
+    wafat: "w. 218 H / 833 M",
+    year: "~abad ke-2 H",
+    desc: "Ringkasan dan penyempurnaan dari sirah Ibn Ishaq; menjadi teks sirah paling otoritatif yang sampai ke tangan kita.",
+    topics: [
+      "Nasab dan kelahiran Nabi Muhammad ﷺ hingga nenek moyang jauh",
+      "Periode Makkiyah: dakwah, tekanan Quraisy, dan hijrah ke Habasyah",
+      "Hijrah ke Madinah dan pembangunan komunitas Islam pertama",
+      "Seluruh ghazwah dan sariyyah secara kronologis",
+      "Peristiwa-peristiwa akhir hayat Nabi dan wafatnya",
+    ],
+    note: "Rujukan paling pokok. Ibn Hisyam membuang riwayat-riwayat yang ia nilai lemah dari versi Ibn Ishaq.",
+  },
+  {
+    cat: "sirah",
+    ar: "المغازي",
+    title: "Al-Maghazi",
+    author: "Muhammad ibn Umar Al-Waqidi",
+    wafat: "w. 207 H / 822 M",
+    year: "~awal abad ke-3 H",
+    desc: "Dokumentasi paling awal dan paling rinci mengenai ekspedisi-ekspedisi militer Nabi ﷺ.",
+    topics: [
+      "Kronologi dan latar belakang setiap ghazwah",
+      "Nama para peserta, pasukan, dan posisi tempur",
+      "Detail geografis: rute perjalanan dan lokasi peristiwa",
+      "Perundingan, perjanjian, dan korespondensi Nabi",
+      "Pembagian ghanimah dan keputusan-keputusan taktis",
+    ],
+    note: "Penting sebagai sumber sejarah, namun dikritisi para muhadditsin dalam kapasitas periwayatan hadis hukum.",
+  },
+  {
+    cat: "sirah",
+    ar: "الروض الأنف",
+    title: "Ar-Raudh al-Unuf",
+    author: "Imam As-Suhaili (Abu al-Qasim Abdurrahman)",
+    wafat: "w. 581 H / 1185 M",
+    year: "~abad ke-6 H",
+    desc: "Syarah (komentar ilmiah) atas Sirah Ibn Hisyam; salah satu karya paling mendalam dalam literatur sirah.",
+    topics: [
+      "Penjelasan kata-kata dan istilah-istilah sirah yang sulit",
+      "Tambahan riwayat dan sanad yang tidak ada di Ibn Hisyam",
+      "Faidah-faidah aqidah dan fiqh yang tersimpan dalam kisah sirah",
+      "Pembahasan nama-nama tempat dan geografi Arab kuno",
+      "Sanggahan atas riwayat-riwayat yang dinilai bermasalah",
+    ],
+  },
+  {
+    cat: "sirah",
+    ar: "زاد المعاد في هدي خير العباد",
+    title: "Zad al-Ma'ad fi Hadyi Khairil-'Ibad",
+    author: "Imam Ibn al-Qayyim al-Jawziyyah",
+    wafat: "w. 751 H / 1350 M",
+    year: "~abad ke-8 H",
+    desc: "Sirah yang memadukan biografi Nabi ﷺ dengan fikih, pengobatan, dan hikmah kehidupan secara sistematis.",
+    topics: [
+      "Petunjuk Nabi ﷺ dalam ibadah, shalat, puasa, haji",
+      "Hadi an-Nabi ﷺ dalam makanan, pakaian, rumah tangga",
+      "Siyasah dan kepemimpinan militer Nabi ﷺ",
+      "Fiqh al-Ghazawat: pelajaran dari setiap peperangan",
+      "At-Thibb an-Nabawi: pengobatan ala Nabi ﷺ",
+    ],
+    note: "Wajib baca bagi yang ingin meneladani sirah secara praktis, bukan hanya mengetahuinya secara historis.",
+  },
+  {
+    cat: "tarikh",
+    ar: "تاريخ الأمم والملوك",
+    title: "Tarikh al-Umam wal-Muluk",
+    alt: "(Tarikh at-Thabari)",
+    author: "Imam Abu Ja'far Muhammad ibn Jarir at-Thabari",
+    wafat: "w. 310 H / 923 M",
+    year: "~awal abad ke-4 H",
+    desc: "Ensiklopedia sejarah Islam paling otoritatif; merekam peristiwa dari penciptaan hingga akhir abad ke-3 H dengan sanad lengkap.",
+    topics: [
+      "Kisah para nabi dan sejarah umat-umat terdahulu",
+      "Sirah Nabi ﷺ secara terperinci dengan berbagai riwayat",
+      "Penaklukan Islam: Persia, Romawi, Mesir, Syam, Iraq",
+      "Sejarah Khulafa Rasyidin dan fitnah-fitnah awal",
+      "Dinasti Umayyah dan Abbasiyah tahun per tahun",
+    ],
+    note: "Metode at-Thabari: merekam semua riwayat — bahkan yang saling bertentangan — dengan sanadnya, dan membiarkan pembaca menilai.",
+  },
+  {
+    cat: "tarikh",
+    ar: "الكامل في التاريخ",
+    title: "Al-Kamil fit-Tarikh",
+    author: "Imam Izz ad-Din Ibn al-Atsir al-Jazari",
+    wafat: "w. 630 H / 1232 M",
+    year: "~abad ke-7 H",
+    desc: "Kronik sejarah Islam terlengkap dari penciptaan hingga awal abad ke-7 H; penyempurnaan dari Tarikh at-Thabari.",
+    topics: [
+      "Rekap sejarah pra-Islam: Persia, Romawi, Arabia",
+      "Sirah Nabi ﷺ dan Khulafa Rasyidin",
+      "Sejarah lengkap Umayyah dan Abbasiyah",
+      "Perang Salib dari sudut pandang Muslim",
+      "Awal masuknya bangsa Mongol ke dunia Islam",
+    ],
+  },
+  {
+    cat: "tarikh",
+    ar: "البداية والنهاية",
+    title: "Al-Bidayah wan-Nihayah",
+    author: "Imam Ismail ibn Katsir ad-Dimasyqi",
+    wafat: "w. 774 H / 1373 M",
+    year: "~abad ke-8 H",
+    desc: "Sejarah Islam dari penciptaan alam hingga abad ke-8 H; paling banyak dibaca kalangan umum karena gaya narasinya yang kuat.",
+    topics: [
+      "Kisah penciptaan dan para nabi sebelum Islam",
+      "Sirah Nabi ﷺ yang sangat terperinci",
+      "Sejarah sahabat dan tabi'in",
+      "Fitnah dan perang saudara dalam Islam",
+      "Rekam jejak dinasti hingga zaman Ibn Katsir",
+    ],
+    note: "Juga berfungsi sebagai tafsir sejarah: banyak ayat Al-Qur'an dijelaskan konteks historisnya secara mendalam.",
+  },
+  {
+    cat: "tarikh",
+    ar: "مروج الذهب ومعادن الجوهر",
+    title: "Muruj adz-Dzahab wa Ma'adin al-Jawhar",
+    author: "Ali ibn al-Husayn Al-Mas'udi",
+    wafat: "w. 346 H / 956 M",
+    year: "~abad ke-4 H",
+    desc: "Karya ensiklopedis yang memadukan sejarah dengan geografi, filsafat, dan sains; perspektif peradaban yang luas.",
+    topics: [
+      "Kosmografi: alam semesta dan geografi dunia",
+      "Sejarah kerajaan-kerajaan pra-Islam: Persia, Romawi, India, Cina",
+      "Sejarah para khalifah disertai analisis sosial dan budaya",
+      "Ilmu-ilmu astronomi, iklim, dan fenomena alam",
+      "Adat istiadat dan kebudayaan berbagai bangsa",
+    ],
+  },
+  {
+    cat: "tarikh",
+    ar: "فتوح البلدان",
+    title: "Futuh al-Buldan",
+    author: "Ahmad ibn Yahya Al-Baladhuri",
+    wafat: "w. 279 H / 892 M",
+    year: "~abad ke-3 H",
+    desc: "Dokumentasi sistematis penaklukan-penaklukan Islam dari Jazirah Arab hingga Asia Tengah.",
+    topics: [
+      "Penaklukan Jazirah Arab di masa Abu Bakar",
+      "Penaklukan Syam, Mesir, dan Afrika Utara",
+      "Penaklukan Iraq, Persia, dan Khurasan",
+      "Sistem administrasi wilayah taklukan",
+      "Perlakuan terhadap penduduk non-Muslim di wilayah taklukan",
+    ],
+  },
+  {
+    cat: "tarikh",
+    ar: "تاريخ الخلفاء",
+    title: "Tarikh al-Khulafa'",
+    author: "Imam Jalaluddin As-Suyuthi",
+    wafat: "w. 911 H / 1505 M",
+    year: "~abad ke-9 H",
+    desc: "Ikhtisar biografi seluruh khalifah Islam dari Abu Bakar ash-Shiddiq hingga masa As-Suyuthi.",
+    topics: [
+      "Biografi singkat setiap khalifah: nasab, akhlak, prestasi",
+      "Kronologi peristiwa penting di setiap era kekhalifahan",
+      "Khulafa Rasyidin: Abu Bakar, Umar, Utsman, Ali",
+      "Dinasti Umayyah: 14 khalifah dari Mu'awiyah hingga Marwan II",
+      "Dinasti Abbasiyah: 37 khalifah dari As-Saffah hingga Al-Mutawakkil Ala Allah",
+    ],
+    note: "Cocok sebagai vade mecum (buku saku rujukan cepat); harus dikombinasikan dengan karya lebih tebal untuk kedalaman.",
+  },
+  {
+    cat: "rijal",
+    ar: "الطبقات الكبرى",
+    title: "At-Thabaqat al-Kubra",
+    author: "Abu Abdillah Muhammad ibn Sa'd al-Basri",
+    wafat: "w. 230 H / 844 M",
+    year: "~awal abad ke-3 H",
+    desc: "Biografi terstruktur para sahabat, tabi'in, dan ulama awal Islam, diurutkan per gelombang generasi (thabaqat).",
+    topics: [
+      "Biografi Nabi ﷺ dan keluarganya secara rinci",
+      "Ummahatul Mukminin: para istri Nabi ﷺ satu per satu",
+      "Biografi sahabat besar: Muhajirin dan Anshar",
+      "Generasi tabi'in per wilayah: Madinah, Makkah, Iraq, Syam",
+      "Identitas para perawi: nama lengkap, nasab, guru, dan murid",
+    ],
+  },
+  {
+    cat: "rijal",
+    ar: "سير أعلام النبلاء",
+    title: "Siyar A'lam an-Nubala'",
+    author: "Imam Syams ad-Din Muhammad adz-Dzahabi",
+    wafat: "w. 748 H / 1347 M",
+    year: "~abad ke-8 H",
+    desc: "Ensiklopedia biografi terbesar dalam tradisi Islam: lebih dari 5.000 tokoh dari sahabat hingga ulama abad ke-8 H.",
+    topics: [
+      "Sahabat besar: 10 yang dijamin surga, Ahl Badr, dan lainnya",
+      "Tabi'in dan tabi'ut tabi'in: ulama fiqh, hadis, tafsir",
+      "Tokoh-tokoh di berbagai bidang: sains, kedokteran, sastra",
+      "Penilaian kritis (jarh wa ta'dil) atas setiap perawi",
+      "Masa wafat, murid, dan karya-karya setiap tokoh",
+    ],
+    note: "Standar emas dalam ilmu rijal; penilaian adz-Dzahabi menjadi acuan hingga hari ini.",
+  },
+  {
+    cat: "rijal",
+    ar: "وفيات الأعيان وأنباء أبناء الزمان",
+    title: "Wafayat al-A'yan wa Anba' Abna' az-Zaman",
+    author: "Abu al-Abbas Ahmad ibn Khallikan",
+    wafat: "w. 681 H / 1282 M",
+    year: "~abad ke-7 H",
+    desc: "Kamus biografi tokoh-tokoh terkemuka dalam sejarah Islam: ulama, sastrawan, negarawan, dan ilmuwan.",
+    topics: [
+      "Biografi lengkap tokoh: asal-usul, karier, dan karya",
+      "Anekdot dan kutipan langsung dari tokoh-tokoh tersebut",
+      "Perdebatan dan dinamika intelektual di era klasik",
+      "Hubungan guru-murid dan silsilah keilmuan",
+      "Kondisi sosial-budaya di berbagai kota pusat peradaban",
+    ],
+  },
+  {
+    cat: "rijal",
+    ar: "حلية الأولياء وطبقات الأصفياء",
+    title: "Hilyah al-Auliya' wa Thabaqat al-Ashfiya'",
+    author: "Abu Nu'aim Ahmad al-Ashfahani",
+    wafat: "w. 430 H / 1038 M",
+    year: "~abad ke-5 H",
+    desc: "Biografi para wali dan orang-orang saleh, disertai perkataan dan nasihat-nasihat mereka yang bernilai tinggi.",
+    topics: [
+      "Biografi 10 sahabat yang dijamin surga disertai perkataan mereka",
+      "Tokoh-tokoh tasawuf awal: Hasan al-Bashri, Sufyan ats-Tsauri, dan lainnya",
+      "Kisah-kisah kezuhudan dan ibadah para ulama salaf",
+      "Hikmah dan nasihat yang diriwayatkan dari setiap tokoh",
+      "Generasi tabi'in dan tabi'ut tabi'in dari berbagai penjuru",
+    ],
+  },
+  {
+    cat: "hadharah",
+    ar: "المقدمة",
+    title: "Muqaddimah Ibn Khaldun",
+    author: "Wali ad-Din Abdurrahman ibn Khaldun al-Hadrami",
+    wafat: "w. 808 H / 1406 M",
+    year: "784 H / 1382 M",
+    desc: "Karya terdepan dalam filsafat sejarah dan sosiologi peradaban; meletakkan hukum-hukum naik-turunnya negara dan bangsa.",
+    topics: [
+      "Teori 'ashabiyah: solidaritas kelompok sebagai motor peradaban",
+      "Siklus naik-turun dinasti: lahir, puncak, kemunduran, runtuh",
+      "Ekonomi: produksi, distribusi, perpajakan, dan kemakmuran kota",
+      "Ilmu pengetahuan: klasifikasi ilmu dan institusi pendidikan",
+      "Sejarah Maghrib dan Andalusia sebagai studi kasus",
+    ],
+    note: "Karya yang jauh melampaui zamannya; dianggap cikal-bakal sosiologi modern oleh para ilmuwan Barat.",
+  },
+  {
+    cat: "hadharah",
+    ar: "فجر الإسلام / ضحى الإسلام / ظهر الإسلام",
+    title: "Fajr al-Islam · Dhuha al-Islam · Zhuhrul-Islam",
+    alt: "(Trilogi Islam)",
+    author: "Ahmad Amin al-Mishri",
+    wafat: "w. 1373 H / 1954 M",
+    year: "1928–1955 M",
+    desc: "Trilogi komprehensif tentang perkembangan intelektual, sastra, dan peradaban Islam dari awal hingga abad ke-4 H.",
+    topics: [
+      "Perkembangan ilmu kalam, fiqh, dan tafsir di era awal",
+      "Gerakan penerjemahan: transfer ilmu Yunani, Persia, India",
+      "Madrasah-madrasah pemikiran dan tokoh-tokoh utamanya",
+      "Sastra Arab: puisi, prosa, dan kritik sastra",
+      "Kehidupan sosial dan kebudayaan di era Abbasiyah",
+    ],
+    note: "Ditulis dengan pendekatan akademis-kritis; ada beberapa pandangan kontroversial yang perlu dikritisi.",
+  },
+  {
+    cat: "hadharah",
+    ar: "فقه التمكين في القرآن الكريم",
+    title: "Fiqh at-Tamkin fil-Qur'an al-Karim",
+    author: "Dr. Ali Muhammad ash-Shalabi",
+    wafat: "lahir 1383 H / 1963 M",
+    year: "~2000-an M",
+    desc: "Teori peradaban Islam berbasis Al-Qur'an: syarat-syarat tegaknya 'tamkin' (kemenangan dan kekokohan) sebuah umat.",
+    topics: [
+      "Konsep tamkin dalam Al-Qur'an: makna, syarat, dan halangannya",
+      "Iman dan akidah yang benar sebagai fondasi peradaban",
+      "Amal shalih kolektif: keadilan, ilmu, dan organisasi",
+      "Sebab-sebab kehancuran peradaban dalam perspektif Al-Qur'an",
+      "Aplikasi sejarah: dinasti-dinasti yang tegak dan yang runtuh",
+    ],
+    note: "Sangat produktif dibaca berdampingan dengan Muqaddimah Ibn Khaldun sebagai perpaduan wahyu dan empirisme sejarah.",
+  },
+  {
+    cat: "kontemporer",
+    ar: "الرحيق المختوم",
+    title: "Ar-Rahiq al-Makhtum",
+    alt: "(The Sealed Nectar)",
+    author: "Syaikh Shafiyurrahman al-Mubarakfuri",
+    wafat: "w. 1427 H / 2006 M",
+    year: "1979 M (peraih hadiah Rabithah Alam Islami)",
+    desc: "Sirah Nabawiyah kontemporer terlengkap dan terpercaya; meraih juara pertama dalam kompetisi sirah internasional.",
+    topics: [
+      "Arabia pra-Islam: kondisi sosial, agama, dan politik",
+      "Silsilah nasab Nabi ﷺ hingga Nabi Ibrahim",
+      "Periode Makkiyah: tahapan dakwah dan penindasan Quraisy",
+      "Periode Madinah: hijrah, perang, dan ekspansi Islam",
+      "Haji Wada' dan wafatnya Nabi ﷺ",
+    ],
+    note: "Titik masuk terbaik untuk pemula; metodis, bersumber kuat, dan dilengkapi peta serta lampiran.",
+  },
+  {
+    cat: "kontemporer",
+    ar: "السيرة النبوية (الصلابي)",
+    title: "As-Sirah an-Nabawiyyah",
+    alt: "(Dr. Ali Ash-Shalabi)",
+    author: "Dr. Ali Muhammad ash-Shalabi",
+    wafat: "lahir 1383 H / 1963 M",
+    year: "~2000-an M",
+    desc: "Sirah komprehensif yang memadukan analisis historis dengan pelajaran-pelajaran praktis bagi umat Islam kontemporer.",
+    topics: [
+      "Konteks geopolitik dunia saat kelahiran Islam",
+      "Strategi dakwah Nabi ﷺ di Makkah dan Madinah",
+      "Analisis tiap perang: sebab, jalannya, dan hasilnya",
+      "Diplomasi Nabi ﷺ: perjanjian, korespondensi, dan duta",
+      "Pelajaran kepemimpinan, manajemen, dan strategi dari sirah",
+    ],
+  },
+  {
+    cat: "kontemporer",
+    ar: "السيرة النبوية (البوطي)",
+    title: "Fiqh as-Sirah an-Nabawiyyah",
+    author: "Dr. Muhammad Sa'id Ramadhan al-Buthi",
+    wafat: "w. 1434 H / 2013 M",
+    year: "1969 M",
+    desc: "Sirah yang ditulis dengan kacamata fiqh: setiap peristiwa digali hikmah dan implikasi hukumnya.",
+    topics: [
+      "Metodologi istinbath hukum dari peristiwa-peristiwa sirah",
+      "Studi hikmah ibadah dari sunnah fi'liyah Nabi ﷺ",
+      "Fiqh hubungan Nabi dengan non-Muslim: dzimmi, kafir harbi",
+      "Perbandingan pendapat ulama tentang persoalan-persoalan sirah",
+      "Menjawab syubhat-syubhat Orientalis tentang kehidupan Nabi ﷺ",
+    ],
+  },
+  {
+    cat: "kontemporer",
+    ar: "قصة التتار",
+    title: "Qisshah at-Tatar: Min an-Nasy'ah hatta 'Ayn Jalut",
+    author: "Prof. Dr. Raghib As-Sirjani",
+    wafat: "lahir 1381 H / 1961 M",
+    year: "~2000-an M",
+    desc: "Narasi paling komprehensif tentang invasi Mongol: dari asal-usul bangsa Mongol hingga kekalahan mereka di 'Ayn Jalut.",
+    topics: [
+      "Asal-usul dan perkembangan kekaisaran Mongol di Asia Tengah",
+      "Jatuhnya Bukhara, Samarkand, dan kota-kota besar Islam",
+      "Kehancuran Baghdad 656 H/1258 M dan pembunuhan Khalifah Abbasiyah",
+      "Peran Dinasti Mamluk dalam menghentikan ekspansi Mongol",
+      "Pertempuran 'Ayn Jalut: pembalikan sejarah yang menyelamatkan Islam",
+    ],
+    note: "Ditulis dengan narasi yang menggerakkan namun tetap bersumber ketat; versi terjemahan tersedia di Indonesia.",
+  },
+  {
+    cat: "kontemporer",
+    ar: "ماذا قدم المسلمون للعالم",
+    title: "Madza Qaddamal-Muslimun lil-'Alam",
+    author: "Prof. Dr. Raghib As-Sirjani",
+    wafat: "lahir 1381 H / 1961 M",
+    year: "~2010 M",
+    desc: "Dokumentasi kontribusi peradaban Islam kepada dunia di bidang sains, medis, matematika, seni, dan filsafat.",
+    topics: [
+      "Kontribusi Muslim dalam matematika: aljabar, algoritma, angka Arab",
+      "Kedokteran Islam: Ibn Sina, ar-Razi, dan rumah sakit pertama",
+      "Astronomi: observatorium, pemetaan bintang, dan kalender",
+      "Arsitektur dan seni: masjid, istana, dan kaligrafi",
+      "Transfer ilmu Islam ke Eropa dan dampaknya pada Renaisans",
+    ],
+  },
+  {
+    cat: "kontemporer",
+    ar: "أطلس السيرة النبوية",
+    title: "Atlas as-Sirah an-Nabawiyyah",
+    author: "Syaikh Sami bin Abdullah al-Maghluts",
+    wafat: "lahir ~1950-an M",
+    year: "2004 M",
+    desc: "Atlas visual sirah Nabawiyah: peta, diagram, dan rekonstruksi geografis untuk setiap peristiwa dalam kehidupan Nabi ﷺ.",
+    topics: [
+      "Peta Arabia pra-Islam: suku-suku, rute perdagangan, kota-kota",
+      "Rute hijrah dari Makkah ke Madinah secara detail",
+      "Peta setiap ghazwah: posisi pasukan, rute perjalanan, dan lokasi",
+      "Rekonstruksi Madinah di era Nabi: masjid, pasar, dan pemukiman",
+      "Seri atlas lengkap: Futuh, Anbiya', Quds, dan Utsmaniyah",
+    ],
+    note: "Wajib dimiliki sebagai pendamping membaca Sirah Ibn Hisyam atau Ar-Rahiq al-Makhtum.",
+  },
+  {
+    cat: "orientalis",
+    ar: "—",
+    title: "History of the Arabs",
+    author: "Philip Khuri Hitti",
+    wafat: "1886–1978 M",
+    year: "1937 M (edisi pertama)",
+    desc: "Karya akademik paling komprehensif tentang sejarah Arab-Islam dalam tradisi Barat; menjadi standar selama puluhan tahun.",
+    topics: [
+      "Arabia pra-Islam: sosial, budaya, agama, dan geografi",
+      "Kebangkitan Islam dan ekspansi awal ke tiga benua",
+      "Peradaban Abbasiyah: sains, filsafat, sastra, dan seni",
+      "Andalusia: kejayaan Islam di Eropa dan warisannya",
+      "Kemunduran dan disintegrasi dunia Arab hingga era modern",
+    ],
+    note: "Perspektif luar yang relatif lebih adil dibanding Orientalis Eropa. Namun perlu dikritisi: beberapa narasi tentang awal Islam bias sekularisasi. Baca berdampingan dengan As-Sirjani atau Ash-Shalabi.",
+  },
+];
+
+const grid = document.getElementById("grid");
+const countEl = document.getElementById("count");
+let activeCat = "all";
+
+function catLabel(cat){
+  return {sirah:"Sirah Nabawiyah",tarikh:"Tarikh Umum",rijal:"Rijal & Biografi",hadharah:"Peradaban & Fikr",kontemporer:"Kontemporer",orientalis:"Orientalis"}[cat]||cat;
+}
+
+function renderCard(b){
+  const c = document.createElement("article");
+  c.className = "kcard";
+  c.dataset.cat = b.cat;
+  c.innerHTML = `
+    <div class="kcard-spine"></div>
+    <div class="kcard-body">
+      <span class="cat-badge">${catLabel(b.cat)}</span>
+      <div class="ar-title">${b.ar}</div>
+      <h3>${b.title}${b.alt?` <span style="font-size:15px;font-weight:400;color:var(--muted)">${b.alt}</span>`:""}
+      </h3>
+      <div class="author-row">
+        <span class="author">${b.author}</span>
+        <span class="wafat">${b.wafat}</span>
+      </div>
+      <span class="year-pill">📅 ${b.year}</span>
+      <p class="desc">${b.desc}</p>
+      <ul class="topics">${b.topics.map(t=>`<li>${t}</li>`).join("")}</ul>
+      ${b.note?`<p class="note">${b.note}</p>`:""}
+    </div>`;
+  return c;
+}
+
+function render(cat){
+  activeCat = cat;
+  grid.innerHTML = "";
+  const filtered = cat==="all" ? BOOKS : BOOKS.filter(b=>b.cat===cat);
+  filtered.forEach(b=>grid.appendChild(renderCard(b)));
+  countEl.textContent = `${filtered.length} kitab`;
+}
+
+document.getElementById("filters").addEventListener("click", e=>{
+  const btn = e.target.closest(".pill");
+  if(!btn) return;
+  document.querySelectorAll(".pill").forEach(p=>p.classList.remove("on"));
+  btn.classList.add("on");
+  render(btn.dataset.cat);
+});
+
+render("all");
+</script>
+</body>
+</html>
