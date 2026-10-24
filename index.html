@@ -116,24 +116,6 @@ main{padding-bottom:48px}
 .legend .sw{width:10px;height:10px;border-radius:2px;background:var(--cc);flex:none}
 .legend p{font-size:13.5px;color:var(--muted);margin:12px 0 0}
 
-.treeSec{margin-top:36px;padding:24px;content-visibility:auto;contain-intrinsic-size:auto 2400px}
-.treeSec h2{font-size:28px;font-weight:600}
-.treeSec .sub{color:var(--muted);max-width:70ch;margin:6px 0 14px}
-.tctl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.tctl button{font:inherit;font-size:14px;background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:5px 12px;cursor:pointer}
-.tctl button:hover{border-color:var(--accent)}
-.treebox{overflow-x:auto;padding-bottom:8px}
-.tree,.tree ul{list-style:none;margin:0;padding:0}
-.tree ul{padding-left:20px;margin-left:8px;border-left:1px solid var(--line)}
-.tree li{padding:3px 0;white-space:nowrap}
-.tree summary{cursor:pointer;list-style-position:outside;padding-left:2px}
-.tree summary::marker{color:var(--muted)}
-.tree li.leaf{padding-left:16px}
-.tree .w,.tree .via{font-size:12.5px;color:var(--muted);margin-left:6px}
-.tree .via{font-style:italic}
-.tree .w .nl{font-size:12.5px}
-.tree h3{font-size:18px;font-weight:600;margin:22px 0 8px}
-.orph{margin-top:20px}
 .sources{margin-top:36px;max-width:78ch;color:var(--muted);font-size:14.5px}
 .sources h2{font-size:22px;color:var(--ink);margin-bottom:8px}
 .sources ul{padding-left:20px;margin:6px 0 12px}
@@ -223,7 +205,7 @@ header.top h1{color:var(--head);font-size:clamp(36px,5.6vw,56px)}
 .dhead h2{font-size:clamp(26px,3.4vw,34px)}
 .ph h2{font-size:clamp(32px,4.4vw,42px)}
 .kl .kt{font-size:19px}
-.treeSec h2,.storySec h2{font-size:32px}
+.storySec h2{font-size:32px}
 .card{border-radius:8px}
 .notice,.sp,.kl,.rel,.nasab{border-radius:6px}
 .dn{border-radius:6px;border-top:3px solid var(--line)}
@@ -331,14 +313,7 @@ header.top .p.nabi{background:#2B2A3B}
     <div id="storyIndex"></div>
   </section>
 
-  <section class="card treeSec">
-    <h2>Pohon nasab Quraisy</h2>
-    <p class="sub">Disusun menurut garis ayah, dari Fihr bin Malik (Quraisy) turun ke kabilah-kabilahnya. Anak dicantumkan di bawah ayahnya; untuk perempuan disebutkan suaminya. Garis yang ditulis miring dengan “via” adalah generasi perantara yang tidak dirinci.</p>
-    <div class="tctl"><button type="button" id="openAll">Buka semua</button><button type="button" id="closeAll">Tutup semua</button><button type="button" id="showCur">Tampilkan tokoh yang dipilih</button></div>
-    <div class="treebox" id="tree"></div>
-  </section>
-
-  <section class="sources">
+  <section class=”sources”>
     <h2>Rujukan dan catatan</h2>
     <p>Data nasab disusun dari kitab-kitab sirah dan biografi sahabat:</p>
     <ul>
@@ -756,6 +731,14 @@ P("sumayyah","Sumayyah bint Khayyath","f",null,null,{c:"Maula Bani Makhzum",n:"S
 M("yasir","sumayyah");
 P("ammar","Ammar bin Yasir","m","yasir","sumayyah",{n:"“Ammar akan dibunuh oleh kelompok yang baghi” (HR. Bukhari-Muslim). Gugur di Shiffin di pihak Ali (37 H)."});
 
+/* ===== Anshar: Aus ===== */
+P("saad_muadz","Sa'd bin Mu'adz","m",null,null,{up:["Mu'adz bin an-Nu'man"],c:"Anshar · Aus · Bani Abdil Asyhal",k:"Sayyid al-Aus",al:"saad muadz sad",n:"Pemimpin Bani Abdil Asyhal. Masuk Islam melalui dakwah Mush'ab bin Umair; setelah ia masuk Islam, seluruh kaumnya mengikutinya (riwayat sirah). Hadir di Badr, Uhud, dan Khandaq. Di Khandaq terluka panah dan berdoa agar tidak wafat sebelum melihat urusan Bani Quraizhah diselesaikan. Keputusannya atas Bani Quraizhah dinilai sesuai hukum Allah dari tujuh langit (HR. Bukhari). Nabi ﷺ bersabda bahwa Arsy ar-Rahman berguncang menyambut ruhnya (HR. Bukhari-Muslim). Wafat 5 H."});
+P("usaid","Usaid bin Hudhair","m",null,null,{up:["Hudhair bin Syimakh"],c:"Anshar · Aus · Bani Abdil Asyhal",n:"Pemimpin Bani Abdil Asyhal. Datang marah-marah menemui Mush'ab bin Umair dengan tombak, lalu masuk Islam setelah mendengar al-Qur'an. Pemegang panji Bani Abdil Asyhal di Badr dan Uhud (riwayat sirah)."});
+
+/* ===== Anshar: Khazraj ===== */
+P("saad_ubadah","Sa'd bin Ubadah","m",null,null,{up:["Ubadah bin Dulaim bin Haritsah"],c:"Anshar · Khazraj · Bani Sa'idah",k:"Sayyid al-Khazraj",al:"saad ubadah sad",n:"Pemimpin Bani Sa'idah dan tokoh Khazraj. Dikenal sangat dermawan; konon setiap hari ia mengundang kaum muslimin makan (riwayat sirah). Ikut Baiat Aqabah kedua. Di Saqifah Bani Sa'idah ia dicalonkan sebagai khalifah, tetapi kaum Anshar membaiat Abu Bakar. Sa'd tidak berbaiat sampai akhir hayatnya. Wafat di Hauran, Syam, sekitar 14-15 H."});
+P("abdullah_rawahah","Abdullah bin Rawahah","m",null,null,{up:["Rawahah bin Tsa'labah"],c:"Anshar · Khazraj · Bani al-Harits bin al-Khazraj",k:"Penyair Rasulullah ﷺ",n:"Salah satu pemimpin dalam Baiat Aqabah kedua. Penyair Nabi ﷺ bersama Hassan bin Tsabit. Sempat ragu sesaat sebelum maju di Mu'tah, lalu menegur dirinya sendiri dalam syair. Gugur sebagai panglima ketiga Perang Mu'tah (8 H) setelah Zaid bin Haritsah dan Ja'far bin Abi Thalib syahid, lalu komando diambil Khalid bin al-Walid (HR. Bukhari)."});
+
 /* ===== Kisah ===== */
 const KS=[];function K(id,e,t,p,src,x){KS.push({id,e,t,p,src,x})}
 const ERAS={pra:"Sebelum kenabian",mk:"Periode Makkah",hj:"Hijrah",md:"Periode Madinah",ps:"Sepeninggal Rasulullah ﷺ"};
@@ -835,7 +818,7 @@ K("tahun-kesedihan","mk","Tahun Kesedihan: wafatnya Abu Thalib dan Khadijah",["a
 "Nabi bersabda, “Aku akan terus memohonkan ampun untukmu selama tidak dilarang.” Lalu turun at-Taubah: 113 dan al-Qashash: 56, “Sesungguhnya engkau tidak dapat memberi petunjuk kepada orang yang engkau cintai.”",
 "Pada tahun yang sama Khadijah juga wafat. Kehilangan pelindung di luar rumah dan penenang di dalam rumah membuat tahun itu disebut Tahun Kesedihan. Abdullah bin Abi Umayyah, yang hadir di sisi Abu Thalib, kelak masuk Islam dan gugur di Tha'if."]);
 
-K("aqabah","mk","Baiat Aqabah dan duta pertama ke Yatsrib",["mushab","abbas","muhammad"],"Sirah Ibnu Hisyam; Musnad Ahmad",[
+K("aqabah","mk","Baiat Aqabah dan duta pertama ke Yatsrib",["mushab","abbas","muhammad","saad_muadz","usaid","saad_ubadah","abdullah_rawahah"],"Sirah Ibnu Hisyam; Musnad Ahmad",[
 "Pada musim haji tahun ke-12 kenabian, dua belas orang dari Yatsrib berbaiat kepada Nabi ﷺ di Aqabah. Ketika mereka pulang, Nabi mengutus Mush'ab bin Umair untuk mengajarkan al-Qur'an. Dengan kelembutannya, Mush'ab mengajak Usaid bin Hudhair dan Sa'd bin Mu'adz, dua pemimpin Bani Abdil Asyhal. Setelah Sa'd masuk Islam, seluruh kaumnya mengikutinya.",
 "Setahun kemudian lebih dari tujuh puluh orang datang untuk baiat kedua, diam-diam di malam hari. Nabi datang ditemani pamannya, al-Abbas, yang belum masuk Islam. Al-Abbas berbicara lebih dulu: Muhammad terlindungi di tengah kaumnya, maka jika mereka sanggup membelanya, silakan; jika tidak, tinggalkan ia sejak sekarang. Kaum Anshar menjawab dengan baiat untuk melindungi beliau seperti melindungi keluarga mereka sendiri."]);
 
@@ -942,7 +925,7 @@ K("umrah-qadha","md","Umrah Qadha dan perebutan hak asuh Umamah",["maimunah","ab
 "Ketika rombongan meninggalkan Makkah, Umamah putri Hamzah mengikuti sambil memanggil, “Paman, paman!” Ali mengambilnya, lalu Ali, Ja'far, dan Zaid berselisih siapa yang paling berhak mengasuh. Ali berkata, “Aku yang mengambilnya, dan ia putri pamanku.” Ja'far berkata, “Ia putri pamanku, dan bibinya adalah istriku.” Zaid berkata, “Ia putri saudaraku,” karena Nabi pernah mempersaudarakan Zaid dengan Hamzah.",
 "Nabi memutuskan Umamah untuk bibinya dengan bersabda, “Bibi dari pihak ibu sama kedudukannya dengan ibu.” Beliau lalu menghibur ketiganya: kepada Ali, “Engkau dariku dan aku darimu”; kepada Ja'far, “Engkau mirip rupa dan akhlakku”; kepada Zaid, “Engkau saudara dan maula kami” (HR. Bukhari)."]);
 
-K("mutah","md","Perang Mu'tah: tiga panglima dan pedang Allah",["zaid_haritsah","jafar","khalid","asma_umais","abdullah_jafar","muhammad"],"Shahih al-Bukhari; Sunan Abu Dawud dan at-Tirmidzi",[
+K("mutah","md","Perang Mu'tah: tiga panglima dan pedang Allah",["zaid_haritsah","jafar","abdullah_rawahah","khalid","asma_umais","abdullah_jafar","muhammad"],"Shahih al-Bukhari; Sunan Abu Dawud dan at-Tirmidzi",[
 "Pada 8 H Nabi ﷺ mengirim 3.000 pasukan ke Mu'tah di perbatasan Syam. Beliau berpesan: pemimpinnya Zaid bin Haritsah; jika Zaid gugur, Ja'far bin Abi Thalib; jika Ja'far gugur, Abdullah bin Rawahah (HR. Bukhari). Pasukan berhadapan dengan tentara Romawi dan sekutu Arabnya yang jauh lebih besar.",
 "Ketiganya gugur berturut-turut. Abdullah bin Umar menghitung lebih dari lima puluh luka tusukan dan panah di tubuh Ja'far, semuanya di bagian depan (HR. Bukhari). Panji lalu diambil Khalid bin al-Walid, yang berhasil menarik pasukan dengan selamat. Di Madinah, Nabi mengabarkan kematian mereka dengan berlinang air mata, “hingga panji diambil oleh salah satu pedang Allah, lalu Allah memberi kemenangan” (HR. Bukhari).",
 "Nabi mendatangi rumah Ja'far, memanggil anak-anaknya dan menciumi mereka. Beliau bersabda, “Buatkan makanan untuk keluarga Ja'far, karena telah datang kepada mereka urusan yang menyibukkan” (HR. Abu Dawud, Tirmidzi). Ja'far dijuluki Dzul Janahain, karena diberi ganti dua sayap di surga."]);
@@ -971,7 +954,7 @@ K("wafat-nabi","md","Hari-hari terakhir Rasulullah ﷺ",["muhammad","aisyah","ab
 "Abdurrahman bin Abi Bakar masuk membawa siwak. Aisyah melihat Nabi memandanginya, lalu melunakkan siwak itu dengan giginya dan memberikannya kepada beliau. Nabi wafat bersandar di dada Aisyah sambil mengucapkan, “Bersama ar-Rafiq al-A'la” (HR. Bukhari), pada Rabi'ul Awwal 11 H.",
 "Umar tidak percaya dan berbicara keras kepada orang-orang. Abu Bakar datang dari as-Sunh, menyingkap wajah Nabi dan menciumnya, lalu keluar dan berkhutbah, “Siapa yang menyembah Muhammad, sesungguhnya Muhammad telah wafat. Siapa yang menyembah Allah, sesungguhnya Allah Maha Hidup dan tidak mati,” kemudian membaca Ali Imran: 144. Umar berkata kakinya lemas, seakan baru pertama kali mendengar ayat itu (HR. Bukhari)."]);
 
-K("saqifah","ps","Saqifah Bani Sa'idah",["abubakar","umar","abuubaidah"],"Shahih al-Bukhari",[
+K("saqifah","ps","Saqifah Bani Sa'idah",["abubakar","umar","abuubaidah","saad_ubadah"],"Shahih al-Bukhari",[
 "Ketika jenazah Nabi ﷺ masih disiapkan, kaum Anshar berkumpul di Saqifah Bani Sa'idah untuk memilih pemimpin. Abu Bakar, Umar, dan Abu Ubaidah mendatangi mereka. Sebagian Anshar mengusulkan, “Dari kami seorang pemimpin dan dari kalian seorang pemimpin.”",
 "Abu Bakar berbicara dengan tenang tentang keutamaan Anshar, lalu menyebut bahwa orang Arab hanya akan tunduk kepada Quraisy, dan menawarkan, “Baiatlah salah satu dari dua orang ini: Umar atau Abu Ubaidah.” Umar menjawab, “Kami membaiatmu. Engkau pemimpin kami, yang terbaik di antara kami, dan yang paling dicintai Rasulullah ﷺ.” Ia menjabat tangan Abu Bakar dan membaiatnya, lalu kaum Muhajirin dan Anshar mengikuti."]);
 
@@ -1026,6 +1009,16 @@ K("karbala","ps","Karbala",["husain","abbas_ali","zainab_ali","alihusain","umar_
 K("asma-hajjaj","ps","Asma' di hadapan al-Hajjaj",["asma_ab","abdullah_zubair"],"Shahih Muslim; Tarikh ath-Thabari",[
 "Abdullah bin az-Zubair dibaiat sebagai khalifah di Hijaz dan wilayah-wilayah lainnya, hingga pasukan Abdul Malik bin Marwan di bawah al-Hajjaj mengepungnya di Makkah pada 73 H. Menurut riwayat sejarah, ia menemui ibunya, Asma', yang sudah berusia hampir seratus tahun dan buta, untuk meminta nasihat. Asma' berpesan agar ia tidak menyerah bila yakin berada di atas kebenaran.",
 "Abdullah gugur dan jasadnya disalib. Al-Hajjaj kemudian mendatangi Asma'. Asma' berkata kepadanya, “Rasulullah ﷺ pernah bercerita kepada kami bahwa di Tsaqif akan ada seorang pendusta dan seorang perusak. Pendusta itu sudah kami lihat; adapun si perusak, aku tidak mengira kecuali engkau orangnya.” Al-Hajjaj pergi tanpa menjawab (HR. Muslim). Asma' wafat tak lama kemudian."]);
+K("saad-muadz-arsy","md","Sa'd bin Mu'adz: Arsy berguncang",["saad_muadz","usaid","mushab","muhammad"],"Shahih al-Bukhari; Shahih Muslim; Sirah Ibnu Hisyam (riwayat sirah)",[
+"Ketika Mush'ab bin Umair tiba di Yatsrib sebagai duta pertama Islam, ia mendatangi perkampungan Bani Abdil Asyhal. Sa'd bin Mu'adz, pemimpinnya, mengutus Usaid bin Hudhair untuk mengusirnya. Usaid datang membawa tombak, tetapi Mush'ab memintanya duduk dan mendengar dulu. Usaid masuk Islam dan kembali menemui Sa'd. Sa'd pergi menemui Mush'ab dan mendengar al-Qur'an. Ia lalu berdiri di hadapan kaumnya: 'Bagaimana penghargaan kalian terhadap perkataanku?' Mereka menjawab, 'Terpercaya.' Ia berkata, 'Maka aku haramkan berbicara dengan kalian sampai kalian beriman kepada Allah dan Rasul-Nya.' Malam itu tidak ada satu rumah pun di Bani Abdil Asyhal yang tidak masuk Islam (riwayat sirah).",
+"Di Perang Khandaq (5 H), Sa'd terkena anak panah yang memotong urat nadi di lengannya. Ia berdoa, 'Ya Allah, jangan matikan aku sampai Engkau dinginkan mataku dari urusan Bani Quraizhah.' Luka itu dijaga agar ia bertahan. Ketika Bani Quraizhah menyerah dan bersedia menerima keputusan Sa'd, ia memutuskan agar kaum lelaki mereka dibunuh, wanita dan anak-anak ditawan, dan harta dibagi.",
+"Nabi ﷺ bersabda, 'Engkau telah memutuskan dengan hukum Allah dari atas tujuh langit' (HR. Bukhari). Tak lama kemudian Sa'd wafat dari lukanya. Nabi ﷺ bersabda, 'Arsy ar-Rahman berguncang karena kematian Sa'd bin Mu'adz' (HR. Bukhari-Muslim)."]);
+
+K("saad-ubadah-saqifah","ps","Sa'd bin Ubadah di Saqifah",["saad_ubadah","abubakar","umar","abuubaidah"],"Shahih al-Bukhari; Sirah Ibnu Hisyam (riwayat sirah)",[
+"Ketika Rasulullah ﷺ wafat, kaum Anshar berkumpul di Saqifah Bani Sa'idah. Sa'd bin Ubadah, yang sedang sakit, diusung ke sana. Kaum Anshar mengusulkan ia sebagai khalifah; ia adalah pemimpin Khazraj dan tokoh terkemuka Anshar.",
+"Abu Bakar, Umar, dan Abu Ubaidah tiba. Abu Bakar berbicara tentang keutamaan Anshar, lalu menyebut bahwa orang Arab hanya akan tunduk kepada Quraisy dalam hal kepemimpinan. Umar menjabat tangan Abu Bakar dan membaiatnya, diikuti kaum Muhajirin dan sebagian besar Anshar.",
+"Sa'd bin Ubadah tidak berbaiat dan mempertahankan penolakannya sampai akhir hayatnya. Ia meninggalkan Madinah menuju Syam dan wafat di Hauran sekitar 14-15 H."]);
+
 // DATA END
 
 /* ===== Mesin ===== */
@@ -1236,25 +1229,10 @@ function renderProfile(id){const p=PP[id];const cl=clanOf(id);const el=document.
 
 function go(id,scroll,back){if(!PP[id])return;
   const push=BOOTED&&!back&&id!==CUR;if(push){HIST.push(CUR);if(HIST.length>60)HIST.shift()}
-  CUR=id;renderProfile(id);renderDiagram(id);markTree();
+  CUR=id;renderProfile(id);renderDiagram(id);
   try{if(location.hash.slice(1)!==id&&(BOOTED||location.hash)){history[push?"pushState":"replaceState"](null,"","#"+id);if(push)PUSHN++}}catch(e){}
   updBack();
   if(scroll&&!document.querySelector(".diag.fs"))requestAnimationFrame(()=>{const el=document.querySelector(".diag");const r=el.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*0.6)el.scrollIntoView({block:"start"})})}
-
-/* Pohon */
-const TK={},VIA={};LIST.forEach(p=>{if(p.fa&&PP[p.fa])(TK[p.fa]||(TK[p.fa]=[])).push(p);else if(p.anc&&PP[p.anc])(VIA[p.anc]||(VIA[p.anc]=[])).push(p)});
-function husbandsHTML(p){const hs=MARS.filter(m=>m.w===p.id).map(m=>m.h);if(!hs.length)return"";return `<span class="w">istri ${hs.map(h=>link(h,PP[h].name.split(/ bin /)[0])).join(", ")}</span>`}
-function tnode(p,via){const kids=(TK[p.id]||[]).concat(VIA[p.id]||[]);
-  const lab=(via?`<span class="via">via ${esc(p.up.slice().reverse().join(" › "))} ›</span> `:"")+chip(p.id)+(p.sex==="f"?husbandsHTML(p):"");
-  if(!kids.length||p.sex==="f")return `<li class="leaf" data-n="${p.id}">${lab}</li>`;
-  return `<li data-n="${p.id}"><details open><summary>${lab}</summary><ul>${kids.map(k=>tnode(k,!k.fa&&k.anc)).join("")}</ul></details></li>`}
-function renderTree(){let h=`<ul class="tree">${tnode(PP.fihr)}</ul>`;
-  const roots=LIST.filter(p=>!p.fa&&!p.anc&&p.id!=="fihr"&&(TK[p.id]||[]).length);
-  h+=`<h3>Keluarga di luar garis Quraisy</h3><ul class="tree">${roots.map(r=>tnode(r)).join("")}</ul>`;
-  const lone=LIST.filter(p=>!p.fa&&!p.anc&&p.id!=="fihr"&&!(TK[p.id]||[]).length);
-  h+=`<div class="orph"><h3>Tokoh lain dalam data</h3><div class="row">${lone.map(p=>chip(p.id)).join("")}</div></div>`;
-  document.getElementById("tree").innerHTML=h}
-function markTree(){document.querySelectorAll("#tree .p.cur").forEach(e=>e.classList.remove("cur"));document.querySelectorAll(`#tree .p[data-go="${CUR}"]`).forEach(e=>e.classList.add("cur"))}
 
 /* Pencarian */
 const norm=s=>String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/['’`ʿʾ\-.,]/g,"").replace(/th/g,"t").replace(/dh/g,"d").replace(/sh/g,"s").replace(/kh/g,"k").replace(/(.)\1+/g,"$1").replace(/\s+/g," ").trim();
@@ -1286,15 +1264,11 @@ document.getElementById("swap").addEventListener("click",()=>{const t=fa.value;f
 /* Legenda & pintasan */
 document.getElementById("legend").innerHTML=LEG.map(([k,n])=>`<li><span class="sw" style="--cc:var(--c-${k})"></span>${esc(n)}</li>`).join("");
 document.getElementById("quick").innerHTML=["muhammad","abubakar","umar","utsman","ali","fathimah","aisyah","khalid","zubair","abbas","hamzah","abusufyan","talhah","saad"].map(x=>chip(x)).join("");
-document.getElementById("openAll").addEventListener("click",()=>document.querySelectorAll("#tree details").forEach(d=>d.open=true));
-document.getElementById("closeAll").addEventListener("click",()=>document.querySelectorAll("#tree details").forEach(d=>d.open=false));
-document.getElementById("showCur").addEventListener("click",()=>{if(!document.querySelector("#tree .tree")){renderTree();markTree()}const el=document.querySelector(`#tree .p[data-go="${CUR}"]`);if(!el)return;let d=el.closest("details");while(d){d.open=true;d=d.parentElement.closest("details")}el.scrollIntoView({block:"center"});el.focus({preventScroll:true})});
-
 renderFinder();
 let start="muhammad",startK=null;try{const h=location.hash.slice(1);if(PP[h])start=h;else if(h.startsWith("kisah-")&&KID[h.slice(6)])startK=h.slice(6)}catch(e){}
 go(start,false);BOOTED=true;if(startK)openStory(startK);
 const idle=window.requestIdleCallback?cb=>requestIdleCallback(cb,{timeout:1500}):cb=>setTimeout(cb,200);
-idle(()=>{renderStoryIndex();idle(()=>{renderTree();markTree()})});
+idle(()=>{renderStoryIndex()});
 </script>
 <!-- static-content -->
 
